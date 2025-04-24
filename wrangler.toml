@@ -1,0 +1,11 @@
+name = "resume"
+type = "javascript"
+
+compatibility_date = "2025-04-24"
+
+[site]
+bucket = "./_site"
+entry-point = "."
+
+[build]
+command = "bundle exec jekyll build"
