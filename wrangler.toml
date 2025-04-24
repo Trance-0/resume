@@ -1,6 +1,6 @@
 name = "resume"
 type = "javascript"
-
+pages_build_output_dir = "./_site"
 compatibility_date = "2025-04-24"
 
 [site]
