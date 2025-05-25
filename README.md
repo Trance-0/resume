@@ -90,6 +90,16 @@ Unfortunately, one logistical issue with a template theme like Academic Pages th
 
 ## Deployment configs
 
+### Cloudflare
+
 Used cloudflare to host the website.
+
+change the build command form the default `jekyll build` to the following:
+
+```bash
+bundle exec jekyll build
+```
+
+### Jenkins
 
 Jenkinsfile is not tested yet.
