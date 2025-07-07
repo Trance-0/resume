@@ -8,7 +8,7 @@
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Earth",
+      "city": "No fixed address",
       "countryCode": "US",
       "region": ""
     },
@@ -25,7 +25,40 @@
       }
     ]
   },
-  "work": [],
+  "work": [
+    {
+      "company": "Washington University in St. Louis",
+      "position": "TA for CSE 5610 (Large Language Models)",
+      "location": "1 Brookings Dr, St. Louis, MO 63130",
+      "startDate": "2025-01",
+      "endDate": "2025-05",
+      "summary": "Teaching assistant for CSE 5610 (Large Language Models)."
+    },
+    {
+      "company": "Washington University in St. Louis",
+      "position": "Grader for Math 309 (Matrix Algebra)",
+      "location": "Remote",
+      "startDate": "2025-01",
+      "endDate": "2025-05",
+      "summary": "Part-time grader for Math 309."
+    },
+    {
+      "company": "Washington University in St. Louis",
+      "position": "Grader for Math 429 (Linear Algebra)",
+      "location": "Remote",
+      "startDate": "2024-09",
+      "endDate": "2025-03",
+      "summary": "Part-time grader for Math 429: Linear Algebra."
+    },
+    {
+      "company": "Washington University in St. Louis",
+      "position": "Grader for Math 309 (Matrix Algebra)",
+      "location": "Remote",
+      "startDate": "2023-09",
+      "endDate": "2024-01",
+      "summary": "Part-time grader for Math 309: Matrix Algebra."
+    }
+  ],
   "education": [
     {
       "institution": "Washington University in St. Louis",
@@ -33,7 +66,7 @@
       "studyType": "Bachelor of Science",
       "startDate": "2022-08",
       "endDate": "Present",
-      "courses": [
+      "focus": [
         "Software Engineering",
         "Advanced Algorithms",
         "Machine Learning",
@@ -46,7 +79,7 @@
       "studyType": "Bachelor of Arts",
       "startDate": "2022-08",
       "endDate": "Present",
-      "courses": [
+      "focus": [
         "Mathematical Analysis",
         "Linear Algebra",
         "Probability Theory",
@@ -54,93 +87,548 @@
       ]
     }
   ],
-  "skills": [],
-  "languages": [],
-  "interests": [],
-  "references": [],
-  "publications": [
+  "skills": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "http://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "semesters": "Summer 2025",
+      "courses": [
+        {
+          "name": "Freiwald research program",
+          "tags": ["Non-commutative probability theory", "Metric and Measure spaces", "Quantum Information Theory"],
+          "level": "Undergraduate Research",
+          "description": "In high dimensional subsystem of bipartite qbits, with high probability, a random selected state is almost maximally entangled."
+        }
+      ]
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "http://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
+      "semesters": "Spring 2025",
+      "courses": [
+        {
+          "name": "CSE 332S (Object-Oriented Programming)",
+          "tags": ["C++", "Object-Oriented Programming", "Design Patterns"],
+          "level": "Undergraduate"
+        },
+        {
+          "name": "CSE 559A (Computer vision)",
+          "tags": ["Computer vision", "Deep learning"],
+          "level": "Graduate",
+          "description": "An introduction to computer vision, covering Vision Transformers, Object Detection, and Segmentation."
+        },
+        {
+          "name": "Nath 401 (Honors Seminar)",
+          "tags": ["Symmetric group", "Representation theory"],
+          "level": "Undergraduate",
+          "description": "This is the prerequisite for the Freiwald research program in the summer of 2025."
+        },
+        {
+          "name": "Math 416 (Complex functions)",
+          "tags": ["Complex analysis", "Complex functions", "Complex integration", "Complex differential equations"],
+          "level": "Undergraduate",
+          "description": "An introduction to complex functions, covering complex analysis, complex integration, and complex differential equations. With focus on Cauchy's integral formula, singularities, and residue theorem."
+        },
+        {
+          "name": "Math 4121 (Lebesgue integration)",
+          "tags": ["Lebesgue integration", "Lebesgue measure", "Lebesgue integral"],
+          "level": "Undergraduate",
+          "description": "An introduction to Lebesgue integration, covering Lebesgue measure, Measure theory"
+        }
+      ]
     },
     {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
+      "semesters": "Fall 2024",
+      "courses": [
+        {
+          "name": "CSE 347 (Analysis of Algorithms)",
+          "tags": ["Analysis of Algorithms", "Greedy algorithms", "Dynamic programming"],
+          "level": "Undergraduate",
+          "description": "An introduction to analysis of algorithms, covering some basic techniques for analyzing algorithms, and introduce greedy algorithms, dynamic programming."
+        },
+        {
+          "name": "CSE 442T (Cryptography)",
+          "tags": ["Cryptography", "Public-key cryptography", "Authentication", "Digital signature"],
+          "level": "Undergraduate",
+          "description": "An introduction to cryptography, covering public-key cryptography, authentication, and digital signature."
+        },
+        {
+          "name": "Jap 213D (Japanese Language Level 2 semester 1)",
+          "tags": ["Japanese Language", "Japanese Grammar", "Japanese Vocabulary"],
+          "level": "Undergraduate",
+          "description": "An intermediate level Japanese language course, covering basic grammar, vocabulary, and conversation."
+        },
+        {
+          "name": "Math 4111 (Real analysis)",
+          "tags": ["Real analysis", "Real numbers", "Basic topology"],
+          "level": "Undergraduate",
+          "description": "An introduction to real analysis, covering real numbers, basic topology"
+        }
+      ]
     },
     {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "semesters": "Summer 2024",
+      "courses": [
+        {
+          "name": "Intensive training in Hand drawing illustration",
+          "tags": ["Hand drawing", "Tempera", "Painting"],
+          "level": "Unknown",
+          "description": "As the trend of AI-generated images, I started to reinforce my hand drawing skills over the summer and started to learn tempera painting. For me that's actually easier than digital drawing since you can craft the color and texture you want directly by hand mixing the pigment and choose the brush you want instead of using a digital tool bending those rules of light."
+        }
+      ]
+    },
+    {
+      "semesters": "Spring 2024",
+      "courses": [
+        {
+          "name": "Antro 160B (Cultural Anthropology)",
+          "tags": ["Cultrual Anthropology"],
+          "level": "Undergraduate",
+          "description": "An introduction to cultural anthropology, covering cultural relativism, cultural relativism, and cultural relativism."
+        },
+        {
+          "name": "CSE 514A (Data Mining)",
+          "tags": ["Data Mining", "Supervised learning", "Data cleaning and preprocessing"],
+          "level": "Graduate",
+          "description": "An introduction to data mining, covering supervised learning, data cleaning and preprocessing."
+        },
+        {
+          "name": "Econ 4011 (Intermediate Microeconomics)",
+          "tags": ["Microeconomics", "Game theory", "Market equilibrium"],
+          "level": "Undergraduate",
+          "description": "An introduction to intermediate microeconomics, covering game theory, market equilibrium, and market equilibrium."
+        },
+        {
+          "name": "Jap 104D (Japanese Language Level 1 semester 2)",
+          "tags": ["Japanese Language", "Japanese Grammar", "Japanese Vocabulary"],
+          "level": "Undergraduate",
+          "description": "An introduction to Japanese language, covering basic grammar, vocabulary, and conversation."
+        },
+        {
+          "name": "Math 429 (Linear Algebra)",
+          "tags": ["Linear Algebra", "Vector space", "Linear transformation", "Jacobian matrix", "Adjoint matrix", "Operator theory"],
+          "level": "Undergraduate",
+          "description": "An introduction to linear algebra, covering vector space, linear transformation, Jacobian matrix, Adjoint matrix, and Operator theory."
+        },
+        {
+          "name": "CSE 546T (Computational Geometry)",
+          "tags": ["Computational Geometry", "Lower-dimensional geometry", "Convex hull", "Voronoi diagram", "Delaunay triangulation"],
+          "level": "Graduate",
+          "description": "An introduction to computational geometry, covering lower-dimensional geometry, convex hull, Voronoi diagram, and Delaunay triangulation with other open problems."
+        }
+      ]
+    },
+    {
+      "semesters": "Fall 2023",
+      "courses": [
+        {
+          "name": "Bio 2970 (Principles of Biology II)",
+          "tags": ["Biology", "Genetics", "Evolution", "Cell biology"],
+          "level": "Undergraduate",
+          "description": "An introduction to principles of biology, covering genetics, evolution, and cell biology."
+        },
+        {
+          "name": "Econ 1011 (Introduction to Microeconomics)",
+          "tags": ["Microeconomics"],
+          "level": "Undergraduate",
+          "description": "An introduction to microeconomics, covering supply and demand, market equilibrium. Easy course for those who are not interested in economics."
+        },
+        {
+          "name": "ESE 417 (Machine Learning)",
+          "tags": ["Machine Learning", "Supervised learning", "Unsupervised learning"],
+          "level": "Undergraduate",
+          "description": "An introduction to machine learning, covering perceptron, decision tree, support vector machine, random forest, and neural network."
+        },
+        {
+          "name": "Jap 103D (Japanese Language Level 1 semester 1)",
+          "tags": ["Japanese Language", "Japanese Grammar", "Japanese Vocabulary"],
+          "level": "Undergraduate",
+          "description": "An introduction to Japanese language, covering basic grammar, vocabulary, and conversation."
+        },
+        {
+          "name": "Jap 226C (Japanese Culture)",
+          "tags": ["Japanese Culture", "Japanese History", "Japanese Literature"],
+          "level": "Undergraduate",
+          "description": "An introduction to Japanese culture, covering Japanese history, Japanese literature, and Japanese art."
+        },
+        {
+          "name": "Math 310W (Introduction to Higher Mathematics, writing intensive)",
+          "tags": ["Higher Mathematics", "Writing in Mathematics"],
+          "level": "Undergraduate",
+          "description": "An introduction to higher mathematics, covering introductory level of number theory, real analysis, complex analysis, and set theory."
+        }
+      ]
+    },
+    {
+      "semesters": "Summer 2023",
+      "courses": [
+        {
+          "name": "CSE 330 (Rapid Prototype Development)",
+          "tags": ["Rapid Prototyping", "Full-stack development", "Web development"],
+          "level": "Undergraduate",
+          "description": "An intermediate level of web development, covering full-stack development via React, Node.js, PHP, and MySQL."
+        },
+        {
+          "name": "Math 493, now SDS 493 (Probability Theory)",
+          "tags": ["Probability Theory", "Probability distribution", "Probability density function"],
+          "level": "Undergraduate",
+          "description": "An intermediate level of probability theory, from the basic lemmas to the advanced theorems."
+        }
+      ]
+    },
+    {
+      "semesters": "Spring 2023",
+      "courses": [
+        {
+          "name": "Bio 2960 (Principles of Biology I)",
+          "tags": ["Biology", "Central dogma of biology"],
+          "level": "Undergraduate",
+          "description": "An introduction to principles of biology,  concentrate on molecules and cells, biochemical processes, and the transfer of information from the genetic material to working proteins, commonly known as the central dogma of biology."
+        },
+        {
+          "name": "Chem 106 & Chem 132 (General Chemistry II)",
+          "tags": ["General Chemistry", "Chemical bonding", "Chemical reactions", "Chemical properties", "Inorganic chemistry", "Lab experiments"],
+          "level": "Undergraduate",
+          "description": "An introduction to general chemistry, covering chemical bonding, chemical reactions, and chemical properties. Also, an introduction to inorganic chemistry and organic chemistry."
+        },
+        {
+          "name": "CSE 132 (Introduction to Computer Engineering)",
+          "tags": ["Computer Engineering", "Assembly language", "Arduino"],
+          "level": "Undergraduate"
+        },
+        {
+          "name": "Math 3200, now SDS 3200 (Introduction to Statistics)",
+          "tags": ["Statistics", "Probability Theory", "R Language", "Data visualization"],
+          "level": "Undergraduate",
+          "description": "An introduction to statistics, covering probability theory, R language, hypothesis testing, and data visualization."
+        },
+        {
+          "name": "Phil 125C (Great Philosophers)",
+          "tags": ["Philosophy", "Philosophy of science", "Philosophy of mind"],
+          "level": "Undergraduate",
+          "description": "An introduction to philosophy, covering from the Socrates, Plato, and Aristotle to the pre-modern philosophy of Kant, Hegel, and Nietzsche."
+        }
+      ]
+    },
+    {
+      "semesters": "Winter 2022",
+      "courses": [
+        {
+          "name": "IBM Full Stack Software Developer",
+          "tags": ["Full Stack Software Developer", "IBM", "CI/CD", "Docker", "Kubernetes", "Git", "React", "Node.js", "Express"],
+          "level": "Coursera",
+          "description": "An introduction to full stack software development, covering the basic concepts of full stack software development from IBM."
+        },
+        {
+          "name": "DeepLearning.AI TensorFlow Developer",
+          "tags": ["TensorFlow", "Deep Learning", "Machine Learning", "Artificial Intelligence"],
+          "level": "Coursera",
+          "description": "An introduction to deep learning, covering the basic concepts of deep learning, TensorFlow, and machine learning."
+        },
+        {
+          "name": "Google Data Analytics",
+          "tags": ["Data Analytics", "Google", "SQL", "R", "Python"],
+          "level": "Coursera",
+          "description": "An introduction to data analytics, covering the basic concepts of data analytics, Google, SQL, R, and Python."
+        }
+      ]
+    },
+    {
+      "semesters": "Fall 2022",
+      "courses": [
+        {
+          "name": "Chem 105 (General Chemistry I)",
+          "tags": ["General Chemistry", "Chemical bonding", "Chemical reactions", "Chemical properties", "Inorganic chemistry", "Lab experiments"],
+          "level": "Undergraduate",
+          "description": "An introduction to general chemistry, covering chemical bonding, chemical reactions, and chemical properties. Also, an introduction to inorganic chemistry and organic chemistry."
+        },
+        {
+          "name": "CSE 247 (Algorithms)",
+          "tags": ["Algorithms", "Sorting", "Searching", "Graph algorithms"],
+          "level": "Undergraduate",
+          "description": "An introduction to algorithms, covering sorting, searching, graph algorithms."
+        },
+        {
+          "name": "CWP 118 (College Writing Program)",
+          "tags": ["College Writing", "Writing", "Critical thinking", "Argumentation"],
+          "level": "Undergraduate",
+          "description": "An introduction to college writing, covering the techniques of writing academic papers. How to check facts and references."
+        },
+        {
+          "name": "FYP 120A (Psychology, neuroscience, and Philosophy intro I)",
+          "tags": ["Psychology", "Neuroscience", "Philosophy"],
+          "level": "Undergraduate",
+          "description": "A first year seminar course for PNP program, covering the basic concepts of psychology, neuroscience, and philosophy."
+        },
+        {
+          "name": "Math 233 (Calculus III)",
+          "tags": ["Calculus", "Multivariable calculus", "Vector calculus", "Line integral", "Surface integral", "Divergence theorem", "Stokes' theorem"],
+          "level": "Undergraduate",
+          "description": "An introduction to multivariable calculus, covering vector calculus, line integral, surface integral, divergence theorem, and Stokes' theorem."
+        }
+      ]
+    },
+    {
+      "semesters": "Summer 2022",
+      "courses": [
+        {
+          "name": "Intensive training in Digital Illustration",
+          "tags": ["Digital Illustration", "Digital painting", "Digital drawing"],
+          "level": "Unknown",
+          "description": "As the end of high school, I started to learn digital illustration via Procreate and Photoshop."
+        }
+      ]
+    },
+    {
+      "semesters": "High school years",
+      "courses": [
+        {
+          "name": "General Programming",
+          "tags": ["Python", "C++", "Java", "JavaScript", "HTML", "CSS"],
+          "level": "High school",
+          "description": "I learned general programming skills in high school, and algorithms in competitive programming."
+        },
+        {
+          "name": "Game Development",
+          "tags": ["Unity", "Blender", "C#"],
+          "level": "High school",
+          "description": "This is the time when I started to learn game development, and I built a few game fragments with my friends via Unity and Blender."
+        }
+      ]
     }
   ],
+  "languages": [
+    {
+      "name": "Chinese",
+      "level": "Native"
+    },
+    {
+      "name": "English",
+      "level": "Fluent"
+    },
+    {
+      "name": "Japanese",
+      "level": "Introductory"
+    }
+  ],
+  "interests": [],
   "presentations": [
     {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
-      "description": ""
+      "name": "Non-commutative probability theory and its applications",
+      "event": "Freiwald research program Summer 2025",
+      "date": "2025-06-23",
+      "location": "Washington University in St. Louis",
+      "description": "An introduction to non-commutative probability theory and its applications.",
+      "url": "https://resume.trance-0.com/files/Freiwald_Presentation_1.pdf",
+      "skills": [
+        "Non-commutative probability theory"
+      ]
     },
     {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
+      "name": "Introduction to Infromation theory and Shannon entropy",
+      "event": "Lectures on Honor Seminar for Mathematics",
+      "date": "2025-05",
+      "location": "Washington University in St. Louis",
+      "description": "An introduction to information theory and Shannon entropy."
     },
     {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
-    }
-  ],
-  "teaching": [
-    {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
-    },
-    {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
+      "name": "Language Model Reasoning via Chain of Thought",
+      "event": "Lecture 5 CSE 561 Fall 2024",
+      "date": "2024-09-10",
+      "location": "Washington University in St. Louis",
+      "description": "An introduction to language model reasoning via chain of thought.",
+      "url": "https://teapot123.github.io/files/CSE561A/Lecture_5.pdf"
     }
   ],
   "portfolio": [
     {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
-      "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+      "name": "WashU Chinese Geeks Club",
+      "category": "Club",
+      "date": "Sep 2024 - Present",
+      "description-keys": [
+        "Built a club for Chinese students in WashU to share their interests and experiences regarding computer science and career development.",
+        "Organized events and activities to promote students engage in learning algorithms via leetcode and enhance their interview skills.",
+        "Hosted a series of events to share experiences about course selection and academic planning in learning computer science and mathematics in WashU."
+      ],
+      "skills": [
+        "Event Planning",
+        "Communication",
+        "Organization",
+        "Leadership"
+      ],
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://wucg.club"
+        }
+      ]
+    },
+    {
+      "name": "SophiasPath",
+      "category": "Web Application",
+      "date": "Sep 2024 - Jan 2025",
+      "description-keys": [
+        "Built an interactive website for delivering stories and content about philosophers.",
+        "Utilized Django backend with Django REST Framework for blog content delivery.",
+        "Deployed scalable services using Docker and reverse proxy tools."
+      ],
+      "skills": [
+        "Front-End Development",
+        "Back-End Web Development",
+        "Databases",
+        "Docker"
+      ],
+      "links": [
+        {
+          "label": "Frontend on GitHub",
+          "url": "https://github.com/Ogjerry/Sophia"
+        },
+        {
+          "label": "Backend on GitHub",
+          "url": "https://github.com/Trance-0/SophiasPathBackend"
+        }
+      ]
+    },
+    {
+      "name": "Graphical Applets for Computational Geometry Algorithms",
+      "category": "Web Application",
+      "date": "Dec 2023 - Present",
+      "description-keys": [
+        "Developed graphical applets using JavaScript to visualize computational geometry algorithms."
+      ],
+      "skills": [
+        "JavaScript",
+        "Computational Geometry"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Trance-0/CSE546_final_project"
+        }
+      ]
+    },
+    {
+      "name": "NoteNextra (Notechondria)",
+      "category": "Full-Stack Application",
+      "date": "Nov 2023 - Present",
+      "description-keys": [
+        "Built a memory archive with LLM to retrieve notes and provide utilities for personal interest.",
+        "Discontinued now but still updating notes in notenetra.trance-0.com"
+      ],
+      "skills": [
+        "Flutter",
+        "Full-Stack Development",
+        "PostgreSQL",
+        "Docker",
+        "Python",
+        "AJAX"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Trance-0/Notechondria"
+        },
+        {
+          "label": "Accessible Website",
+          "url": "https://notenetra.trance-0.com"
+        }
+      ]
+    },
+    {
+      "name": "Web Development & Personal Website",
+      "category": "Web Development",
+      "date": "Feb 2020 - Present",
+      "description-keys": [
+        "Built a website containing learning material in computer science and shared personal interests at www.trance-0.com.",
+        "Created posts about algorithms and experiences in computer science.",
+        "Built VPN using V2ray."
+      ],
+      "skills": [
+        "Computer Science",
+        "Linux",
+        "Programming"
+      ],
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://www.trance-0.com"
+        }
+      ]
+    },
+    {
+      "name": "Cookistry",
+      "category": "Full-Stack Application",
+      "date": "Jul 2023 - Sep 2023",
+      "description-keys": [
+        "Built a full-stack app for sharing standardized recipes in Python with PostgreSQL using Django Framework.",
+        "Designed the app mechanism and UI.",
+        "Adapted by WashU cooking club for sharing recipes.",
+        "Enabled customized cooking experience with preferred units and accurate time measures."
+      ],
+      "skills": [
+        "Full-Stack Development",
+        "Django",
+        "Programming",
+        "PostgreSQL",
+        "Databases"
+      ]
+    },
+    {
+      "name": "Using Machine Learning to Analyze Apartheid in South Africa",
+      "category": "Data Science",
+      "date": "Sep 2022 - Nov 2022",
+      "organization": "Washington University in St. Louis",
+      "description-keys": [
+        "Provided technical support in a team using Python, TensorFlow, and GPT-3 to construct models analyzing Apartheid in South Africa and Namibia from the Bohr era to the end of segregation."
+      ],
+      "skills": [
+        "Programming",
+        "TensorFlow",
+        "Python"
+      ]
+    },
+    {
+      "name": "TimeBlocks",
+      "category": "Mobile Application",
+      "date": "Feb 2021 - Feb 2022",
+      "description-keys": [
+        "Developed an app to help users enhance concentration and relax scientifically by recording concentration time and finding optimal work-relax cycles.",
+        "Features include to-do list management, distraction detection, and personalized reports.",
+        "Built independently using Unity and SQL database on VPS."
+      ],
+      "skills": [
+        "Unity",
+        "Programming",
+        "SQL"
+      ]
+    },
+    {
+      "name": "Gray-75",
+      "category": "Game Development",
+      "date": "Feb 2020 - Feb 2022",
+      "description-keys": [
+        "Initiated a demo project for a first-person puzzle-solving game about Alzheimer's disease.",
+        "Led a team, designed scenes, implemented gameplay with Unity and Blender, and provided long-term support for junior developers."
+      ],
+      "skills": [
+        "Unity",
+        "Blender",
+        "Programming"
+      ]
+    },
+    {
+      "name": "Robot Open Autonomous Racing (ROAR)",
+      "category": "AI/Robotics",
+      "date": "Apr 2019 - Nov 2021",
+      "organization": "UC-Berkeley FHL Vive Center for Enhanced Reality",
+      "description-keys": [
+        "Participated in an autonomous car racing program.",
+        "Trained AI agents to drive cars in simulation.",
+        "Tuned reward/punishment parameters.",
+        "Led a team to improve performance.",
+        "Provided technical support and mentorship to new members."
+      ],
+      "skills": [
+        "TensorFlow",
+        "Programming",
+        "AI"
+      ]
     }
   ]
 }

@@ -95,10 +95,11 @@
 
   img {
     max-width: 175px;
-    border-radius: 50%;
+    // This makes the image a circle:
+    border-radius: 0%;
 
     @include breakpoint($large) {
-      padding: 5px;
+      // padding: 5px;
       border: 1px solid var(--global-border-color);
     }
   }
