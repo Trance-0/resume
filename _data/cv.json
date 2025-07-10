@@ -421,6 +421,17 @@
       ]
     },
     {
+      "name": "Concentration of measure effect on quantum communication",
+      "event": "Freiwald research program Summer 2025",
+      "date": "2025-07-08",
+      "location": "Washington University in St. Louis",
+      "description": "Given a bipartite system $A\\otimes B$, assume $\\dim(B)\\geq \\dim(A)\\geq 3$, as the dimension of the smaller system $A$ increases, with a very high probability, a random pure state $\\sigma=|\\psi\\rangle\\langle\\psi|$ selected from $A\\otimes B$ is almost as good as the maximally entangled state.",
+      "url": "https://resume.trance-0.com/files/Freiwald_Presentation_2.pdf",
+      "skills": [
+        "Non-commutative probability theory"
+      ]
+    },
+    {
       "name": "Introduction to Infromation theory and Shannon entropy",
       "event": "Lectures on Honor Seminar for Mathematics",
       "date": "2025-05",
