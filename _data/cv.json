@@ -105,13 +105,14 @@
         {
           "name": "CSE 332S (Object-Oriented Programming)",
           "tags": ["C++", "Object-Oriented Programming", "Design Patterns"],
-          "level": "Undergraduate"
+          "level": "Undergraduate",
+          "description": "Intensive focus on practical aspects of designing, implementing and debugging software, using object-oriented, procedural, and generic programming techniques. The course emphasizes familiarity and proficiency with a wide range of C++ language features through hands-on practice completing studio exercises and lab assignments, supplemented with readings and summary presentations for each session. An evening midterm exam at which attendance is required will be given on March 25. Prerequisites: CSE 131 and CSE 247."
         },
         {
           "name": "CSE 559A (Computer vision)",
           "tags": ["Computer vision", "Deep learning"],
           "level": "Graduate",
-          "description": "An introduction to computer vision, covering Vision Transformers, Object Detection, and Segmentation."
+          "description": "This course introduces the fundamentals of designing computational systems that can \"look at\" images and reason about the physical objects and scenes they represent. Topics include the estimation of color, shape, geometry, and motion from images; image classification, segmentation, and object detection; and image restoration, enhancement, and synthesis. The focus of this course will be on mathematical foundations and practical algorithmic approaches, including: the physics and geometry of image formation; robust methods for estimating image motion and geometry; and deep-learning approaches for semantic image understanding. Students will be required to program in Python. Prerequisites: Any of: CSE 417T (ML), ESE417 (ML), CSE514A (Data Mining), CSE517A (ML)."
         },
         {
           "name": "Nath 401 (Honors Seminar)",
@@ -123,13 +124,13 @@
           "name": "Math 416 (Complex functions)",
           "tags": ["Complex analysis", "Complex functions", "Complex integration", "Complex differential equations"],
           "level": "Undergraduate",
-          "description": "An introduction to complex functions, covering complex analysis, complex integration, and complex differential equations. With focus on Cauchy's integral formula, singularities, and residue theorem."
+          "description": "Analytic functions, elementary functions and their properties, line integrals, the Cauchy integral formula, power series, residues, poles, conformal mapping and applications. Prereq: Math 310 and (Math 318 or Math 4111) or permission of instructor."
         },
         {
           "name": "Math 4121 (Lebesgue integration)",
           "tags": ["Lebesgue integration", "Lebesgue measure", "Lebesgue integral"],
           "level": "Undergraduate",
-          "description": "An introduction to Lebesgue integration, covering Lebesgue measure, Measure theory"
+          "description": "Riemann integration; measurable functions; measures; the Lebesgue integral; integrable functions; L^p spaces; modes of convergence; decomposition of measures; product measures; Lebesgue measure. Prerequisite: Math 4111 or permission of the instructor."
         }
       ]
     },
@@ -140,25 +141,31 @@
           "name": "CSE 347 (Analysis of Algorithms)",
           "tags": ["Analysis of Algorithms", "Greedy algorithms", "Dynamic programming"],
           "level": "Undergraduate",
-          "description": "An introduction to analysis of algorithms, covering some basic techniques for analyzing algorithms, and introduce greedy algorithms, dynamic programming."
+          "description": "Introduces techniques for the mathematical analysis of algorithms, including randomized algorithms and non-worst-case analyses such as amortized and competitive analysis. Introduces the standard paradigms of divide-and-conquer, greedy, and dynamic programming algorithms, as well as reductions. Also provides an introduction to the study of intractability and techniques to determine when good algorithms cannot be designed. Note: A Wednesday recitation section will be required. Times TBD based on students' schedules. Attendance is required for two evening exams. Evening exams will be October 22 and December 3 from 6:30 - 8:30pm. Prerequisites: (CSE 240 or Math 310) and CSE 247"
         },
         {
           "name": "CSE 442T (Cryptography)",
           "tags": ["Cryptography", "Public-key cryptography", "Authentication", "Digital signature"],
           "level": "Undergraduate",
-          "description": "An introduction to cryptography, covering public-key cryptography, authentication, and digital signature."
+          "description": "This course is an introduction to modern cryptography, with an emphasis on its theoretical foundations. Topics will include one-way functions, pseudorandom generators, public key encryption, digital signatures, and zero-knowledge proofs. Prerequisites: CSE 240 and 247"
         },
         {
           "name": "Jap 213D (Japanese Language Level 2 semester 1)",
           "tags": ["Japanese Language", "Japanese Grammar", "Japanese Vocabulary"],
           "level": "Undergraduate",
-          "description": "An intermediate level Japanese language course, covering basic grammar, vocabulary, and conversation."
+          "description": "This is the first semester of an academic-year course in intermediate Japanese. The course emphasizes the acquisition of all four language skills (listening, speaking, reading, and writing) through meaningful communicative practices. It covers the basic vocabulary, expressions, and more grammatical structures and conjugation patterns. About 100 new kanji characters are introduced. Cultural aspects of the language are consistently incorporated in classroom practice to deepen students' cultural awareness and successful communication in the global era. After completing this course, students are able to understand and participate in daily conversation about their experience, past, present and future events in more complex Japanese, and to be able to express opinions/thoughts and present information. They are able to read and write more complex texts on topics related to oneself and their immediate environment with a solid understanding of main ideas and supporting details from a variety of texts. Prerequisite: L05 104D (grade of B- or better) or placement by examination."
         },
         {
           "name": "Math 4111 (Real analysis)",
           "tags": ["Real analysis", "Real numbers", "Basic topology"],
           "level": "Undergraduate",
-          "description": "An introduction to real analysis, covering real numbers, basic topology"
+          "description": "The real number system and the least upper bound property; metric spaces (completeness, compactness, and connectedness); continuous functions (in R^n; on compact spaces; on connected spaces); C(X) (pointwise and uniform convergence; Weierstrass approximation theorem); differentiation (mean value theorem; Taylor's theorem); the contraction mapping theorem; the inverse and implicit function theorems. Prerequisite: Math 310 or permission of instructor."
+        },
+        {
+          "name": "CSE 561A (Large Language Models)",
+          "tags": ["Large Language Models", "LLM", "AI", "Transformer", "Attention Mechanism", "Prompt Engineering"],
+          "level": "Graduate",
+          "description": "Large Language Models (LLMs) have revolutionized the field of artificial intelligence, offering unprecedented capabilities in understanding and generating human-like text. This is a research-oriented course that explores the capabilities and challenges of LLMs. Students will gain a comprehensive understanding of the underlying mechanisms that power these models, as well as reading frontier papers and working on projects to gain hands-on experience. Topics to be covered include LLM training, LLM capabilities, safety, ethical considerations, approaches to augment LLMs, efficiency of modeling and training LLMs, etc. Pre-reqs: basic understanding of machine learning (CSE 417 or ESE 417)"
         }
       ]
     },
@@ -180,37 +187,37 @@
           "name": "Antro 160B (Cultural Anthropology)",
           "tags": ["Cultrual Anthropology"],
           "level": "Undergraduate",
-          "description": "An introduction to cultural anthropology, covering cultural relativism, cultural relativism, and cultural relativism."
+          "description": "This course introduces the basic concepts, theories, and methods of Cultural Anthropology - an academic discipline that studies the diversity of human cultures and societies. The purpose is to provide a broad perspective on the types of research that anthropologists undertake, and to engage in a critical dialogue on how the work of anthropologists contributes to understanding the human condition. Introduction to Cultural Anthropology is a portal into more advanced anthropology courses and is a required course for anthropology majors."
         },
         {
           "name": "CSE 514A (Data Mining)",
           "tags": ["Data Mining", "Supervised learning", "Data cleaning and preprocessing"],
           "level": "Graduate",
-          "description": "An introduction to data mining, covering supervised learning, data cleaning and preprocessing."
+          "description": "With the vast advancement in science and technology, data acquisition in large quantities are routinely done in many fields. Examples of large data include various types of data on the internet, high-throughput sequencing data in biology and medicine, extraterrestrial data from telescopes in astronomy, and images from surveillance camera in security. Mining a large amount of data through data mining has become an effective means to extracting knowledge from data. This course introduces the basic concepts and methods for data mining and provides hands-on experience for processing, analyzing and modeling structured and unstructured data. Homework problems, examines and programming assignments will be administrated throughout the course to enhance the learning. Prerequisites: CSE 247 and ESE 326 (or Math 3200 or Engr 328) or their equivalent, or permission of the instructor."
         },
         {
           "name": "Econ 4011 (Intermediate Microeconomics)",
           "tags": ["Microeconomics", "Game theory", "Market equilibrium"],
           "level": "Undergraduate",
-          "description": "An introduction to intermediate microeconomics, covering game theory, market equilibrium, and market equilibrium."
+          "description": "Analytic theory of consumer and producer behavior under perfect and imperfect competition. Coverage of demand theory (indifference curves and utility functions and preferences under uncertainty, including expected utility and risk aversion). Development of general equilibrium under pure exchange, including the concepts of competitive equilibrium and Pareto efficiency. Discussion of the role of time as it pertains to interest rates, discounting and net present value. Analysis of standard monopoly and simple oligopoly problems. Development of non-cooperative game theory, including strategic and extensive-form equilibria and Nash and sub-game perfect equilibria. Thorough training in intermediate theory would require both Econ 4011 and Econ 4021. The Friday \"A\" subsection is an opportunity to obtain additional course help via a TA-led review session. Attendance at the subsection is recommended, but not required. Prerequisites: Econ 1011, Math 131, Math 132, and concurrent enrollment in, or prior completion of, either Econ 493 (\"Mathematical Economics\") or Math 233."
         },
         {
           "name": "Jap 104D (Japanese Language Level 1 semester 2)",
           "tags": ["Japanese Language", "Japanese Grammar", "Japanese Vocabulary"],
           "level": "Undergraduate",
-          "description": "An introduction to Japanese language, covering basic grammar, vocabulary, and conversation."
+          "description": "This is the second semester of an academic-year course in beginning Japanese. This course emphasizes the acquisition of all four language skills (listening, speaking, reading, and writing) through meaningful communicative practices. It covers everyday vocabulary and expressions, and introduces approximately 90 kanji characters. More grammatical structures and conjugation patterns will be introduced and practiced. Cultural aspects of the language are also incorporated in classroom practice to deepen students' cultural awareness and successful communication in the global era. After completing this course, students are able to understand and participate in daily conversation such as making requests, comparing things, expressing one's ideas and desires, and describing one's family members. They will be able to understand how to read and write novice-level materials on topics related to oneself and their immediate environment. Prerequisite: Prerequisite: L05 103D (grade of B- or better) or placement by examination."
         },
         {
           "name": "Math 429 (Linear Algebra)",
           "tags": ["Linear Algebra", "Vector space", "Linear transformation", "Jacobian matrix", "Adjoint matrix", "Operator theory"],
           "level": "Undergraduate",
-          "description": "An introduction to linear algebra, covering vector space, linear transformation, Jacobian matrix, Adjoint matrix, and Operator theory."
+          "description": "Introduction to the linear algebra of finite-dimensional vector spaces. Includes systems of equations, matrices, determinants, inner product spaces, spectral theory. Prerequisite: Math 310 or permission of instructor. Math 309 is not an explicit prerequisite but students should already be familiar with such basic topics from matrix theory as matrix operations, linear systems, row reduction and Gaussian elimination. Material on these topics in early chapters of the text will be covered very quickly."
         },
         {
           "name": "CSE 546T (Computational Geometry)",
           "tags": ["Computational Geometry", "Lower-dimensional geometry", "Convex hull", "Voronoi diagram", "Delaunay triangulation"],
           "level": "Graduate",
-          "description": "An introduction to computational geometry, covering lower-dimensional geometry, convex hull, Voronoi diagram, and Delaunay triangulation with other open problems."
+          "description": "Computational geometry is the algorithmic study of problems that involve geometric shapes such as points, lines, and polygons. Such problems appear in computer graphics, vision, robotics, animation, visualization, molecular biology, and geographic information systems. This course covers data structures that are unique to geometric computing, such as convex hull, Voronoi diagram, Delaunay triangulation, arrangement, range searching, KD-trees, and segment trees. Also covered are algorithms for polygon triangulation, path planning, and the art gallery problem. Prerequisite: CSE 347."
         }
       ]
     },
@@ -221,37 +228,37 @@
           "name": "Bio 2970 (Principles of Biology II)",
           "tags": ["Biology", "Genetics", "Evolution", "Cell biology"],
           "level": "Undergraduate",
-          "description": "An introduction to principles of biology, covering genetics, evolution, and cell biology."
+          "description": "A broad overview of genetics, including Mendelian assortment, linkage, chromosomal aberrations, variations in chromosome number, mutation, developmental genetics, quantitative genetics, population genetics, mechanisms of evolution, and phylogenetics. Three lecture/problem solving sections and one laboratory period per week. Does not fulfill the laboratory requirement of the biology major. Prereq: Bio 2960, or permission of instructor. This course must be taken for a grade to count towards the Biology major."
         },
         {
           "name": "Econ 1011 (Introduction to Microeconomics)",
           "tags": ["Microeconomics"],
           "level": "Undergraduate",
-          "description": "An introduction to microeconomics, covering supply and demand, market equilibrium. Easy course for those who are not interested in economics."
+          "description": "Determination of prices; supply & demand; consumer theory; elasticity; theory of the firm (production). For a thorough introduction to economics, Econ 1021 should also be taken. EXAMINATION SCHEDULE: IN-PERSON evening exams are Monday, Oct. 2 (7-8:30 pm), Monday, Nov. 6 (7-8:30 pm), and Thursday, Dec. 14 (8:30-10:30 pm)."
         },
         {
           "name": "ESE 417 (Machine Learning)",
           "tags": ["Machine Learning", "Supervised learning", "Unsupervised learning"],
           "level": "Undergraduate",
-          "description": "An introduction to machine learning, covering perceptron, decision tree, support vector machine, random forest, and neural network."
+          "description": "This course provides a broad introduction to machine learning and statistical pattern classification. Students will study theoretical foundations of learning and several important supervised and unsupervised machine learning methods and algorithms including linear model of regression and classification, logistic regression, Bayesian learning methods, neural networks, nearest neighbor method, support vector machines methods, clustering methods and principal component analysis. Students will also learn to use Python programming language to implement learned models and methods to solve pattern classification problems. Pre-requisites: ESE326, Math 233, Python Programming Experience"
         },
         {
           "name": "Jap 103D (Japanese Language Level 1 semester 1)",
           "tags": ["Japanese Language", "Japanese Grammar", "Japanese Vocabulary"],
           "level": "Undergraduate",
-          "description": "An introduction to Japanese language, covering basic grammar, vocabulary, and conversation."
+          "description": "This is the first semester of an academic-year course in beginning Japanese. It is designed for students who have had no prior study of Japanese. The course emphasizes the acquisition of all four language skills (listening, speaking, reading, and writing) through meaningful communicative practices. It covers everyday vocabulary, expressions and basic grammatical structures and introduces all Japanese phonetic syllabaries (hiragana and katakana) as well as kanji characters. Cultural aspects of the language will also be introduced to deepen students' cultural awareness and to communicate appropriately in the global era. After completing this course, students are able to have basic conversations such as self-introduction, shopping, making invitations, describing locations, etc. They are able to read and write simple texts on topics related to oneself. Note: students with some previous Japanese language background must take a placement test; students who misrepresent the extent of their background so as to gain entrance to this course will be dropped from this course. Minimum grade of B- required for continuation to Japanese 104D."
         },
         {
           "name": "Jap 226C (Japanese Culture)",
           "tags": ["Japanese Culture", "Japanese History", "Japanese Literature"],
           "level": "Undergraduate",
-          "description": "An introduction to Japanese culture, covering Japanese history, Japanese literature, and Japanese art."
+          "description": "This course will present a comprehensive overview of Japan, its history, its institutions and cultural products, and its society and people. The first half of the course will comprise a survey of Japanese history, with an emphasis on its social and cultural aspects, from the earliest period to the present day. Having established the historical framework- with its interweave of native and foreign elements, Kyoto-based imperial aristocracy, the samurai class and their crucial role, Zen-inspired meditative arts, and exquisitely diverse cultural products- the class will move on, in the second half, to an examination of recent and contemporary trends and issues. These will center on Japanese education, social and family structures, urban centers and the rural periphery, economic and socio-political trends, Japan's distinctive and vibrant popular culture, contemporary problems and challenges, and the nation's dramatically shifting position in East Asia and in the 21st-century global order."
         },
         {
           "name": "Math 310W (Introduction to Higher Mathematics, writing intensive)",
           "tags": ["Higher Mathematics", "Writing in Mathematics"],
           "level": "Undergraduate",
-          "description": "An introduction to higher mathematics, covering introductory level of number theory, real analysis, complex analysis, and set theory."
+          "description": "Introduction to the rigorous techniques used in more advanced mathematics. Topics include basic logic, set theory, methods of proof and counterexamples, foundations of mathematics, construction of number systems, counting methods, combinatorial arguments and elementary analysis. At least 3 papers will be required, which with at least one revision. Prerequisite: Math 233."
         }
       ]
     },
@@ -262,13 +269,19 @@
           "name": "CSE 330 (Rapid Prototype Development)",
           "tags": ["Rapid Prototyping", "Full-stack development", "Web development"],
           "level": "Undergraduate",
-          "description": "An intermediate level of web development, covering full-stack development via React, Node.js, PHP, and MySQL."
+          "description": "This course uses web development as a vehicle for developing skills in rapid prototyping. Students acquire the skills to build a Linux web server in Apache, to write a web site from scratch in PHP, to run an SQL database, to perform scripting in Python, to employ the AngularJS web framework and to develop modern web applications in client-side and server-side JavaScript. The course culminates with a creative project in which students are able to synthesize the course material into a project of their own interest. The course implements an interactive studio format: after a formal presentation of a topic, students develop a related project under the supervision of the instructor. Prerequisite: CSE 131"
         },
         {
           "name": "Math 493, now SDS 493 (Probability Theory)",
           "tags": ["Probability Theory", "Probability distribution", "Probability density function"],
           "level": "Undergraduate",
-          "description": "An intermediate level of probability theory, from the basic lemmas to the advanced theorems."
+          "description": "Mathematical theory and application of probability at the advanced undergraduate level; a calculus based introduction to probability theory. Topics include the computational basics of probability theory, combinatorial methods, conditional probability including Bayes' theorem, random variables and distributions, expectations and moments, the classical distributions, and the central limit theorem. permission of the instructor. Prerequisites: Math 233. Math 310 is recommended but not required."
+        },
+        {
+          "name": "Math 309 (Matrix Algebra)",
+          "tags": ["Matrix Algebra", "Linear algebra", "Matrix decomposition", "Eigenvalue", "Eigenvector", "Singular value decomposition"],
+          "level": "Undergraduate",
+          "description": "Theory of matrices and vector spaces from a concrete, computational point of view. Topics: row reduction (pivot method), rank and dimension, determinants, eigenvalues and eigenvectors, and diagonalization of symmetrical matrices. Prerequisite: Math 132."
         }
       ]
     },
@@ -279,30 +292,31 @@
           "name": "Bio 2960 (Principles of Biology I)",
           "tags": ["Biology", "Central dogma of biology"],
           "level": "Undergraduate",
-          "description": "An introduction to principles of biology,  concentrate on molecules and cells, biochemical processes, and the transfer of information from the genetic material to working proteins, commonly known as the central dogma of biology."
+          "description": "The course provides an introduction to cell biology, biochemistry, and molecular biology. An understanding of cellular structure and mechanisms, and the properties of biological macromolecules are integrated with a discussion of the flow of genetic information within cells. Examples of how these concepts can be applied to selected areas in modern biology will be discussed. Weekly labs reinforce material from lectures and explore common laboratory techniques and computer-based resources. Completion of Chem 105 or Chem 111A and concurrent enrollment in Chem 106 or Chem 112A are strongly recommended but not required. Three hours of lecture and 2 hours of lab per week. Examination schedule: Exams will be given from 6:30pm - 8:30pm on the following Monday evenings: TBD Large Class and small lab sections. Credit 4 units. Hafer, Kunkel. IMPORTANT: Students will only receive class participation credit for work done in the lecture section for which they are registered."
         },
         {
           "name": "Chem 106 & Chem 132 (General Chemistry II)",
           "tags": ["General Chemistry", "Chemical bonding", "Chemical reactions", "Chemical properties", "Inorganic chemistry", "Lab experiments"],
           "level": "Undergraduate",
-          "description": "An introduction to general chemistry, covering chemical bonding, chemical reactions, and chemical properties. Also, an introduction to inorganic chemistry and organic chemistry."
+          "description": "This course covers chemical equilibrium, thermodynamics, and kinetics at a fundamental level, with an emphasis on problem solving. Gas-phase reactions, heterogeneous (multi-phase) reactions, acid-base reactions, and solubility equilibria are introduced first. Chemical thermodynamics is then taught in its relation to chemical equilibrium. The course finishes with chemical kinetics and rate laws. The content is similar to that in Chem 112A, but advanced applications are omitted to allow more in-class guided active learning. Prerequisites:Two years of high-school math, one year of high-school chemistry or physics, and Chemistry 105 or 111A, or by permission of the instructors. Exams at which attendance is required will be given from 6:30 to 8:00 p.m. on Tuesdays, February 14, March 21, and April 18."
         },
         {
           "name": "CSE 132 (Introduction to Computer Engineering)",
           "tags": ["Computer Engineering", "Assembly language", "Arduino"],
-          "level": "Undergraduate"
+          "level": "Undergraduate",
+          "description": "CSE 132 introduces students to fundamental concepts in the basic operation of computers, ranging from desktops and servers to microcontrollers and handheld devices. Subjects include digital and analog input/output, sensing the physical world, information representation, basic computer architecture and machine language, time-critical computation, machine-to-machine communication and protocol design. Students will use both desktop systems and handheld microcontrollers for laboratory experiments. Active-learning sessions are conducted in a studio setting in which students interact with each other and the professor to solve problems collaboratively. Evening exams will be held, dates are the following: 02/21 (6:30-8:30p) and 04/04(6:30-8:30p). Prerequisite CSE 131"
         },
         {
           "name": "Math 3200, now SDS 3200 (Introduction to Statistics)",
           "tags": ["Statistics", "Probability Theory", "R Language", "Data visualization"],
           "level": "Undergraduate",
-          "description": "An introduction to statistics, covering probability theory, R language, hypothesis testing, and data visualization."
+          "description": "An introduction to probability and statistics. Major topics include elementary probability, special distributions, experimental design, exploratory data analysis, estimation of mean and proportion, hypothesis testing and confidence, regression, and analysis of variance. Emphasis is placed on development of statistical reasoning, basic analytic skills, and critical thinking in empirical research studies. The use of the statistical software R is integrated into lectures and weekly assignments. Required for students pursuing a major or minor in mathematics or wishing to take 400 level or above statistics courses. Prereqs: Math 132. Though Math 233 is not essential, it is recommended. Examination Schedule: Tests at which attendance is required will be given from 6:30-8:30PM on Wednesday Feb 8, Wednesday Mar 8, Wednesday Apr 19."
         },
         {
           "name": "Phil 125C (Great Philosophers)",
           "tags": ["Philosophy", "Philosophy of science", "Philosophy of mind"],
           "level": "Undergraduate",
-          "description": "An introduction to philosophy, covering from the Socrates, Plato, and Aristotle to the pre-modern philosophy of Kant, Hegel, and Nietzsche."
+          "description": "In this course we focus on some of the most important texts in the history of Western philosophy in order to discuss a wide range of central philosophical problems. Among the philosophers most likely to be studied are Plato, Aristotle, Descartes, Hume, Kant, Mill, Marx, Nietzsche, and Wittgenstein. Our goal is not just to appreciate the genius of some great philosophers but also to grapple with the current philosophical problems they have bequeathed to us."
         }
       ]
     },
@@ -336,31 +350,31 @@
           "name": "Chem 105 (General Chemistry I)",
           "tags": ["General Chemistry", "Chemical bonding", "Chemical reactions", "Chemical properties", "Inorganic chemistry", "Lab experiments"],
           "level": "Undergraduate",
-          "description": "An introduction to general chemistry, covering chemical bonding, chemical reactions, and chemical properties. Also, an introduction to inorganic chemistry and organic chemistry."
+          "description": "This course traces the development of chemistry from early atomic theory to modern descriptions of structure, bonding, and intermolecular interactions. Over the course of the semester, the students learn how macroscopic observations of stoichiometry, chemical reactions, the properties of elements and compounds, and chemical periodicity developed into the microscopic understanding of molecular structure and bonding. The semester begins with fundamentals related to stoichiometry, chemical reactions, solution chemistry, and gas properties, with an emphasis on quantitative problem solving. The octet rule, Lewis structures, and valence-shell-electron-pair repulsion (VSEPR) theory are then introduced as early efforts to describe the stability and structures of molecules. The localized electron model (LEM) and molecular-orbital theory (MOT) are next described as modern descriptions of chemical bonding. The course concludes with intermolecular forces such as hydrogen bonding and van der Waals interactions. This course will be a serious introductory series that requires and develops algebraic-computation and problem-solving skills. Pre-requisite: Two years of high-school math, and one year of high-school chemistry or physics, or by permission of the instructors. Students who register for Chem 105 are required for one of the subsections. Exams, at which attendance is required, dates are TBA.."
         },
         {
           "name": "CSE 247 (Algorithms)",
           "tags": ["Algorithms", "Sorting", "Searching", "Graph algorithms"],
           "level": "Undergraduate",
-          "description": "An introduction to algorithms, covering sorting, searching, graph algorithms."
+          "description": "Study of fundamental algorithms, data structures, and their effective use in a variety of applications. Emphasizes importance of data structure choice and implementation for obtaining the most efficient algorithm for solving a given problem. A key component of this course is worst-case asymptotic analysis, which provides a quick and simple method for determining the scalability and effectiveness of an algorithm. Online textbook purchase required. Prerequisite: CSE 131/501N, and fluency with summations, derivatives, and proofs by induction. Attendance is required for two evening exams on Wednesday Week 6 (10/5), 6:30-8:30pm and Wed. Week 12 (11/16) 6:30-8:30pm, and one daytime exam on Wed. (12/14) 10:00am-12:00pm. Lab fee: $68. The lab fee will cover the interactive online textbook for the course. There will be no additional textbook to purchase."
         },
         {
           "name": "CWP 118 (College Writing Program)",
           "tags": ["College Writing", "Writing", "Critical thinking", "Argumentation"],
           "level": "Undergraduate",
-          "description": "An introduction to college writing, covering the techniques of writing academic papers. How to check facts and references."
+          "description": "Writing is a technology that allows one to read the thoughts of others across space and time. Our course's theme -- technology -- is the subject matter that we will be reading to hone skills such as analysis, argumentation, and critical thinking. This does not mean that a student must be a budding technologist to succeed in this course, nor will this course seek to transform a student into one. Rather, this course treats \"technology\" in its broadest sense, from its root in the Greek techne (which means \"craftsmanship,\" \"craft,\" \"art,\" or \"rhetoric\") to its contemporary definition as the realm of knowledge that deals with the mechanical arts and applied sciences. In writing about technology, we will consider perspectives across the university curriculum in order to better comprehend our relationship with our tools and to scrutinize the dynamic interaction, communication, and interdependence of different kinds of tools for various means of communication and representation. We will strive to think critically about ourselves as part of larger communities and systems by attending closely to the ways we communicate with and about others through technologies such as writing, film, and social media. In writing creative, analytical, argumentative, and researched essays, we will address responsible uses of technology and the effects that technologies have on different communities and individuals, and we will try to answer questions like the following: How does technology affect us when we use it? How do technologies intersect and affect one another? What roles does technology play in our everyday lives? What roles do we want it to play in our future? THIS COURSE SATISFIES THE FIRST-YEAR WRITING REQUIREMENT FOR ALL DIVISIONS."
         },
         {
           "name": "FYP 120A (Psychology, neuroscience, and Philosophy intro I)",
           "tags": ["Psychology", "Neuroscience", "Philosophy"],
           "level": "Undergraduate",
-          "description": "A first year seminar course for PNP program, covering the basic concepts of psychology, neuroscience, and philosophy."
+          "description": "A consideration of three primary areas of research in cognitive science: attention, memory, and language. These topics are used to illustrate the techniques by which mental abilities are investigated and explained in psychology and neuroscience: the focus, in particular, is on the use of reaction time studies, brain imaging, and cell recordings to isolate the basic components that make up complex functions. In addition to the central concepts and theories in each area, the course will address philosophical implications of this research concerning how the mind and brain are related, how the mind-brain encodes or represents information, and the nature of consciousness. And there will be an emphasis on applying these findings to important problems, such as Alzheimer's disease and deficits due to brain damage. The class is taught by three members of the faculty from different disciplines and combines a whole-group lecture with small discussion classes. The goal is to give students a good understanding of the interdisciplinary nature of cognitive science and to help them develop the ability to think and write critically about scientific research into the mind-brain. Prerequisite: admission to the Hewlett Program in the Study of the Mind-Brain."
         },
         {
           "name": "Math 233 (Calculus III)",
           "tags": ["Calculus", "Multivariable calculus", "Vector calculus", "Line integral", "Surface integral", "Divergence theorem", "Stokes' theorem"],
           "level": "Undergraduate",
-          "description": "An introduction to multivariable calculus, covering vector calculus, line integral, surface integral, divergence theorem, and Stokes' theorem."
+          "description": "Differential and integral calculus of functions of two and three variables. Vectors, curves and surfaces in space, partial derivatives, multiple integrals, line integrals, vector calculus through Green's Theorem. Prerequisite: Math 132, or a score of 4 or 5 on the Advanced Placement Calculus Examination (BC version). Examination Schedule: Tests at which attendance is required will be given from 6:30-8:30PM on Tues Sept 20, Tues Oct 18, Tues Nov 15."
         }
       ]
     },
@@ -497,11 +511,75 @@
       ]
     },
     {
+      "name": "Mon3tr",
+      "category": "Computer vision",
+      "date": "Jun 2025 - June 2025",
+      "description-keys": [
+        "named from, Matching and smOoth difussioN for 3d reconsTRuction",
+        "This is an experimental project as Final project of Spring 2025 CSE 559A Computer Vision course at Washington University in St. Louis.",
+        "Combines MASt3R and Smooth-Diffusion. To test if we can use 2D image generation model to improve 3D reconstruction."
+      ],
+      "skills": [
+        "Computer Vision",
+        "MASt3R",
+        "Smooth-Diffusion"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Trance-0/Mon3tr"
+        }
+      ]
+    },
+    {
+      "name": "Flow-of-Thought",
+      "category": "Large Language Models, Chain of Thought, self-RAG",
+      "date": "May 2024 - May 2024",
+      "description-keys": [
+        "This is an experimental project as Final project of Fall 2024 CSE 561A Large Language Models course at Washington University in St. Louis.",
+        "Implemented a multi-agent self-RAG system with Chain of Thought and Large Language Models. Based on Graph of Thoughts pipeline."
+      ],
+      "skills": [
+        "Large Language Models",
+        "Chain of Thought",
+        "self-RAG"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Trance-0/Flow-of-Thoughts"
+        }
+      ]
+    },
+    {
+      "name": "Odoru",
+      "category": "Web Application (HackWashU Hackathon 2024)",
+      "date": "Nov 2024 - Dec 2024",
+      "description-keys": [
+        "Video Streaming: Users can select a dance video and view it while recording their dance through a webcam.",
+        "Real-Time Pose Detection: The app uses machine learning and computer vision models to detect the user’s skeleton in real-time from the video stream.",
+        "Motion Similarity Scoring: The app calculates scores by comparing the user's skeletal movements with the reference dance video, providing feedback on their performance.",
+        "Responsive UI: The app provides a seamless interface for users to interact with the video, record themselves, and receive ongoing feedback during their performance."
+      ],
+      "skills": [
+        "Machine Learning",
+        "Computer Vision",
+        "Web Development"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Weizhi-Du/odoru"
+        }
+      ]
+    },
+    {
       "name": "Graphical Applets for Computational Geometry Algorithms",
       "category": "Web Application",
       "date": "Dec 2023 - Present",
       "description-keys": [
-        "Developed graphical applets using JavaScript to visualize computational geometry algorithms."
+        "Developed graphical applets using JavaScript to visualize computational geometry algorithms.",
+        "Serve as final project for CSE 546: Computational Geometry."
       ],
       "skills": [
         "JavaScript",
@@ -567,6 +645,7 @@
       "category": "Full-Stack Application",
       "date": "Jul 2023 - Sep 2023",
       "description-keys": [
+        "Initialized project in Insite x ACM x Skandalaris No-Code HackAThon 2023.",
         "Built a full-stack app for sharing standardized recipes in Python with PostgreSQL using Django Framework.",
         "Designed the app mechanism and UI.",
         "Adapted by WashU cooking club for sharing recipes.",
