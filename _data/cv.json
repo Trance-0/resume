@@ -30,8 +30,8 @@
       "company": "Washington University in St. Louis",
       "position": "TA for CSE 5610 (Large Language Models)",
       "location": "1 Brookings Dr, St. Louis, MO 63130",
-      "startDate": "2025-01",
-      "endDate": "2025-05",
+      "startDate": "2025-09",
+      "endDate": "2025-12",
       "summary": "Teaching assistant for CSE 5610 (Large Language Models)."
     },
     {
@@ -88,6 +88,41 @@
     }
   ],
   "skills": [
+    {
+      "semesters": "Fall 2025",
+      "courses": [
+        {
+          "name": "Math 4201 (Topology I)",
+          "tags": ["Topology", "Topological spaces", "Metric spaces", "Baire category theorem", "Compactness", "Connectedness"],
+          "level": "Undergraduate",
+          "description": "An introduction to the most important ideas of topology.  Course includes necessary ideas from set theory, topological spaces, subspaces, products and quotients, compactness and connectedness.  Some time is also devoted to the particular case of metric spaces (including topics such as separability, completeness, completions, the Baire Caregory Theorem, and equivalents of compactness in metric spaces).  Prerequisite:  Math 4111 or permission of instructor."
+        },
+        {
+          "name": "CSE 5100 (Deep Reinforcement Learning)",
+          "tags": ["Deep Reinforcement Learning", "Reinforcement learning", "Q-learning", "Deep Q-network", "Policy gradient"],
+          "level": "Graduate",
+          "description": "Deep Reinforcement Learning (RL) is a cutting-edge field at the intersection of artificial intelligence and decision-making. This course provides an in-depth exploration of the fundamental principles, algorithms, and applications of deep reinforcement learning. It covers basic algorithms, including value-based, policy-based, actor-critic, and model-based methods, as well as advanced topics, such as meta RL, offline RL, and multi-agent RL. By combining deep learning techniques with reinforcement learning, this course equips students with the necessary skills to build intelligent systems that can learn from experiences and make optimal decisions in complex environments. Evaluation of this course is based on written and programming assignments, and a final course project."
+        },
+        {
+          "name": "CSE 5519 (Advances in Computer Vision)",
+          "tags": ["Computer vision", "Deep learning", "Attention-based architectures", "Self-supervised/few-shot/zero-shot learning", "Explainable models", "Deep geometric methods", "Neural fields", "Generative image modeling", "Vision language models"],
+          "level": "Graduate",
+          "description": "Computer vision is a fast-moving field, with the past few years seeing tremendous advances in the development of computational algorithms for solving visual tasks. This course is designed to introduce students to advanced and recently published techniques, including work in the areas of attention-based architectures, self-supervised/few-shot/zero-shot learning, explainable models, deep geometric methods, neural fields, generative image modeling, and vision language models. Prerequisite: Any of CSE 559A (Computer Vision), CSE 555A (Computational Photography), CSE 527A (Natural Language Processing), CSE 561A (Large Language Models), or permission of the instructor."
+        },
+        {
+          "name": "CSE 5313 (Coding and information theory for data science)",
+          "tags": ["Coding and information theory", "Error-correcting codes", "Information theory", "Data compression", "Data transmission", "Storage", "Computation", "Privacy", "Machine learning", "Networks", "Blockchains", "DNA storage"],
+          "level": "Graduate",
+          "description": "Coding/information theory emerged in mid 20'th century as a mathematical theory of communication with noise. In latter decades it has developed to a vast topic encompassing most aspects of handling large datasets. The course will begin by surveying the classical mathematical theory and its basic applications in communication, and continue to contemporary applications in storage, computation, privacy, machine learning, and emerging technologies such as networks, blockchains, and DNA storage. The course is self-contained, but prior knowledge in algebra (such as Math 309 or ESE 318), discrete math (such as CSE 240 or Math 310), and probability (such as Math 2200 or ESE 326), as well as some mathematical maturity, is assumed. There will be 4-5 homework assignments, one in-person midterm, and a final reading assignment."
+        },
+        {
+          "name": "Music 1260 (Jazz Theory I)",
+          "tags": ["Jazz Theory", "Jazz music", "Jazz composition", "Jazz improvisation", "Jazz harmony", "Jazz rhythm"],
+          "level": "Undergraduate",
+          "description": "Introduction to the jazz music language as a preparation for the study of improvisation. The course of study consists of basic music theory including music-reading skills and notation, scales, intervals, and triads. An introduction to extended tertian chords as derived from the twenty-one modes of the major, melodic and harmonic minor scales forms the basis of the jazz harmonic language. The study of chord progression and chord substitution, song form, and the blues prepares the student for a detailed study of the modern jazz language. Students who register for Music 121J are required to register for one of the subsections."
+        }
+      ]
+    },
     {
       "semesters": "Summer 2025",
       "courses": [
