@@ -11,9 +11,9 @@ Zheyuan Wu is a student at Washington University in St. Louis, pursuing a Bachel
 
 Some of the topics he is currently actively researching on are:
 
-- Large Language Models
+- Complex projective spaces
 - Computer Vision
-- Quantum Computing
+- Large Language Models
 
 ## Proposition 1
 

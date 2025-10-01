@@ -93,7 +93,7 @@
       "courses": [
         {
           "name": "Math 4201 (Topology I)",
-          "tags": ["Topology", "Topological spaces", "Metric spaces", "Baire category theorem", "Compactness", "Connectedness"],
+          "tags": ["Topology", "Topological spaces", "Metric spaces", "Hausdorff space", "Compactness", "Connectedness"],
           "level": "Undergraduate",
           "description": "An introduction to the most important ideas of topology.  Course includes necessary ideas from set theory, topological spaces, subspaces, products and quotients, compactness and connectedness.  Some time is also devoted to the particular case of metric spaces (including topics such as separability, completeness, completions, the Baire Caregory Theorem, and equivalents of compactness in metric spaces).  Prerequisite:  Math 4111 or permission of instructor."
         },
@@ -130,7 +130,7 @@
           "name": "Freiwald research program",
           "tags": ["Non-commutative probability theory", "Metric and Measure spaces", "Quantum Information Theory"],
           "level": "Undergraduate Research",
-          "description": "In high dimensional subsystem of bipartite qbits, with high probability, a random selected state is almost maximally entangled."
+          "description": "To understand the following claim: In high dimensional subsystem of bipartite qbits, with high probability, a random selected state is almost maximally entangled. Topic of research skim through non-commutative probability theory (POVMs, partial trace, von Neumann entropy, tensor products), metric and measure spaces (L^2 spaces, Bargmann spaces), smooth manifolds (Riemannian manifolds, complex manifolds, kahler manifolds, compact lie groups), concentration of measure effect (levy family, high dimensional probability theory, invariant measures), quantum stochastic processes (coherent states), quantum information theory, and quantum computing. Who cares we start with Von Neumann algebra in the beginning?"
         }
       ]
     },
@@ -150,7 +150,7 @@
           "description": "This course introduces the fundamentals of designing computational systems that can \"look at\" images and reason about the physical objects and scenes they represent. Topics include the estimation of color, shape, geometry, and motion from images; image classification, segmentation, and object detection; and image restoration, enhancement, and synthesis. The focus of this course will be on mathematical foundations and practical algorithmic approaches, including: the physics and geometry of image formation; robust methods for estimating image motion and geometry; and deep-learning approaches for semantic image understanding. Students will be required to program in Python. Prerequisites: Any of: CSE 417T (ML), ESE417 (ML), CSE514A (Data Mining), CSE517A (ML)."
         },
         {
-          "name": "Nath 401 (Honors Seminar)",
+          "name": "Math 401 (Honors Seminar)",
           "tags": ["Symmetric group", "Representation theory"],
           "level": "Undergraduate",
           "description": "This is the prerequisite for the Freiwald research program in the summer of 2025."
