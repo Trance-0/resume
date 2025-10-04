@@ -24,6 +24,7 @@ Here is a list of skills I have learned over the years and might be useful for y
         <a href="{{ link.url }}">
           <i class="fa fa-link"></i>{{ link.name }}</a>
         {% endfor %}
+      </span>
     {% endif %}
     {% if course.tags %}
     <br>

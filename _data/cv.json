@@ -95,7 +95,7 @@
           "name": "Math 4201 (Topology I)",
           "tags": ["Topology", "Topological spaces", "Metric spaces", "Hausdorff space", "Compactness", "Connectedness"],
           "level": "Undergraduate",
-          "textbook": [
+          "textbooks": [
             {
               "url":"https://eclass.uoa.gr/modules/document/file.php/MATH707/James%20R.%20Munkres%20Topology%20%20Prentice%20Hall%2C%20Incorporated%2C%202000%20by%20James%20R.%20Munkres%20%28z-lib.org%29.pdf",
               "name":"topology 2nd ed. by james munkres"
@@ -113,7 +113,7 @@
           "name": "CSE 5519 (Advances in Computer Vision)",
           "tags": ["Computer vision", "Deep learning", "Attention-based architectures", "Self-supervised/few-shot/zero-shot learning", "Explainable models", "Deep geometric methods", "Neural fields", "Generative image modeling", "Vision language models"],
           "level": "Graduate",
-          "textbook": [
+          "textbooks": [
             {
               "url":"https://notenextra.trance-0.com/CSE5519",
               "name":"List of selected papers"
@@ -125,7 +125,7 @@
           "name": "CSE 5313 (Coding and information theory for data science)",
           "tags": ["Coding and information theory", "Error-correcting codes", "Information theory", "Data compression", "Data transmission", "Storage", "Computation", "Privacy", "Machine learning", "Networks", "Blockchains", "DNA storage"],
           "level": "Graduate",
-          "textbook": [
+          "textbooks": [
             {
               "url":"https://www.cambridge.org/core/books/introduction-to-coding-theory/377D24BE73F473B15378776B0AE63CA3",
               "name":"Introduction to Coding theory. by ron roth"
@@ -148,7 +148,7 @@
           "name": "Freiwald research program",
           "tags": ["Non-commutative probability theory", "Metric and Measure spaces", "Quantum Information Theory"],
           "level": "Undergraduate Research",
-          "textbook": [
+          "textbooks": [
             {
               "url":"https://www.cambridge.org/core/books/geometry-of-quantum-states/46B62FE3F9DA6E0B4EDDAE653F61ED8C",
               "name":"Geometry of Quantum States. by Ingemar Bengtsson and Karol Życzkowski"
@@ -205,7 +205,7 @@
           "name": "CSE 332S (Object-Oriented Programming)",
           "tags": ["C++", "Object-Oriented Programming", "Design Patterns"],
           "level": "Undergraduate",
-          "textbook": [
+          "textbooks": [
             {
               "url":"https://zhjwpku.com/assets/pdf/books/C++.Primer.Plus.6th.Edition.Oct.2011.pdf",
               "name":"C++ primer plus. by Stephen Prata"
@@ -223,7 +223,7 @@
           "name": "Math 401 (Honors Seminar)",
           "tags": ["Symmetric group", "Representation theory"],
           "level": "Undergraduate",
-          "textbook": [
+          "textbooks": [
             {
               "url":"https://www.cambridge.org/core/books/highdimensional-probability/797C466DA29743D2C8213493BD2D2102",
               "name":"High-Dimensional Probability. by Roman Vershynin"
@@ -239,7 +239,7 @@
           "name": "Math 416 (Complex functions)",
           "tags": ["Complex analysis", "Complex functions", "Complex integration", "Complex differential equations"],
           "level": "Undergraduate",
-          "textbook": [
+          "textbooks": [
             {
               "url":"https://bookstore.ams.org/view?ProductCode=MBK/49",
               "name":"Complex Function Theory: Second Edition. by Donald Sarason"
@@ -251,7 +251,7 @@
           "name": "Math 4121 (Lebesgue integration)",
           "tags": ["Lebesgue integration", "Lebesgue measure", "Lebesgue integral"],
           "level": "Undergraduate",
-          "textbook": [
+          "textbooks": [
             {
               "url":"https://www.cambridge.org/9780521884747",
               "name":"A Radical Approach to Lebesgue's Theory of Integration. by David M. Bressoud"
@@ -290,7 +290,7 @@
           "name": "Math 4111 (Real analysis)",
           "tags": ["Real analysis", "Real numbers", "Basic topology"],
           "level": "Undergraduate",
-          "textbook": [
+          "textbooks": [
             {
               "url":"https://old.maa.org/press/maa-reviews/principles-of-mathematical-analysis",
               "name": "Principles of Mathematical Analysis. by Walter Rudin"
@@ -348,7 +348,7 @@
           "name": "Math 429 (Linear Algebra)",
           "tags": ["Linear Algebra", "Vector space", "Linear transformation", "Jacobian matrix", "Adjoint matrix", "Operator theory"],
           "level": "Undergraduate",
-          "textbook": [
+          "textbooks": [
             {
               "url":"https://link.springer.com/book/10.1007/978-3-031-41026-0",
               "name":"Linear Algebra Done Right . by Sheldon Axler"
@@ -505,7 +505,7 @@
           "name": "CSE 247 (Algorithms)",
           "tags": ["Algorithms", "Sorting", "Searching", "Graph algorithms"],
           "level": "Undergraduate",
-          "description": "Study of fundamental algorithms, data structures, and their effective use in a variety of applications. Emphasizes importance of data structure choice and implementation for obtaining the most efficient algorithm for solving a given problem. A key component of this course is worst-case asymptotic analysis, which provides a quick and simple method for determining the scalability and effectiveness of an algorithm. Online textbook purchase required. Prerequisite: CSE 131/501N, and fluency with summations, derivatives, and proofs by induction. Attendance is required for two evening exams on Wednesday Week 6 (10/5), 6:30-8:30pm and Wed. Week 12 (11/16) 6:30-8:30pm, and one daytime exam on Wed. (12/14) 10:00am-12:00pm. Lab fee: $68. The lab fee will cover the interactive online textbook for the course. There will be no additional textbook to purchase."
+          "description": "Study of fundamental algorithms, data structures, and their effective use in a variety of applications. Emphasizes importance of data structure choice and implementation for obtaining the most efficient algorithm for solving a given problem. A key component of this course is worst-case asymptotic analysis, which provides a quick and simple method for determining the scalability and effectiveness of an algorithm. Online textbooks purchase required. Prerequisite: CSE 131/501N, and fluency with summations, derivatives, and proofs by induction. Attendance is required for two evening exams on Wednesday Week 6 (10/5), 6:30-8:30pm and Wed. Week 12 (11/16) 6:30-8:30pm, and one daytime exam on Wed. (12/14) 10:00am-12:00pm. Lab fee: $68. The lab fee will cover the interactive online textbooks for the course. There will be no additional textbooks to purchase."
         },
         {
           "name": "CWP 118 (College Writing Program)",
