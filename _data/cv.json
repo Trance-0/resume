@@ -95,6 +95,12 @@
           "name": "Math 4201 (Topology I)",
           "tags": ["Topology", "Topological spaces", "Metric spaces", "Hausdorff space", "Compactness", "Connectedness"],
           "level": "Undergraduate",
+          "textbook": [
+            {
+              "url":"https://eclass.uoa.gr/modules/document/file.php/MATH707/James%20R.%20Munkres%20Topology%20%20Prentice%20Hall%2C%20Incorporated%2C%202000%20by%20James%20R.%20Munkres%20%28z-lib.org%29.pdf",
+              "name":"topology 2nd ed. by james munkres"
+            }
+          ],
           "description": "An introduction to the most important ideas of topology.  Course includes necessary ideas from set theory, topological spaces, subspaces, products and quotients, compactness and connectedness.  Some time is also devoted to the particular case of metric spaces (including topics such as separability, completeness, completions, the Baire Caregory Theorem, and equivalents of compactness in metric spaces).  Prerequisite:  Math 4111 or permission of instructor."
         },
         {
@@ -107,12 +113,24 @@
           "name": "CSE 5519 (Advances in Computer Vision)",
           "tags": ["Computer vision", "Deep learning", "Attention-based architectures", "Self-supervised/few-shot/zero-shot learning", "Explainable models", "Deep geometric methods", "Neural fields", "Generative image modeling", "Vision language models"],
           "level": "Graduate",
+          "textbook": [
+            {
+              "url":"https://notenextra.trance-0.com/CSE5519",
+              "name":"List of selected papers"
+            }
+          ],
           "description": "Computer vision is a fast-moving field, with the past few years seeing tremendous advances in the development of computational algorithms for solving visual tasks. This course is designed to introduce students to advanced and recently published techniques, including work in the areas of attention-based architectures, self-supervised/few-shot/zero-shot learning, explainable models, deep geometric methods, neural fields, generative image modeling, and vision language models. Prerequisite: Any of CSE 559A (Computer Vision), CSE 555A (Computational Photography), CSE 527A (Natural Language Processing), CSE 561A (Large Language Models), or permission of the instructor."
         },
         {
           "name": "CSE 5313 (Coding and information theory for data science)",
           "tags": ["Coding and information theory", "Error-correcting codes", "Information theory", "Data compression", "Data transmission", "Storage", "Computation", "Privacy", "Machine learning", "Networks", "Blockchains", "DNA storage"],
           "level": "Graduate",
+          "textbook": [
+            {
+              "url":"https://www.cambridge.org/core/books/introduction-to-coding-theory/377D24BE73F473B15378776B0AE63CA3",
+              "name":"Introduction to Coding theory. by ron roth"
+            }
+          ],
           "description": "Coding/information theory emerged in mid 20'th century as a mathematical theory of communication with noise. In latter decades it has developed to a vast topic encompassing most aspects of handling large datasets. The course will begin by surveying the classical mathematical theory and its basic applications in communication, and continue to contemporary applications in storage, computation, privacy, machine learning, and emerging technologies such as networks, blockchains, and DNA storage. The course is self-contained, but prior knowledge in algebra (such as Math 309 or ESE 318), discrete math (such as CSE 240 or Math 310), and probability (such as Math 2200 or ESE 326), as well as some mathematical maturity, is assumed. There will be 4-5 homework assignments, one in-person midterm, and a final reading assignment."
         },
         {
@@ -130,6 +148,52 @@
           "name": "Freiwald research program",
           "tags": ["Non-commutative probability theory", "Metric and Measure spaces", "Quantum Information Theory"],
           "level": "Undergraduate Research",
+          "textbook": [
+            {
+              "url":"https://www.cambridge.org/core/books/geometry-of-quantum-states/46B62FE3F9DA6E0B4EDDAE653F61ED8C",
+              "name":"Geometry of Quantum States. by Ingemar Bengtsson and Karol Życzkowski"
+            },
+            {
+              "url":"https://link.springer.com/book/10.1007/978-93-86279-28-6",
+              "name":"Mathematical Foundations of Quantum Mechanics. by K.R.Parthasarathy"
+            },
+            {
+              "url":"https://link.springer.com/book/10.1007/978-3-0348-0566-7",
+              "name":"An Introduction to Quantum Stochastic Calculus. by K.R.Parthasarathy"
+            },
+            {
+              "url":"https://www.cambridge.org/core/books/highdimensional-probability/797C466DA29743D2C8213493BD2D2102",
+              "name":"High-Dimensional Probability. by Roman Vershynin"
+            },
+            {
+              "url":"https://link.springer.com/book/10.1007/978-0-8176-4583-0",
+              "name":"Metric Structures for Riemannian and Non-Riemannian Spaces. by M. Gromov"
+            },
+            {
+              "url":"https://link.springer.com/book/10.1007/978-93-86279-59-0",
+              "name":"Coding theorems of classical and quantum information theory. by K.R.Parthasarathy"
+            },
+            {
+              "url":"https://link.springer.com/book/10.1007/978-3-319-16718-3",
+              "name":" The Functional Analysis of Quantum Information Theory. A Collection of Notes Based on Lectures by Gilles Pisier, K. R. Parthasarathy, Vern Paulsen and Andreas Winter"
+            },
+            {
+              "url":"https://link.springer.com/book/10.1007/978-1-4419-9982-5",
+              "name":"Introduction to smooth manifolds. by John M. Lee"
+            },
+            {
+              "url":"https://link.springer.com/book/10.1007/978-3-319-91755-9",
+              "name":"Introduction to Riemannian manifolds. by John M. Lee"
+            },
+            {
+              "url":"https://bookstore.ams.org/gsm-244",
+              "name":"Introduction to Complex manifolds. by John M. Lee"
+            },   
+            {
+              "url":"https://link.springer.com/book/10.1007/978-3-031-41026-0",
+              "name":"Linear Algebra Done Right . by Sheldon Axler"
+            }
+          ],
           "description": "To understand the following claim: In high dimensional subsystem of bipartite qbits, with high probability, a random selected state is almost maximally entangled. Topic of research skim through non-commutative probability theory (POVMs, partial trace, von Neumann entropy, tensor products), metric and measure spaces (L^2 spaces, complex projective spaces, Bargmann spaces), smooth manifolds (Riemannian manifolds, complex manifolds, kahler manifolds, compact lie groups), concentration of measure effect (levy family, high dimensional probability theory, maxwell-boltzmann distribution, invariant measures), representation theory (Majorana stellar representations, Weyl-Heisenberg group, symmetric products), quantum stochastic processes (coherent states), quantum information theory, and quantum computing. Who cares we start with Von Neumann algebra in the beginning?"
         }
       ]
@@ -141,6 +205,12 @@
           "name": "CSE 332S (Object-Oriented Programming)",
           "tags": ["C++", "Object-Oriented Programming", "Design Patterns"],
           "level": "Undergraduate",
+          "textbook": [
+            {
+              "url":"https://zhjwpku.com/assets/pdf/books/C++.Primer.Plus.6th.Edition.Oct.2011.pdf",
+              "name":"C++ primer plus. by Stephen Prata"
+            }
+          ],
           "description": "Intensive focus on practical aspects of designing, implementing and debugging software, using object-oriented, procedural, and generic programming techniques. The course emphasizes familiarity and proficiency with a wide range of C++ language features through hands-on practice completing studio exercises and lab assignments, supplemented with readings and summary presentations for each session. An evening midterm exam at which attendance is required will be given on March 25. Prerequisites: CSE 131 and CSE 247."
         },
         {
@@ -153,18 +223,44 @@
           "name": "Math 401 (Honors Seminar)",
           "tags": ["Symmetric group", "Representation theory"],
           "level": "Undergraduate",
+          "textbook": [
+            {
+              "url":"https://www.cambridge.org/core/books/highdimensional-probability/797C466DA29743D2C8213493BD2D2102",
+              "name":"High-Dimensional Probability. by Roman Vershynin"
+            },
+            {
+              "url":"https://zhjwpku.com/assets/pdf/books/C++.Primer.Plus.6th.Edition.Oct.2011.pdf",
+              "name":"C++ primer plus. by Stephen Prata"
+            }
+          ],
           "description": "This is the prerequisite for the Freiwald research program in the summer of 2025."
         },
         {
           "name": "Math 416 (Complex functions)",
           "tags": ["Complex analysis", "Complex functions", "Complex integration", "Complex differential equations"],
           "level": "Undergraduate",
+          "textbook": [
+            {
+              "url":"https://bookstore.ams.org/view?ProductCode=MBK/49",
+              "name":"Complex Function Theory: Second Edition. by Donald Sarason"
+            }
+          ],
           "description": "Analytic functions, elementary functions and their properties, line integrals, the Cauchy integral formula, power series, residues, poles, conformal mapping and applications. Prereq: Math 310 and (Math 318 or Math 4111) or permission of instructor."
         },
         {
           "name": "Math 4121 (Lebesgue integration)",
           "tags": ["Lebesgue integration", "Lebesgue measure", "Lebesgue integral"],
           "level": "Undergraduate",
+          "textbook": [
+            {
+              "url":"https://www.cambridge.org/9780521884747",
+              "name":"A Radical Approach to Lebesgue's Theory of Integration. by David M. Bressoud"
+            },
+            {
+              "url":"https://old.maa.org/press/maa-reviews/principles-of-mathematical-analysis",
+              "name": "Principles of Mathematical Analysis. by Walter Rudin"
+            }
+          ],
           "description": "Riemann integration; measurable functions; measures; the Lebesgue integral; integrable functions; L^p spaces; modes of convergence; decomposition of measures; product measures; Lebesgue measure. Prerequisite: Math 4111 or permission of the instructor."
         }
       ]
@@ -194,6 +290,12 @@
           "name": "Math 4111 (Real analysis)",
           "tags": ["Real analysis", "Real numbers", "Basic topology"],
           "level": "Undergraduate",
+          "textbook": [
+            {
+              "url":"https://old.maa.org/press/maa-reviews/principles-of-mathematical-analysis",
+              "name": "Principles of Mathematical Analysis. by Walter Rudin"
+            }
+          ],
           "description": "The real number system and the least upper bound property; metric spaces (completeness, compactness, and connectedness); continuous functions (in R^n; on compact spaces; on connected spaces); C(X) (pointwise and uniform convergence; Weierstrass approximation theorem); differentiation (mean value theorem; Taylor's theorem); the contraction mapping theorem; the inverse and implicit function theorems. Prerequisite: Math 310 or permission of instructor."
         },
         {
@@ -246,6 +348,12 @@
           "name": "Math 429 (Linear Algebra)",
           "tags": ["Linear Algebra", "Vector space", "Linear transformation", "Jacobian matrix", "Adjoint matrix", "Operator theory"],
           "level": "Undergraduate",
+          "textbook": [
+            {
+              "url":"https://link.springer.com/book/10.1007/978-3-031-41026-0",
+              "name":"Linear Algebra Done Right . by Sheldon Axler"
+            }
+          ],
           "description": "Introduction to the linear algebra of finite-dimensional vector spaces. Includes systems of equations, matrices, determinants, inner product spaces, spectral theory. Prerequisite: Math 310 or permission of instructor. Math 309 is not an explicit prerequisite but students should already be familiar with such basic topics from matrix theory as matrix operations, linear systems, row reduction and Gaussian elimination. Material on these topics in early chapters of the text will be covered very quickly."
         },
         {
@@ -293,6 +401,12 @@
           "name": "Math 310W (Introduction to Higher Mathematics, writing intensive)",
           "tags": ["Higher Mathematics", "Writing in Mathematics"],
           "level": "Undergraduate",
+          "textbooks":[
+            {
+              "url":"https://old.maa.org/press/maa-reviews/a-concise-introduction-to-pure-mathematics-0",
+              "name": "A Concise Introduction to Pure Mathematics. by Martin Liebeck"
+            }
+          ],
           "description": "Introduction to the rigorous techniques used in more advanced mathematics. Topics include basic logic, set theory, methods of proof and counterexamples, foundations of mathematics, construction of number systems, counting methods, combinatorial arguments and elementary analysis. At least 3 papers will be required, which with at least one revision. Prerequisite: Math 233."
         }
       ]

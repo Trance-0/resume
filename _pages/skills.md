@@ -17,6 +17,14 @@ Here is a list of skills I have learned over the years and might be useful for y
 <ul>
   {% for course in section.courses %}
   <li><span class="archive__item-title">{{ course.name }}</span> ({{ course.level }})
+    {% if course.textbooks%}
+    <br>
+      <span class="archive__item-links">
+        {% for link in course.textbooks %}
+        <a href="{{ link.url }}">
+          <i class="fa fa-link"></i>{{ link.name }}</a>
+        {% endfor %}
+    {% endif %}
     {% if course.tags %}
     <br>
         <span class="archive__subtitle">
