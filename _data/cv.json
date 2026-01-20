@@ -28,6 +28,23 @@
   "work": [
     {
       "company": "Washington University in St. Louis",
+      "position": "TA for CSE 347 (Analysis of Algorithms)",
+      "location": "1 Brookings Dr, St. Louis, MO 63130",
+      "startDate": "2026-01",
+      "endDate": "2026-5",
+      "summary": "Teaching assistant for CSE 347 (Analysis of Algorithms)."
+    },
+    
+    {
+      "company": "Washington University in St. Louis",
+      "position": "TA for CSE 559A (Computer Vision)",
+      "location": "1 Brookings Dr, St. Louis, MO 63130",
+      "startDate": "2026-01",
+      "endDate": "2026-5",
+      "summary": "Teaching assistant for CSE 559A (Computer Vision)."
+    },
+    {
+      "company": "Washington University in St. Louis",
       "position": "TA for CSE 5610 (Large Language Models)",
       "location": "1 Brookings Dr, St. Louis, MO 63130",
       "startDate": "2025-09",
@@ -88,6 +105,47 @@
     }
   ],
   "skills": [
+    {
+      "semesters": "Spring 2026",
+      "courses": [
+        {
+          "name": "Math 4202 (Topology II)",
+          "tags": ["Topology", "Topological spaces","CW Complexes","Manifolds"],
+          "level": "Undergraduate",
+          "textbooks": [
+            {
+              "url":"https://eclass.uoa.gr/modules/document/file.php/MATH707/James%20R.%20Munkres%20Topology%20%20Prentice%20Hall%2C%20Incorporated%2C%202000%20by%20James%20R.%20Munkres%20%28z-lib.org%29.pdf",
+              "name":"topology 2nd ed. by james munkres"
+            }
+          ],
+          "description": "A continuation of MATH 4201 featuring more advanced topics in topology. The content may vary with each offering."
+        },
+        {
+          "name": "Math 4302 (Modern Algebra)",
+          "tags": ["Groups","Rings"],
+          "level": "Undergraduate",
+          "textbooks": [
+            {
+              "url":"https://exchange.pearson.com/products/4f9f0d76-a6ec-4a33-bfe6-2d703f9a1751/pearson-etext-a-first-course-in-abstract-algebra-8e?uuid=4f9f0d76-a6ec-4a33-bfe6-2d703f9a1751",
+              "name":"A first course in Abstract Algebra (8e) by John B. Fraleigh, Neal Brand"
+            }
+          ],
+          "description": "Introduction to groups, rings, and fields. Includes permutation groups, group and ring homomorphisms, field extensions, connections with linear algebra."
+        },
+        {
+          "name": "CSE 433 (Introduction to Computer security)",
+          "tags": ["Computer security", "VM ware"],
+          "level": "Undergraduate",
+          "description": "Secure computing requires the secure design, implementation, and use of systems and algorithms across many areas of computer science. Fundamentals of secure computing such as trust models and cryptography will lay the groundwork for studying key topics in the security of systems, networking, web design, machine learning algorithms, mobile applications, and physical devices. Human factors, privacy, and the law will also be considered. Hands-on practice exploring vulnerabilities and defenses using Linux, C, and Python in studios and lab assignments is a key component of the course."
+        },
+        {
+          "name": "ENGR 310 (Technical Writing)",
+          "tags": ["Writing", "Technical writing"],
+          "level": "Undergraduate",
+          "description":"Persistent concerns of grammar and style. Analysis and discussion of clear sentence and paragraph structure and of organization in complete technical documents. Guidelines for effective layout and graphics. Examples and exercises stressing audience analysis, graphic aids, editing, and readability. Videotaped work in oral presentation of technical projects. Writing assignments include descriptions of mechanisms, process instructions, basic proposals, letters and memos, and a long formal report. Students enrolled or waitlisted in Technical Writing must attend the first week of class or their registration will be dropped to allow a waitlisted student in the course."
+        }
+      ]
+    },
     {
       "semesters": "Fall 2025",
       "courses": [
