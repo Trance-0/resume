@@ -702,6 +702,57 @@
       ]
     },
     {
+      "name": "ImGenHCT",
+      "category": "Computer Vision, Image Generation",
+      "date": "Nov 2025 - Dec 2025",
+      "description-keys": [
+        "Serve as final project for CSE 5519: Advances in Computer Vision.",
+        "Explored highly compressed image tokenization combined with text-to-image generation, using a TiTok-style 1D tokenizer to encode images into minimal latent representations.",
+        "Built an encoder-decoder pipeline that leverages CLIP scores and VQA metrics to evaluate and optimize semantic alignment between generated images and text prompts.",
+        "Investigated trade-offs between compression ratio and generation quality for text-to-image alignment assessment."
+      ],
+      "skills": [
+        "Computer Vision",
+        "Image Generation",
+        "TiTok",
+        "CLIP",
+        "PyTorch",
+        "Python"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Trance-0/ImGenHCT"
+        }
+      ]
+    },
+    {
+      "name": "ATTPDRL",
+      "category": "Deep Reinforcement Learning, Autonomous Vehicles",
+      "date": "Nov 2025 - Dec 2025",
+      "description-keys": [
+        "Serve as final project for CSE 5100: Deep Reinforcement Learning.",
+        "Autonomous Trailer-Truck Parking with Deep Reinforcement Learning: trained agents to park trailer trucks in designated spots while avoiding collisions, tackling the nonlinear dynamics that make trailer trucks harder to control than standard cars.",
+        "Modeled parking as an environment with continuous states (position, angle) and discrete actions (steering, direction), and implemented and compared DQN, PPO, DDPG, and TD3.",
+        "Built simulation environments, reference implementations, and comparative analyses across multiple RL algorithms for this specialized autonomous parking problem."
+      ],
+      "skills": [
+        "Deep Reinforcement Learning",
+        "PyTorch",
+        "DQN",
+        "PPO",
+        "DDPG",
+        "TD3",
+        "Python"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Trance-0/ATTPDRL"
+        }
+      ]
+    },
+    {
       "name": "SophiasPath",
       "category": "Web Application",
       "date": "Sep 2024 - Jan 2025",
