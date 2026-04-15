@@ -1,0 +1,30 @@
+{%- comment -%}
+Skill tree graph widget.
+Source of truth: scripts/skill-tree-graph/skill-tree.html
+Copied to _includes/skill-tree.html by scripts/skill-tree-graph/prebuild.sh
+(kept in sync by .github/workflows/build-skill-tree.yml).
+{%- endcomment -%}
+
+<link rel="stylesheet" href="{{ '/scripts/skill-tree-graph/skill-tree.css' | relative_url }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xyflow/react@12/dist/style.css">
+
+<div class="stg-wrapper">
+  <script id="stg-cv-data" type="application/json">{{ site.data.cv | jsonify | replace: "</", "<\/" }}</script>
+  <div id="stg-root" class="stg-root" role="region" aria-label="Skill tree graph">
+    <div class="stg-loading">Loading skill tree…</div>
+  </div>
+  <p class="stg-hint">Drag to pan · scroll to zoom · click a node to open its first link. Dashed grey edges link projects &amp; talks back to the course where the skill was first introduced.</p>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react-dom": "https://esm.sh/react-dom@18.3.1",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+    "@xyflow/react": "https://esm.sh/@xyflow/react@12?deps=react@18.3.1,react-dom@18.3.1",
+    "@dagrejs/dagre": "https://esm.sh/@dagrejs/dagre@1"
+  }
+}
+</script>
+<script type="module" src="{{ '/scripts/skill-tree-graph/skill-tree.js' | relative_url }}"></script>

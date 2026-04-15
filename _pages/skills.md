@@ -12,6 +12,8 @@ redirect_from:
 
 Here is a list of skills I have learned over the years and might be useful for you.
 
+{% include skill-tree.html %}
+
 {% for section in cv.skills %}
 <h3>{{ section.semesters }}</h3>
 <ul>
