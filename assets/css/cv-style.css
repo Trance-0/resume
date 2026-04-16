@@ -212,24 +212,168 @@
   color: #666;
 }
 
+/* Courses grouped by semester */
+.cv-semester-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.cv-semester-title {
+  margin: 0 0 0.5rem 0;
+  padding: 0.35rem 0.75rem;
+  background: #f4f6fb;
+  border-left: 3px solid #2a7ae2;
+  border-radius: 3px;
+  color: #1756a9;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.cv-course {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #edf0f5;
+  border-radius: 6px;
+  background: #fdfefe;
+  margin-bottom: 0.6rem;
+}
+
+.cv-course-level {
+  font-size: 0.85rem;
+  background: #f2f6ff;
+  color: #1d4ed8;
+  padding: 0.05rem 0.45rem;
+  border-radius: 999px;
+}
+
+.cv-textbooks {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cv-textbooks li {
+  display: flex;
+  gap: 0.4rem;
+  align-items: baseline;
+  font-size: 0.9rem;
+  color: #374151;
+  margin-bottom: 0.15rem;
+}
+
+.cv-item-location {
+  color: #888;
+  font-weight: normal;
+  font-size: 0.95em;
+}
+
+.cv-item-links {
+  margin-top: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.cv-item-links a {
+  color: #2a7ae2;
+  text-decoration: none;
+}
+
+.cv-item-links a:hover {
+  text-decoration: underline;
+}
+
+/* Download / print toolbar */
+.cv-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin: 0 0 1.5rem;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #eef0f3;
+  backdrop-filter: saturate(120%) blur(4px);
+}
+
+.cv-toolbar .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid #2a7ae2;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cv-toolbar .btn--primary {
+  background: #2a7ae2;
+  color: #fff;
+}
+
+.cv-toolbar .btn--primary:hover {
+  background: #1756a9;
+  color: #fff;
+}
+
+.cv-toolbar .btn--inverse {
+  background: #fff;
+  color: #2a7ae2;
+}
+
+.cv-toolbar .btn--inverse:hover {
+  background: #eef2fb;
+}
+
 /* Print Styles */
 @media print {
   .cv-container {
     max-width: 100%;
   }
-  
+
   .cv-header {
     border-bottom-color: #ccc;
   }
-  
+
   .cv-section h2 {
     border-bottom-color: #ccc;
   }
-  
+
   .cv-skill-keyword,
   .cv-project-keyword,
   .cv-interest-keyword {
     border: 1px solid #ccc;
     background-color: transparent;
+  }
+
+  .cv-toolbar,
+  .masthead,
+  .page__footer,
+  .sidebar,
+  .page__share,
+  .page__related,
+  .page__meta,
+  #site-nav {
+    display: none !important;
+  }
+
+  .cv-item,
+  .cv-course,
+  .cv-semester {
+    page-break-inside: avoid;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
   }
 }
