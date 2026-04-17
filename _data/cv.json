@@ -2,15 +2,15 @@
   "basics": {
     "name": "Zheyuan Wu",
     "email": "me@trance-0.com",
-    "phone": "",
+    "phone": "In emergency, call 911. In non-emergency, email me.",
     "website": "https://index.trance-0.com",
     "summary": "Student @ WashU",
     "location": {
-      "address": "",
-      "postalCode": "",
-      "city": "No fixed address",
+      "address": "Any Street",
+      "postalCode": "00000",
+      "city": "Any City",
       "countryCode": "US",
-      "region": ""
+      "region": "NA"
     },
     "profiles": [
       {
@@ -57,7 +57,7 @@
       "location": "Remote",
       "startDate": "2025-01",
       "endDate": "2025-05",
-      "summary": "Part-time grader for Math 309."
+      "summary": "Part-time grader for Math 309: Matrix Algebra."
     },
     {
       "company": "Washington University in St. Louis",
@@ -110,7 +110,7 @@
       "courses": [
         {
           "name": "Math 4202 (Topology II)",
-          "tags": ["Topology", "Topological spaces","CW Complexes","Manifolds"],
+          "tags": ["Topology", "Topological spaces","CW Complexes","Manifolds", "Algebraic topology", "Closed surfaces"],
           "level": "Undergraduate",
           "textbooks": [
             {
@@ -118,7 +118,7 @@
               "name":"topology 2nd ed. by james munkres"
             }
           ],
-          "description": "A continuation of MATH 4201 featuring more advanced topics in topology. The content may vary with each offering."
+          "description": "A continuation of Math 4201 featuring more advanced topics in topology. The content may vary with each offering. (Current offering: Topological spaces, CW complexes, manifolds, fundamental groups of closed surfaces, Seifert-Van Kampen Theorem, and related topics.)"
         },
         {
           "name": "Math 4302 (Modern Algebra)",
@@ -163,7 +163,7 @@
         },
         {
           "name": "CSE 5100 (Deep Reinforcement Learning)",
-          "tags": ["Deep Reinforcement Learning", "Reinforcement learning", "Q-learning", "Deep Q-network", "Policy gradient"],
+          "tags": ["Deep Reinforcement Learning", "Reinforcement learning", "Q-learning", "Deep Q-network", "Policy gradient", "Actor-critic", "Proximal Policy Optimization", "Offline reinforcement learning"],
           "level": "Graduate",
           "description": "Deep Reinforcement Learning (RL) is a cutting-edge field at the intersection of artificial intelligence and decision-making. This course provides an in-depth exploration of the fundamental principles, algorithms, and applications of deep reinforcement learning. It covers basic algorithms, including value-based, policy-based, actor-critic, and model-based methods, as well as advanced topics, such as meta RL, offline RL, and multi-agent RL. By combining deep learning techniques with reinforcement learning, this course equips students with the necessary skills to build intelligent systems that can learn from experiences and make optimal decisions in complex environments. Evaluation of this course is based on written and programming assignments, and a final course project."
         },
@@ -627,6 +627,20 @@
   "interests": [],
   "presentations": [
     {
+      "name": "Senior Honors Thesis Presentation: Measure concentration in complex projective space and quantum entanglement",
+      "event": "Honor thesis presentation in Department of Mathematics of Washington University in St. Louis",
+      "date": "2026-03-26",
+      "location": "Eads Hall, Room 115, Washington University in St. Louis",
+      "description": "We explain, after Patrick Hayden, how concentration inequalities can be used in quantum theory to show that random quantum states associated to high-dimensional bipartite systems are highly entangled with high probability. A geometric interpretation of the concentration phenomenon can be given in terms of Michael Gromov's notion of the observable diameter of families of measure-metric (MM) spaces. We use Hayden's result to obtain estimates for the observable diameter of complex projective spaces.",
+      "url": "https://math.wustl.edu/past-events/senior-honors-thesis-presentation-measure-concentration-complex-projective-space-and-quantum",
+      "skills": [
+        "Non-commutative probability theory",
+        "Metric and Measure spaces",
+        "Quantum Information Theory",
+        "Concentration of measure effect"
+      ]
+    },
+    {
       "name": "GeoNet: Unsupervised learning of Monocular depth",
       "event": "CSE 5519 Advances in Computer Vision",
       "date": "2025-09-12",
@@ -663,7 +677,7 @@
       ]
     },
     {
-      "name": "Introduction to Infromation theory and Shannon entropy",
+      "name": "Introduction to Information theory and Shannon entropy",
       "event": "Lectures on Honor Seminar for Mathematics",
       "date": "2025-05",
       "location": "Washington University in St. Louis",
