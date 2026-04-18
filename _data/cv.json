@@ -1591,18 +1591,20 @@
       "date": "Feb 2020 - Present",
       "description-keys": [
         "Built a website containing learning material in computer science and shared personal interests at www.trance-0.com.",
-        "Created posts about algorithms and experiences in computer science.",
-        "Built VPN using V2ray."
+        "Created a series of services via docker: git server, cloud storage via NextCloud/OpenList, media server via Immich, CI/CD manager via Jenkins, password manager via Bitwarden, chatbot supports QQ, WeChat, Telegram, and Discord."
       ],
       "skills": [
         "Computer Science",
+        "Computer Networks",
+        "Web Development",
         "Linux",
+        "Docker",
         "Programming"
       ],
       "links": [
         {
           "label": "Website",
-          "url": "https://www.trance-0.com"
+          "url": "https://index.trance-0.com"
         }
       ]
     },
