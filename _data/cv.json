@@ -1506,7 +1506,7 @@
         "Computer Science",
         "Computational Geometry"
       ],
-      "date": "Dec 2023 - Present",
+      "date": "Dec 2023 - Dec 2023",
       "description-keys": [
         "Developed graphical applets using JavaScript to visualize computational geometry algorithms.",
         "Serve as final project for CSE 546: Computational Geometry."
@@ -1519,6 +1519,34 @@
         {
           "label": "GitHub",
           "url": "https://github.com/Trance-0/CSE546_final_project"
+        }
+      ]
+    },
+    {
+      "name": "Applets for Algorithms",
+      "category": "Web Application",
+      "topicCategory": [
+        "Computer Science",
+        "Algorithms"
+      ],
+      "date": "Dec 2023 - Present",
+      "description-keys": [
+        "Developed zoo of algorithms used in Competitive Programming contests, especially Leetcode.",
+        "Serve as extension for final project for CSE 546: Computational Geometry.",
+        "Leetcode top 0.64% (updated on Apr 2026), without use of AI."
+      ],
+      "skills": [
+        "JavaScript",
+        "Advance Algorithms"
+      ],
+      "links": [
+        {
+          "label": "Site deployed",
+          "url": "https://code.trance-0.com/"
+        },
+        {
+          "label": "Leetcode profile",
+          "url": "https://leetcode.com/u/Trance-0/"
         }
       ]
     },
