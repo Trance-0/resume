@@ -39,3 +39,18 @@
 .cv-download-links a {
   margin: 0 0.5rem;
 }
+
+/* Dark-mode overrides */
+html[data-theme="dark"] .cv-header-nav {
+  border-bottom-color: #4b5563;
+}
+html[data-theme="dark"] .cv-header-nav .home-button {
+  background-color: #1d4ed8;
+  color: #f1f5f9;
+}
+html[data-theme="dark"] .cv-header-nav .home-button:hover {
+  background-color: #1e40af;
+}
+html[data-theme="dark"] .cv-download-links {
+  border-top-color: #4b5563;
+}

@@ -78,6 +78,13 @@
           {% if education.gpa %}
           <div class="cv-item-summary">GPA: {{ education.gpa }}</div>
           {% endif %}
+          {% if education.majorGpa or education.cumulativeGpa %}
+          <div class="cv-item-summary">
+            {% if education.majorGpa %}Major GPA: {{ education.majorGpa }}{% endif %}
+            {% if education.majorGpa and education.cumulativeGpa %} · {% endif %}
+            {% if education.cumulativeGpa %}Cumulative GPA (incl. transfer): {{ education.cumulativeGpa }}{% endif %}
+          </div>
+          {% endif %}
           {% if education.focus and education.focus.size > 0 %}
           <div class="cv-item-courses">
             <strong>Focus:</strong>

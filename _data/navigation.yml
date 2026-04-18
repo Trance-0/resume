@@ -11,8 +11,11 @@ main:
   # - title: "Academic garbage"
   #   url: /publications/
 
+  - title: "Solution"
+    url: /solution/
+
   - title: "Talks"
-    url: /talks/    
+    url: /talks/
 
   - title: "Skill tree"
     url: /skills/    
@@ -22,9 +25,6 @@ main:
 
   - title: "Notes"
     url: https://notenextra.trance-0.com
-        
-  - title: "Blog Posts"
-    url: https://www.trance-0.com
     
   - title: "CV"
     url: /cv-json/

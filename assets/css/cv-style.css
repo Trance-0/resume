@@ -334,6 +334,90 @@
   background: #eef2fb;
 }
 
+/* ==========================================================================
+   Dark-mode overrides — track html[data-theme="dark"] set by _main.js
+   ========================================================================== */
+html[data-theme="dark"] .cv-container {
+  color: #f1f5f9;
+}
+html[data-theme="dark"] .cv-header {
+  border-bottom-color: #4b5563;
+}
+html[data-theme="dark"] .cv-header h1,
+html[data-theme="dark"] .cv-section h2 {
+  color: #60a5fa;
+  border-bottom-color: #4b5563;
+}
+html[data-theme="dark"] .cv-section h2 i {
+  color: #9ca3af;
+}
+html[data-theme="dark"] .cv-profile-item a,
+html[data-theme="dark"] .cv-item-links a {
+  color: #60a5fa;
+}
+html[data-theme="dark"] .cv-item-date,
+html[data-theme="dark"] .cv-item-subtitle,
+html[data-theme="dark"] .cv-language-fluency,
+html[data-theme="dark"] .cv-references {
+  color: #cbd5e1;
+}
+html[data-theme="dark"] .cv-item-location {
+  color: #9ca3af;
+}
+html[data-theme="dark"] .cv-skill-category h3,
+html[data-theme="dark"] .cv-interest h3 {
+  color: #f1f5f9;
+}
+html[data-theme="dark"] .cv-skill-keyword {
+  background-color: #374151;
+  color: #f1f5f9;
+}
+html[data-theme="dark"] .cv-project-keyword {
+  background-color: #1e3a8a;
+  color: #bfdbfe;
+}
+html[data-theme="dark"] .cv-interest-keyword {
+  background-color: #374151;
+  color: #f1f5f9;
+}
+html[data-theme="dark"] .cv-semester-title {
+  background: #1e3a8a;
+  color: #dbeafe;
+  border-left-color: #60a5fa;
+}
+html[data-theme="dark"] .cv-course {
+  background: #374151;
+  border-color: #4b5563;
+}
+html[data-theme="dark"] .cv-course-level {
+  background: #1e3a8a;
+  color: #bfdbfe;
+}
+html[data-theme="dark"] .cv-textbooks li {
+  color: #cbd5e1;
+}
+html[data-theme="dark"] .cv-toolbar {
+  background: rgba(31, 41, 55, 0.95);
+  border-bottom-color: #4b5563;
+}
+html[data-theme="dark"] .cv-toolbar .btn {
+  border-color: #60a5fa;
+}
+html[data-theme="dark"] .cv-toolbar .btn--primary {
+  background: #1d4ed8;
+  color: #f1f5f9;
+}
+html[data-theme="dark"] .cv-toolbar .btn--primary:hover {
+  background: #1e40af;
+}
+html[data-theme="dark"] .cv-toolbar .btn--inverse {
+  background: #374151;
+  color: #bfdbfe;
+}
+html[data-theme="dark"] .cv-toolbar .btn--inverse:hover {
+  background: #4b5563;
+}
+
 /* Print Styles */
 @media print {
   .cv-container {

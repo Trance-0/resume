@@ -6,377 +6,606 @@ import {
   Background,
   Controls,
   MiniMap,
-  MarkerType,
-  Handle,
-  Position,
-  useNodesState,
-  useEdgesState,
 } from '@xyflow/react';
-import dagre from '@dagrejs/dagre';
 
 const h = React.createElement;
 
-const slug = (s) =>
-  String(s || '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
-
-const attr = (obj, key, fallback) =>
-  obj && obj[key] !== undefined && obj[key] !== null ? obj[key] : fallback;
-
-const readGraph = (entry) => (entry && typeof entry === 'object' ? entry.graph || {} : {});
-const weightOf = (entry) => {
-  const w = Number(attr(readGraph(entry), 'weight', 1));
-  return Number.isFinite(w) && w > 0 ? w : 1;
-};
-const isHidden = (entry) => Boolean(attr(readGraph(entry), 'hidden', false));
-
-const semesterOrder = (label) => {
-  const m = /(\d{4})/.exec(label || '');
-  const year = m ? Number(m[1]) : 0;
-  const season = /spring/i.test(label) ? 0.25
-    : /summer/i.test(label) ? 0.5
-    : /fall/i.test(label) ? 0.75
-    : /winter/i.test(label) ? 1.0
-    : 0;
-  return year + season;
+const MONTHS = {
+  jan: 0, january: 0,
+  feb: 1, february: 1,
+  mar: 2, march: 2,
+  apr: 3, april: 3,
+  may: 4,
+  jun: 5, june: 5,
+  jul: 6, july: 6,
+  aug: 7, august: 7,
+  sep: 8, sept: 8, september: 8,
+  oct: 9, october: 9,
+  nov: 10, november: 10,
+  dec: 11, december: 11,
 };
 
-const dateOrder = (d) => {
-  if (!d) return 0;
-  const m = /(\d{4})(?:-(\d{1,2}))?/.exec(String(d));
-  if (!m) return 0;
-  return Number(m[1]) + (m[2] ? Number(m[2]) / 12 : 0);
+const nowMonthIndex = () => {
+  const d = new Date();
+  return d.getFullYear() * 12 + d.getMonth();
 };
 
-function buildGraph(cv) {
-  const nodes = [];
-  const edges = [];
-  const courseNodeForTag = new Map();
+const parseMonth = (raw) => {
+  if (raw === null || raw === undefined) return null;
+  const s = String(raw).trim();
+  if (!s) return null;
+  if (/^present$/i.test(s) || /^current$/i.test(s) || /^now$/i.test(s)) return 'PRESENT';
+  let m = /^(\d{4})[-/](\d{1,2})(?:[-/]\d{1,2})?$/.exec(s);
+  if (m) return Number(m[1]) * 12 + Math.max(0, Math.min(11, Number(m[2]) - 1));
+  m = /^(\d{4})$/.exec(s);
+  if (m) return Number(m[1]) * 12;
+  m = /^([A-Za-z]+)\.?\s+(\d{4})$/.exec(s);
+  if (m) {
+    const mi = MONTHS[m[1].toLowerCase()];
+    if (mi !== undefined) return Number(m[2]) * 12 + mi;
+  }
+  return null;
+};
 
-  const pushEdge = (source, target, opts = {}) => {
-    const id = `${source}~${target}~${edges.length}`;
-    edges.push({
-      id,
-      source,
-      target,
-      type: opts.type || 'smoothstep',
-      animated: !!opts.animated,
-      style: {
-        stroke: opts.stroke || '#64748b',
-        strokeWidth: opts.strokeWidth || 1.5,
-        ...(opts.dashed ? { strokeDasharray: '5 4' } : {}),
-      },
-      markerEnd: opts.noArrow
-        ? undefined
-        : { type: MarkerType.ArrowClosed, color: opts.stroke || '#64748b' },
-      label: opts.label,
-      labelStyle: opts.label ? { fontSize: 10, fill: '#475569' } : undefined,
-      labelBgStyle: opts.label ? { fill: '#ffffff' } : undefined,
-      labelBgPadding: opts.label ? [4, 2] : undefined,
-      labelBgBorderRadius: 4,
+const semesterRange = (label) => {
+  if (!label) return null;
+  const y = /(\d{4})/.exec(label);
+  if (!y) {
+    if (/high\s+school/i.test(label)) {
+      const base = 2020 * 12;
+      return [base, 2022 * 12 + 4];
+    }
+    return null;
+  }
+  const year = Number(y[1]);
+  if (/spring/i.test(label)) return [year * 12 + 0, year * 12 + 4];
+  if (/summer/i.test(label)) return [year * 12 + 4, year * 12 + 7];
+  if (/fall/i.test(label)) return [year * 12 + 7, year * 12 + 11];
+  if (/winter/i.test(label)) return [year * 12 + 11, (year + 1) * 12 + 0];
+  return [year * 12, year * 12 + 11];
+};
+
+const parsePortfolioRange = (str) => {
+  if (!str) return null;
+  const parts = String(str).split(/\s+[-–]\s+/);
+  if (parts.length === 2) {
+    const a = parseMonth(parts[0]);
+    const b = parseMonth(parts[1]);
+    if (a !== null && b !== null) return [a, b];
+  }
+  const single = parseMonth(str);
+  if (single !== null) return [single, single];
+  return null;
+};
+
+function collectItems(cv) {
+  const items = [];
+
+  (cv.education || []).forEach((e, i) => {
+    const a = parseMonth(e.startDate);
+    const b = parseMonth(e.endDate);
+    if (a === null || b === null) return;
+    items.push({
+      id: `edu-${i}`,
+      kind: 'education',
+      title: e.area ? `${e.studyType || 'Degree'} in ${e.area}` : (e.studyType || 'Education'),
+      subtitle: e.institution || '',
+      start: a,
+      end: b,
+      category: e.category || [],
+      description: (e.focus || []).join(', '),
+      links: [],
     });
-  };
-
-  const basics = cv.basics || {};
-  nodes.push({
-    id: 'me',
-    type: 'stgNode',
-    data: {
-      kind: 'me',
-      title: basics.name || 'Me',
-      subtitle: basics.summary || '',
-      weight: 3,
-    },
-    position: { x: 0, y: 0 },
   });
 
-  const hubs = [
-    { id: 'hub-courses', title: 'Courses', stroke: '#6366f1' },
-    { id: 'hub-projects', title: 'Projects', stroke: '#db2777' },
-    { id: 'hub-work', title: 'Work & Teaching', stroke: '#16a34a' },
-    { id: 'hub-presentations', title: 'Presentations', stroke: '#9333ea' },
-  ];
-  hubs.forEach((hub) => {
-    nodes.push({
-      id: hub.id,
-      type: 'stgNode',
-      data: { kind: 'hub', title: hub.title, weight: 2 },
-      position: { x: 0, y: 0 },
+  (cv.work || []).forEach((w, i) => {
+    const a = parseMonth(w.startDate);
+    const b = parseMonth(w.endDate);
+    if (a === null || b === null) return;
+    items.push({
+      id: `work-${i}`,
+      kind: 'work',
+      title: w.position || 'Position',
+      subtitle: w.company || '',
+      start: a,
+      end: b,
+      category: w.category || [],
+      description: w.summary || '',
+      links: [],
     });
-    pushEdge('me', hub.id, { stroke: hub.stroke, strokeWidth: 2 });
   });
 
-  const skills = Array.isArray(cv.skills) ? cv.skills : [];
-  const sortedSem = skills
-    .map((s, i) => ({ s, i, order: semesterOrder(s.semesters || '') }))
-    .filter((e) => !isHidden(e.s))
-    .sort((a, b) => b.order - a.order || a.i - b.i);
-
-  sortedSem.forEach(({ s, i }) => {
-    const semId = `sem-${i}`;
-    nodes.push({
-      id: semId,
-      type: 'stgNode',
-      data: {
-        kind: 'semester',
-        title: s.semesters || 'Semester',
-        weight: weightOf(s),
-      },
-      position: { x: 0, y: 0 },
-    });
-    pushEdge('hub-courses', semId, { stroke: '#6366f1' });
-
-    (s.courses || []).forEach((c, ci) => {
-      if (isHidden(c)) return;
-      const courseId = `course-${i}-${ci}`;
+  (cv.skills || []).forEach((sem, si) => {
+    const range = semesterRange(sem.semesters);
+    if (!range) return;
+    (sem.courses || []).forEach((c, ci) => {
       const level = (c.level || '').toLowerCase();
-      const kindSub = level.includes('graduate') && !level.includes('undergraduate')
+      const kind = level.includes('graduate') && !level.includes('undergraduate')
+        ? 'course-grad'
+        : level.includes('research')
         ? 'course-grad'
         : 'course';
-      nodes.push({
-        id: courseId,
-        type: 'stgNode',
-        data: {
-          kind: kindSub,
-          title: c.name || 'Course',
-          subtitle: c.level || '',
-          tags: c.tags || [],
-          description: c.description || '',
-          links: (c.textbooks || []).map((t) => ({ label: t.name, url: t.url })),
-          weight: weightOf(c),
-        },
-        position: { x: 0, y: 0 },
-      });
-      pushEdge(semId, courseId, { stroke: '#0891b2' });
-
-      (c.tags || []).forEach((t) => {
-        const ts = slug(t);
-        if (!courseNodeForTag.has(ts)) {
-          courseNodeForTag.set(ts, { id: courseId, tag: t, order: semesterOrder(s.semesters) });
-        }
-      });
-
-      (attr(readGraph(c), 'prerequisites', []) || []).forEach((prereq) => {
-        const ts = slug(prereq);
-        const ref = courseNodeForTag.get(ts);
-        if (ref && ref.id !== courseId) {
-          pushEdge(courseId, ref.id, {
-            stroke: '#a3a3a3',
-            dashed: true,
-            label: prereq,
-            type: 'bezier',
-          });
-        }
+      items.push({
+        id: `course-${si}-${ci}`,
+        kind,
+        title: c.name || 'Course',
+        subtitle: c.level || '',
+        start: range[0],
+        end: range[1],
+        category: c.category || [],
+        tags: c.tags || [],
+        description: c.description || '',
+        links: (c.textbooks || []).map((t) => ({ label: t.name, url: t.url })),
       });
     });
   });
 
-  const portfolio = Array.isArray(cv.portfolio) ? cv.portfolio : [];
-  portfolio
-    .map((p, i) => ({ p, i, order: dateOrder(p.date || '') }))
-    .filter((e) => !isHidden(e.p))
-    .sort((a, b) => b.order - a.order || a.i - b.i)
-    .forEach(({ p, i }) => {
-      const pid = `proj-${i}`;
-      nodes.push({
-        id: pid,
-        type: 'stgNode',
-        data: {
-          kind: 'portfolio',
-          title: p.name || 'Project',
-          subtitle: p.category || '',
-          date: p.date || '',
-          tags: p.skills || [],
-          description: (p['description-keys'] || []).join(' '),
-          links: (p.links || []).map((l) => ({ label: l.label, url: l.url })),
-          weight: weightOf(p),
-        },
-        position: { x: 0, y: 0 },
-      });
-      pushEdge('hub-projects', pid, { stroke: '#db2777' });
-
-      (p.skills || []).forEach((sk) => {
-        const ref = courseNodeForTag.get(slug(sk));
-        if (ref) {
-          pushEdge(pid, ref.id, {
-            stroke: '#94a3b8',
-            dashed: true,
-            label: sk,
-            type: 'bezier',
-            strokeWidth: 1,
-            noArrow: true,
-          });
-        }
-      });
+  (cv.portfolio || []).forEach((p, i) => {
+    const range = parsePortfolioRange(p.date || '');
+    if (!range) return;
+    items.push({
+      id: `proj-${i}`,
+      kind: 'portfolio',
+      title: p.name || 'Project',
+      subtitle: p.category || '',
+      start: range[0],
+      end: range[1],
+      category: p.topicCategory || [],
+      tags: p.skills || [],
+      description: (p['description-keys'] || []).join(' '),
+      links: (p.links || []).map((l) => ({ label: l.label, url: l.url })),
     });
+  });
 
-  const work = Array.isArray(cv.work) ? cv.work : [];
-  work
-    .map((w, i) => ({ w, i, order: dateOrder(w.startDate || '') }))
-    .filter((e) => !isHidden(e.w))
-    .sort((a, b) => b.order - a.order || a.i - b.i)
-    .forEach(({ w, i }) => {
-      const wid = `work-${i}`;
-      nodes.push({
-        id: wid,
-        type: 'stgNode',
-        data: {
-          kind: 'work',
-          title: w.position || 'Position',
-          subtitle: w.company || '',
-          date: [w.startDate, w.endDate].filter(Boolean).join(' – '),
-          description: w.summary || '',
-          weight: weightOf(w),
-        },
-        position: { x: 0, y: 0 },
-      });
-      pushEdge('hub-work', wid, { stroke: '#16a34a' });
+  (cv.presentations || []).forEach((pr, i) => {
+    const m = parseMonth(pr.date);
+    if (m === null) return;
+    items.push({
+      id: `pres-${i}`,
+      kind: 'presentation',
+      title: pr.name || 'Presentation',
+      subtitle: pr.event || '',
+      start: m,
+      end: m,
+      category: pr.category || [],
+      tags: pr.skills || [],
+      description: pr.description || '',
+      links: pr.url ? [{ label: 'Slides', url: pr.url }] : [],
     });
+  });
 
-  const pres = Array.isArray(cv.presentations) ? cv.presentations : [];
-  pres
-    .map((pr, i) => ({ pr, i, order: dateOrder(pr.date || '') }))
-    .filter((e) => !isHidden(e.pr))
-    .sort((a, b) => b.order - a.order || a.i - b.i)
-    .forEach(({ pr, i }) => {
-      const prid = `pres-${i}`;
-      nodes.push({
-        id: prid,
-        type: 'stgNode',
-        data: {
-          kind: 'presentation',
-          title: pr.name || 'Presentation',
-          subtitle: pr.event || '',
-          date: pr.date || '',
-          tags: pr.skills || [],
-          description: pr.description || '',
-          links: pr.url ? [{ label: 'Slides', url: pr.url }] : [],
-          weight: weightOf(pr),
-        },
-        position: { x: 0, y: 0 },
-      });
-      pushEdge('hub-presentations', prid, { stroke: '#9333ea' });
-
-      (pr.skills || []).forEach((sk) => {
-        const ref = courseNodeForTag.get(slug(sk));
-        if (ref) {
-          pushEdge(prid, ref.id, {
-            stroke: '#cbd5e1',
-            dashed: true,
-            type: 'bezier',
-            strokeWidth: 1,
-            noArrow: true,
-          });
-        }
-      });
-    });
-
-  return { nodes, edges };
+  return items;
 }
 
-function layoutLR(nodes, edges) {
-  const g = new dagre.graphlib.Graph();
-  g.setDefaultEdgeLabel(() => ({}));
-  g.setGraph({
-    rankdir: 'LR',
-    align: 'UL',
-    ranker: 'longest-path',
-    nodesep: 24,
-    ranksep: 110,
-    edgesep: 10,
-    marginx: 24,
-    marginy: 24,
+const TOP_ORDER = [
+  'Computer Science',
+  'Mathematics',
+  'Chemistry',
+  'Biology',
+  'Economics',
+  'Humanities',
+  'Language',
+  'Writing',
+  'Music',
+  'Art',
+  'Community',
+  'Other',
+];
+
+const SUB_ORDER = {
+  'Computer Science': [
+    'Computer Vision',
+    'Large Language Models',
+    'Deep Reinforcement Learning',
+    'Machine Learning',
+    'Data Analytics',
+    'AI/Robotics',
+    'Computational Geometry',
+    'Algorithms',
+    'Cryptography',
+    'Computer Security',
+    'Computer Engineering',
+    'Information Theory',
+    'Software Engineering',
+    'Web Development',
+    'Mobile Development',
+    'Game Development',
+  ],
+  Mathematics: [
+    'Topology',
+    'Abstract Algebra',
+    'Real Analysis',
+    'Complex Analysis',
+    'Representation Theory',
+    'Quantum Information Theory',
+    'Probability Theory',
+    'Statistics',
+    'Linear Algebra',
+    'Calculus',
+    'Information Theory',
+    'Foundations',
+  ],
+};
+
+function groupLanes(items) {
+  const byCat = new Map();
+  items.forEach((it) => {
+    const top = (it.category && it.category[0]) || 'Other';
+    const sub = (it.category && it.category[1]) || '(general)';
+    if (!byCat.has(top)) byCat.set(top, new Map());
+    const subMap = byCat.get(top);
+    if (!subMap.has(sub)) subMap.set(sub, []);
+    subMap.get(sub).push(it);
   });
 
-  const baseW = 210;
-  const baseH = 72;
-  nodes.forEach((n) => {
-    const w = n.data.weight || 1;
-    g.setNode(n.id, {
-      width: baseW + Math.min(80, (w - 1) * 24),
-      height: baseH + Math.min(40, (w - 1) * 12),
-    });
-  });
-  edges.forEach((e) => {
-    if (!e.style || e.style.strokeDasharray) return;
-    g.setEdge(e.source, e.target);
-  });
-  dagre.layout(g);
+  const orderIdx = (list, name) => {
+    const i = list.indexOf(name);
+    return i === -1 ? list.length + 1 : i;
+  };
 
-  return nodes.map((n) => {
-    const p = g.node(n.id);
-    return {
-      ...n,
-      position: { x: Math.round(p.x - p.width / 2), y: Math.round(p.y - p.height / 2) },
+  const tops = Array.from(byCat.keys()).sort(
+    (a, b) => orderIdx(TOP_ORDER, a) - orderIdx(TOP_ORDER, b) || a.localeCompare(b),
+  );
+
+  const groups = [];
+  tops.forEach((top) => {
+    const subMap = byCat.get(top);
+    const subs = Array.from(subMap.keys());
+    const preferred = SUB_ORDER[top] || [];
+    subs.sort(
+      (a, b) => orderIdx(preferred, a) - orderIdx(preferred, b) || a.localeCompare(b),
+    );
+    const lanes = subs.map((sub) => ({ top, sub, items: subMap.get(sub) }));
+    groups.push({ top, lanes });
+  });
+  return groups;
+}
+
+const LEFT_GUTTER = 240;
+const TOP_HEADER = 44;
+const PX_PER_MONTH = 26;
+const ROW_HEIGHT = 48;
+const COLLAPSED_ROW_HEIGHT = 34;
+const LANE_PAD_BOTTOM = 8;
+const MIN_NODE_WIDTH = 90;
+
+function packRows(items) {
+  items.sort((a, b) => a.start - b.start);
+  const rowEnds = [];
+  items.forEach((it) => {
+    let placed = -1;
+    for (let r = 0; r < rowEnds.length; r++) {
+      if (rowEnds[r] < it.start) {
+        rowEnds[r] = it.end;
+        placed = r;
+        break;
+      }
+    }
+    if (placed === -1) {
+      rowEnds.push(it.end);
+      placed = rowEnds.length - 1;
+    }
+    it._row = placed;
+  });
+  return Math.max(1, rowEnds.length);
+}
+
+function layoutTimeline(items, collapsedTops, onToggleTop) {
+  const now = nowMonthIndex();
+  const resolved = items
+    .map((it) => ({
+      ...it,
+      start: it.start === 'PRESENT' ? now : it.start,
+      end: it.end === 'PRESENT' ? now : it.end,
+    }))
+    .filter((it) => typeof it.start === 'number' && typeof it.end === 'number');
+
+  if (resolved.length === 0) {
+    return { nodes: [], totalWidth: 0, totalHeight: 0 };
+  }
+
+  const minMonth = Math.min(...resolved.map((it) => it.start)) - 1;
+  const maxMonth = Math.max(...resolved.map((it) => it.end)) + 1;
+  const xOf = (m) => LEFT_GUTTER + (m - minMonth) * PX_PER_MONTH;
+
+  const groups = groupLanes(resolved);
+
+  groups.forEach((g) => {
+    g.collapsed = collapsedTops.has(g.top);
+    if (g.collapsed) {
+      // Treat the whole discipline as a single lane with one row.
+      const allItems = g.lanes.flatMap((l) => l.items);
+      allItems.sort((a, b) => a.start - b.start);
+      allItems.forEach((it) => {
+        it._row = 0;
+      });
+      g.flatItems = allItems;
+    } else {
+      g.lanes.forEach((lane) => {
+        lane.rowCount = packRows(lane.items);
+      });
+    }
+  });
+
+  let cursorY = TOP_HEADER;
+  groups.forEach((g) => {
+    g.yStart = cursorY;
+    if (g.collapsed) {
+      g.yHeight = COLLAPSED_ROW_HEIGHT + LANE_PAD_BOTTOM;
+      cursorY += g.yHeight;
+    } else {
+      let sub = cursorY;
+      g.lanes.forEach((lane) => {
+        lane.yStart = sub;
+        lane.yHeight = lane.rowCount * ROW_HEIGHT + LANE_PAD_BOTTOM;
+        sub += lane.yHeight;
+      });
+      g.yHeight = sub - cursorY;
+      cursorY = sub;
+    }
+  });
+
+  const totalHeight = cursorY + 20;
+  const totalWidth = xOf(maxMonth) + 20;
+
+  const nodes = [];
+
+  for (let m = Math.ceil(minMonth / 12) * 12; m <= maxMonth; m += 12) {
+    const year = Math.floor(m / 12);
+    nodes.push({
+      id: `year-${year}`,
+      type: 'stgYear',
+      data: { year, height: totalHeight },
+      position: { x: xOf(m) - 22, y: 4 },
       draggable: false,
-      selectable: true,
-      connectable: false,
-    };
+      selectable: false,
+    });
+  }
+
+  groups.forEach((g) => {
+    nodes.push({
+      id: `toplabel-${g.top}`,
+      type: 'stgTopLabel',
+      data: {
+        title: g.top,
+        height: g.yHeight,
+        collapsed: g.collapsed,
+        onToggle: () => onToggleTop(g.top),
+      },
+      position: { x: 0, y: g.yStart },
+      draggable: false,
+      selectable: false,
+    });
+
+    if (!g.collapsed) {
+      g.lanes.forEach((lane) => {
+        nodes.push({
+          id: `sublabel-${lane.top}-${lane.sub}`,
+          type: 'stgSubLabel',
+          data: { title: lane.sub, height: lane.yHeight },
+          position: { x: 120, y: lane.yStart },
+          draggable: false,
+          selectable: false,
+        });
+      });
+    }
+
+    // Lane backgrounds
+    if (g.collapsed) {
+      nodes.push({
+        id: `topBg-${g.top}`,
+        type: 'stgLaneBg',
+        data: {
+          width: totalWidth - LEFT_GUTTER,
+          height: g.yHeight,
+          alt: false,
+        },
+        position: { x: LEFT_GUTTER, y: g.yStart },
+        draggable: false,
+        selectable: false,
+      });
+    } else {
+      g.lanes.forEach((lane, li) => {
+        nodes.push({
+          id: `laneBg-${lane.top}-${lane.sub}`,
+          type: 'stgLaneBg',
+          data: {
+            width: totalWidth - LEFT_GUTTER,
+            height: lane.yHeight,
+            alt: li % 2 === 0,
+          },
+          position: { x: LEFT_GUTTER, y: lane.yStart },
+          draggable: false,
+          selectable: false,
+        });
+      });
+    }
   });
+
+  groups.forEach((g) => {
+    if (g.collapsed) {
+      g.flatItems.forEach((it) => {
+        const width = Math.max(
+          MIN_NODE_WIDTH,
+          (it.end - it.start + 1) * PX_PER_MONTH - 8,
+        );
+        nodes.push({
+          id: it.id,
+          type: 'stgItem',
+          data: { ...it, width, collapsed: true },
+          position: {
+            x: xOf(it.start) + 2,
+            y: g.yStart + 3,
+          },
+          draggable: false,
+          selectable: true,
+        });
+      });
+    } else {
+      g.lanes.forEach((lane) => {
+        lane.items.forEach((it) => {
+          const width = Math.max(
+            MIN_NODE_WIDTH,
+            (it.end - it.start + 1) * PX_PER_MONTH - 8,
+          );
+          nodes.push({
+            id: it.id,
+            type: 'stgItem',
+            data: { ...it, width, collapsed: false },
+            position: {
+              x: xOf(it.start) + 2,
+              y: lane.yStart + it._row * ROW_HEIGHT + 4,
+            },
+            draggable: false,
+            selectable: true,
+          });
+        });
+      });
+    }
+  });
+
+  return { nodes, totalWidth, totalHeight };
 }
 
-function StgNode({ data, selected }) {
+function ItemNode({ data, selected }) {
   const cls = ['stg-node', `stg-node--${data.kind || 'default'}`];
   if (selected) cls.push('stg-selected');
+  if (data.collapsed) cls.push('stg-node--slim');
   return h(
     'div',
-    { className: cls.join(' '), title: data.description || '' },
-    h(Handle, {
-      type: 'target',
-      position: Position.Left,
-      style: { background: '#94a3b8', width: 8, height: 8 },
-    }),
+    {
+      className: cls.join(' '),
+      style: { width: data.width, maxWidth: data.width },
+      title: data.description || data.title || '',
+    },
     h('div', { className: 'stg-title' }, data.title || ''),
-    data.subtitle ? h('div', { className: 'stg-subtitle' }, data.subtitle) : null,
-    data.date ? h('div', { className: 'stg-subtitle' }, data.date) : null,
-    data.tags && data.tags.length
+    !data.collapsed && data.subtitle
+      ? h('div', { className: 'stg-subtitle' }, data.subtitle)
+      : null,
+    !data.collapsed && data.tags && data.tags.length
       ? h(
           'div',
           { className: 'stg-tags' },
-          data.tags.slice(0, 6).map((t, i) => h('span', { key: i, className: 'stg-tag-chip' }, t)),
-          data.tags.length > 6
-            ? h('span', { className: 'stg-tag-chip' }, `+${data.tags.length - 6}`)
-            : null,
+          data.tags
+            .slice(0, 4)
+            .map((t, i) => h('span', { key: i, className: 'stg-tag-chip' }, t)),
         )
       : null,
-    data.links && data.links.length
+    !data.collapsed && data.links && data.links.length
       ? h(
           'div',
           { className: 'stg-links' },
-          data.links.slice(0, 3).map((l, i) =>
-            h(
-              'a',
-              {
-                key: i,
-                href: l.url,
-                target: '_blank',
-                rel: 'noopener noreferrer',
-                onClick: (e) => e.stopPropagation(),
-              },
-              l.label || 'link',
+          data.links
+            .slice(0, 2)
+            .map((l, i) =>
+              h(
+                'a',
+                {
+                  key: i,
+                  href: l.url,
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                  onClick: (e) => e.stopPropagation(),
+                },
+                l.label || 'link',
+              ),
             ),
-          ),
         )
       : null,
-    h(Handle, {
-      type: 'source',
-      position: Position.Right,
-      style: { background: '#94a3b8', width: 8, height: 8 },
-    }),
   );
 }
 
-const nodeTypes = { stgNode: StgNode };
+function TopLabel({ data }) {
+  return h(
+    'div',
+    {
+      className: `stg-toplabel ${data.collapsed ? 'stg-toplabel--collapsed' : 'stg-toplabel--open'}`,
+      style: { height: data.height },
+      onClick: (e) => {
+        e.stopPropagation();
+        if (data.onToggle) data.onToggle();
+      },
+      title: data.collapsed ? 'Click to expand' : 'Click to collapse',
+    },
+    h('span', { className: 'stg-toplabel__caret' }, data.collapsed ? '▸' : '▾'),
+    h('span', { className: 'stg-toplabel__text' }, data.title),
+  );
+}
+
+function SubLabel({ data }) {
+  return h(
+    'div',
+    { className: 'stg-sublabel', style: { height: data.height } },
+    data.title,
+  );
+}
+
+function YearMarker({ data }) {
+  return h(
+    'div',
+    { className: 'stg-year', style: { height: data.height } },
+    h('div', { className: 'stg-year__label' }, data.year),
+    h('div', { className: 'stg-year__line' }),
+  );
+}
+
+function LaneBg({ data }) {
+  return h('div', {
+    className: `stg-lane-bg ${data.alt ? 'stg-lane-bg--alt' : ''}`,
+    style: { width: data.width, height: data.height },
+  });
+}
+
+const nodeTypes = {
+  stgItem: ItemNode,
+  stgTopLabel: TopLabel,
+  stgSubLabel: SubLabel,
+  stgYear: YearMarker,
+  stgLaneBg: LaneBg,
+};
 
 function Widget({ cv }) {
-  const built = React.useMemo(() => buildGraph(cv), [cv]);
-  const laidOut = React.useMemo(() => layoutLR(built.nodes, built.edges), [built]);
-  const [nodes, , onNodesChange] = useNodesState(laidOut);
-  const [edges, , onEdgesChange] = useEdgesState(built.edges);
+  const items = React.useMemo(() => collectItems(cv), [cv]);
+
+  const allTops = React.useMemo(() => {
+    const s = new Set();
+    items.forEach((it) => s.add((it.category && it.category[0]) || 'Other'));
+    return s;
+  }, [items]);
+
+  const [collapsedTops, setCollapsedTops] = React.useState(() => new Set(allTops));
+
+  React.useEffect(() => {
+    // Ensure any newly-discovered top-level defaults to collapsed.
+    setCollapsedTops((prev) => {
+      let changed = false;
+      const next = new Set(prev);
+      allTops.forEach((t) => {
+        if (!next.has(t)) {
+          next.add(t);
+          changed = true;
+        }
+      });
+      return changed ? next : prev;
+    });
+  }, [allTops]);
+
+  const toggleTop = React.useCallback((top) => {
+    setCollapsedTops((prev) => {
+      const next = new Set(prev);
+      if (next.has(top)) next.delete(top);
+      else next.add(top);
+      return next;
+    });
+  }, []);
+
+  const layout = React.useMemo(
+    () => layoutTimeline(items, collapsedTops, toggleTop),
+    [items, collapsedTops, toggleTop],
+  );
 
   const onNodeClick = React.useCallback((_e, node) => {
+    if (node.type !== 'stgItem') return;
     const link = (node.data && node.data.links && node.data.links[0]) || null;
     if (link && link.url) window.open(link.url, '_blank', 'noopener');
   }, []);
@@ -384,17 +613,15 @@ function Widget({ cv }) {
   return h(
     ReactFlow,
     {
-      nodes,
-      edges,
-      onNodesChange,
-      onEdgesChange,
+      nodes: layout.nodes,
+      edges: [],
       onNodeClick,
       nodeTypes,
       fitView: true,
+      fitViewOptions: { padding: 0.1 },
       minZoom: 0.2,
       maxZoom: 2,
       proOptions: { hideAttribution: true },
-      defaultEdgeOptions: { type: 'smoothstep' },
       nodesDraggable: false,
       nodesConnectable: false,
       elementsSelectable: true,
@@ -402,7 +629,7 @@ function Widget({ cv }) {
       zoomOnScroll: true,
       zoomOnPinch: true,
     },
-    h(Background, { gap: 18, color: '#e5e7eb' }),
+    h(Background, { gap: 24, color: '#eef2f7' }),
     h(Controls, { position: 'bottom-right', showInteractive: false }),
     h(MiniMap, {
       pannable: true,
@@ -411,17 +638,16 @@ function Widget({ cv }) {
         const k = n.data && n.data.kind;
         return (
           {
-            me: '#1d4ed8',
-            hub: '#0f172a',
-            semester: '#6366f1',
+            education: '#2563eb',
+            work: '#16a34a',
             course: '#0891b2',
             'course-grad': '#d97706',
             portfolio: '#db2777',
-            work: '#16a34a',
             presentation: '#9333ea',
-          }[k] || '#94a3b8'
+          }[k] || '#cbd5e1'
         );
       },
+      nodeStrokeWidth: 0,
     }),
   );
 }

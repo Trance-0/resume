@@ -32,16 +32,23 @@
       "location": "1 Brookings Dr, St. Louis, MO 63130",
       "startDate": "2026-01",
       "endDate": "2026-5",
-      "summary": "Teaching assistant for CSE 347 (Analysis of Algorithms)."
+      "summary": "Teaching assistant for CSE 347 (Analysis of Algorithms).",
+      "category": [
+        "Computer Science",
+        "Algorithms"
+      ]
     },
-    
     {
       "company": "Washington University in St. Louis",
       "position": "TA for CSE 559A (Computer Vision)",
       "location": "1 Brookings Dr, St. Louis, MO 63130",
       "startDate": "2026-01",
       "endDate": "2026-5",
-      "summary": "Teaching assistant for CSE 559A (Computer Vision)."
+      "summary": "Teaching assistant for CSE 559A (Computer Vision).",
+      "category": [
+        "Computer Science",
+        "Computer Vision"
+      ]
     },
     {
       "company": "Washington University in St. Louis",
@@ -49,7 +56,11 @@
       "location": "1 Brookings Dr, St. Louis, MO 63130",
       "startDate": "2025-09",
       "endDate": "2025-12",
-      "summary": "Teaching assistant for CSE 5610 (Large Language Models)."
+      "summary": "Teaching assistant for CSE 5610 (Large Language Models).",
+      "category": [
+        "Computer Science",
+        "Large Language Models"
+      ]
     },
     {
       "company": "Washington University in St. Louis",
@@ -57,7 +68,11 @@
       "location": "Remote",
       "startDate": "2025-01",
       "endDate": "2025-05",
-      "summary": "Part-time grader for Math 309: Matrix Algebra."
+      "summary": "Part-time grader for Math 309: Matrix Algebra.",
+      "category": [
+        "Mathematics",
+        "Linear Algebra"
+      ]
     },
     {
       "company": "Washington University in St. Louis",
@@ -65,7 +80,11 @@
       "location": "Remote",
       "startDate": "2024-09",
       "endDate": "2025-03",
-      "summary": "Part-time grader for Math 429: Linear Algebra."
+      "summary": "Part-time grader for Math 429: Linear Algebra.",
+      "category": [
+        "Mathematics",
+        "Linear Algebra"
+      ]
     },
     {
       "company": "Washington University in St. Louis",
@@ -73,7 +92,11 @@
       "location": "Remote",
       "startDate": "2023-09",
       "endDate": "2024-01",
-      "summary": "Part-time grader for Math 309: Matrix Algebra."
+      "summary": "Part-time grader for Math 309: Matrix Algebra.",
+      "category": [
+        "Mathematics",
+        "Linear Algebra"
+      ]
     }
   ],
   "education": [
@@ -83,11 +106,16 @@
       "studyType": "Bachelor of Science",
       "startDate": "2022-08",
       "endDate": "Present",
+      "majorGpa": "3.78",
+      "cumulativeGpa": "3.83",
       "focus": [
         "Software Engineering",
         "Advanced Algorithms",
         "Machine Learning",
         "Computer Security"
+      ],
+      "category": [
+        "Computer Science"
       ]
     },
     {
@@ -96,11 +124,16 @@
       "studyType": "Bachelor of Arts",
       "startDate": "2022-08",
       "endDate": "Present",
+      "majorGpa": "3.96",
+      "cumulativeGpa": "3.83",
       "focus": [
         "Mathematical Analysis",
         "Linear Algebra",
         "Probability Theory",
         "Mathematical Modeling"
+      ],
+      "category": [
+        "Mathematics"
       ]
     }
   ],
@@ -110,39 +143,70 @@
       "courses": [
         {
           "name": "Math 4202 (Topology II)",
-          "tags": ["Topology", "Topological spaces","CW Complexes","Manifolds", "Algebraic topology", "Closed surfaces"],
+          "tags": [
+            "Topology",
+            "Topological spaces",
+            "CW Complexes",
+            "Manifolds",
+            "Algebraic topology",
+            "Closed surfaces"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Mathematics",
+            "Topology"
+          ],
           "textbooks": [
             {
-              "url":"https://eclass.uoa.gr/modules/document/file.php/MATH707/James%20R.%20Munkres%20Topology%20%20Prentice%20Hall%2C%20Incorporated%2C%202000%20by%20James%20R.%20Munkres%20%28z-lib.org%29.pdf",
-              "name":"topology 2nd ed. by james munkres"
+              "url": "https://eclass.uoa.gr/modules/document/file.php/MATH707/James%20R.%20Munkres%20Topology%20%20Prentice%20Hall%2C%20Incorporated%2C%202000%20by%20James%20R.%20Munkres%20%28z-lib.org%29.pdf",
+              "name": "topology 2nd ed. by james munkres"
             }
           ],
           "description": "A continuation of Math 4201 featuring more advanced topics in topology. The content may vary with each offering. (Current offering: Topological spaces, CW complexes, manifolds, fundamental groups of closed surfaces, Seifert-Van Kampen Theorem, and related topics.)"
         },
         {
           "name": "Math 4302 (Modern Algebra)",
-          "tags": ["Groups","Rings"],
+          "tags": [
+            "Groups",
+            "Rings"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Mathematics",
+            "Abstract Algebra"
+          ],
           "textbooks": [
             {
-              "url":"https://exchange.pearson.com/products/4f9f0d76-a6ec-4a33-bfe6-2d703f9a1751/pearson-etext-a-first-course-in-abstract-algebra-8e?uuid=4f9f0d76-a6ec-4a33-bfe6-2d703f9a1751",
-              "name":"A first course in Abstract Algebra (8e) by John B. Fraleigh, Neal Brand"
+              "url": "https://exchange.pearson.com/products/4f9f0d76-a6ec-4a33-bfe6-2d703f9a1751/pearson-etext-a-first-course-in-abstract-algebra-8e?uuid=4f9f0d76-a6ec-4a33-bfe6-2d703f9a1751",
+              "name": "A first course in Abstract Algebra (8e) by John B. Fraleigh, Neal Brand"
             }
           ],
           "description": "Introduction to groups, rings, and fields. Includes permutation groups, group and ring homomorphisms, field extensions, connections with linear algebra."
         },
         {
           "name": "CSE 433 (Introduction to Computer security)",
-          "tags": ["Computer security", "VM ware"],
+          "tags": [
+            "Computer security",
+            "VM ware"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Computer Science",
+            "Computer Security"
+          ],
           "description": "Secure computing requires the secure design, implementation, and use of systems and algorithms across many areas of computer science. Fundamentals of secure computing such as trust models and cryptography will lay the groundwork for studying key topics in the security of systems, networking, web design, machine learning algorithms, mobile applications, and physical devices. Human factors, privacy, and the law will also be considered. Hands-on practice exploring vulnerabilities and defenses using Linux, C, and Python in studios and lab assignments is a key component of the course."
         },
         {
           "name": "ENGR 310 (Technical Writing)",
-          "tags": ["Writing", "Technical writing"],
+          "tags": [
+            "Writing",
+            "Technical writing"
+          ],
           "level": "Undergraduate",
-          "description":"Persistent concerns of grammar and style. Analysis and discussion of clear sentence and paragraph structure and of organization in complete technical documents. Guidelines for effective layout and graphics. Examples and exercises stressing audience analysis, graphic aids, editing, and readability. Videotaped work in oral presentation of technical projects. Writing assignments include descriptions of mechanisms, process instructions, basic proposals, letters and memos, and a long formal report. Students enrolled or waitlisted in Technical Writing must attend the first week of class or their registration will be dropped to allow a waitlisted student in the course."
+          "category": [
+            "Writing"
+          ],
+          "description": "Persistent concerns of grammar and style. Analysis and discussion of clear sentence and paragraph structure and of organization in complete technical documents. Guidelines for effective layout and graphics. Examples and exercises stressing audience analysis, graphic aids, editing, and readability. Videotaped work in oral presentation of technical projects. Writing assignments include descriptions of mechanisms, process instructions, basic proposals, letters and memos, and a long formal report. Students enrolled or waitlisted in Technical Writing must attend the first week of class or their registration will be dropped to allow a waitlisted student in the course."
         }
       ]
     },
@@ -151,50 +215,115 @@
       "courses": [
         {
           "name": "Math 4201 (Topology I)",
-          "tags": ["Topology", "Topological spaces", "Metric spaces", "Hausdorff space", "Compactness", "Connectedness"],
+          "tags": [
+            "Topology",
+            "Topological spaces",
+            "Metric spaces",
+            "Hausdorff space",
+            "Compactness",
+            "Connectedness"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Mathematics",
+            "Topology"
+          ],
           "textbooks": [
             {
-              "url":"https://eclass.uoa.gr/modules/document/file.php/MATH707/James%20R.%20Munkres%20Topology%20%20Prentice%20Hall%2C%20Incorporated%2C%202000%20by%20James%20R.%20Munkres%20%28z-lib.org%29.pdf",
-              "name":"topology 2nd ed. by james munkres"
+              "url": "https://eclass.uoa.gr/modules/document/file.php/MATH707/James%20R.%20Munkres%20Topology%20%20Prentice%20Hall%2C%20Incorporated%2C%202000%20by%20James%20R.%20Munkres%20%28z-lib.org%29.pdf",
+              "name": "topology 2nd ed. by james munkres"
             }
           ],
           "description": "An introduction to the most important ideas of topology.  Course includes necessary ideas from set theory, topological spaces, subspaces, products and quotients, compactness and connectedness.  Some time is also devoted to the particular case of metric spaces (including topics such as separability, completeness, completions, the Baire Caregory Theorem, and equivalents of compactness in metric spaces).  Prerequisite:  Math 4111 or permission of instructor."
         },
         {
           "name": "CSE 5100 (Deep Reinforcement Learning)",
-          "tags": ["Deep Reinforcement Learning", "Reinforcement learning", "Q-learning", "Deep Q-network", "Policy gradient", "Actor-critic", "Proximal Policy Optimization", "Offline reinforcement learning"],
+          "tags": [
+            "Deep Reinforcement Learning",
+            "Reinforcement learning",
+            "Q-learning",
+            "Deep Q-network",
+            "Policy gradient",
+            "Actor-critic",
+            "Proximal Policy Optimization",
+            "Offline reinforcement learning"
+          ],
           "level": "Graduate",
+          "category": [
+            "Computer Science",
+            "Deep Reinforcement Learning"
+          ],
           "description": "Deep Reinforcement Learning (RL) is a cutting-edge field at the intersection of artificial intelligence and decision-making. This course provides an in-depth exploration of the fundamental principles, algorithms, and applications of deep reinforcement learning. It covers basic algorithms, including value-based, policy-based, actor-critic, and model-based methods, as well as advanced topics, such as meta RL, offline RL, and multi-agent RL. By combining deep learning techniques with reinforcement learning, this course equips students with the necessary skills to build intelligent systems that can learn from experiences and make optimal decisions in complex environments. Evaluation of this course is based on written and programming assignments, and a final course project."
         },
         {
           "name": "CSE 5519 (Advances in Computer Vision)",
-          "tags": ["Computer vision", "Deep learning", "Attention-based architectures", "Self-supervised/few-shot/zero-shot learning", "Explainable models", "Deep geometric methods", "Neural fields", "Generative image modeling", "Vision language models"],
+          "tags": [
+            "Computer vision",
+            "Deep learning",
+            "Attention-based architectures",
+            "Self-supervised/few-shot/zero-shot learning",
+            "Explainable models",
+            "Deep geometric methods",
+            "Neural fields",
+            "Generative image modeling",
+            "Vision language models"
+          ],
           "level": "Graduate",
+          "category": [
+            "Computer Science",
+            "Computer Vision"
+          ],
           "textbooks": [
             {
-              "url":"https://notenextra.trance-0.com/CSE5519",
-              "name":"List of selected papers"
+              "url": "https://notenextra.trance-0.com/CSE5519",
+              "name": "List of selected papers"
             }
           ],
           "description": "Computer vision is a fast-moving field, with the past few years seeing tremendous advances in the development of computational algorithms for solving visual tasks. This course is designed to introduce students to advanced and recently published techniques, including work in the areas of attention-based architectures, self-supervised/few-shot/zero-shot learning, explainable models, deep geometric methods, neural fields, generative image modeling, and vision language models. Prerequisite: Any of CSE 559A (Computer Vision), CSE 555A (Computational Photography), CSE 527A (Natural Language Processing), CSE 561A (Large Language Models), or permission of the instructor."
         },
         {
           "name": "CSE 5313 (Coding and information theory for data science)",
-          "tags": ["Coding and information theory", "Error-correcting codes", "Information theory", "Data compression", "Data transmission", "Storage", "Computation", "Privacy", "Machine learning", "Networks", "Blockchains", "DNA storage"],
+          "tags": [
+            "Coding and information theory",
+            "Error-correcting codes",
+            "Information theory",
+            "Data compression",
+            "Data transmission",
+            "Storage",
+            "Computation",
+            "Privacy",
+            "Machine learning",
+            "Networks",
+            "Blockchains",
+            "DNA storage"
+          ],
           "level": "Graduate",
+          "category": [
+            "Computer Science",
+            "Information Theory"
+          ],
           "textbooks": [
             {
-              "url":"https://www.cambridge.org/core/books/introduction-to-coding-theory/377D24BE73F473B15378776B0AE63CA3",
-              "name":"Introduction to Coding theory. by ron roth"
+              "url": "https://www.cambridge.org/core/books/introduction-to-coding-theory/377D24BE73F473B15378776B0AE63CA3",
+              "name": "Introduction to Coding theory. by ron roth"
             }
           ],
           "description": "Coding/information theory emerged in mid 20'th century as a mathematical theory of communication with noise. In latter decades it has developed to a vast topic encompassing most aspects of handling large datasets. The course will begin by surveying the classical mathematical theory and its basic applications in communication, and continue to contemporary applications in storage, computation, privacy, machine learning, and emerging technologies such as networks, blockchains, and DNA storage. The course is self-contained, but prior knowledge in algebra (such as Math 309 or ESE 318), discrete math (such as CSE 240 or Math 310), and probability (such as Math 2200 or ESE 326), as well as some mathematical maturity, is assumed. There will be 4-5 homework assignments, one in-person midterm, and a final reading assignment."
         },
         {
           "name": "Music 1260 (Jazz Theory I)",
-          "tags": ["Jazz Theory", "Jazz music", "Jazz composition", "Jazz improvisation", "Jazz harmony", "Jazz rhythm"],
+          "tags": [
+            "Jazz Theory",
+            "Jazz music",
+            "Jazz composition",
+            "Jazz improvisation",
+            "Jazz harmony",
+            "Jazz rhythm"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Music"
+          ],
           "description": "Introduction to the jazz music language as a preparation for the study of improvisation. The course of study consists of basic music theory including music-reading skills and notation, scales, intervals, and triads. An introduction to extended tertian chords as derived from the twenty-one modes of the major, melodic and harmonic minor scales forms the basis of the jazz harmonic language. The study of chord progression and chord substitution, song form, and the blues prepares the student for a detailed study of the modern jazz language. Students who register for Music 121J are required to register for one of the subsections."
         }
       ]
@@ -204,52 +333,60 @@
       "courses": [
         {
           "name": "Freiwald research program",
-          "tags": ["Non-commutative probability theory", "Metric and Measure spaces", "Quantum Information Theory"],
+          "tags": [
+            "Non-commutative probability theory",
+            "Metric and Measure spaces",
+            "Quantum Information Theory"
+          ],
           "level": "Undergraduate Research",
+          "category": [
+            "Mathematics",
+            "Quantum Information Theory"
+          ],
           "textbooks": [
             {
-              "url":"https://www.cambridge.org/core/books/geometry-of-quantum-states/46B62FE3F9DA6E0B4EDDAE653F61ED8C",
-              "name":"Geometry of Quantum States. by Ingemar Bengtsson and Karol Życzkowski"
+              "url": "https://www.cambridge.org/core/books/geometry-of-quantum-states/46B62FE3F9DA6E0B4EDDAE653F61ED8C",
+              "name": "Geometry of Quantum States. by Ingemar Bengtsson and Karol Życzkowski"
             },
             {
-              "url":"https://link.springer.com/book/10.1007/978-93-86279-28-6",
-              "name":"Mathematical Foundations of Quantum Mechanics. by K.R.Parthasarathy"
+              "url": "https://link.springer.com/book/10.1007/978-93-86279-28-6",
+              "name": "Mathematical Foundations of Quantum Mechanics. by K.R.Parthasarathy"
             },
             {
-              "url":"https://link.springer.com/book/10.1007/978-3-0348-0566-7",
-              "name":"An Introduction to Quantum Stochastic Calculus. by K.R.Parthasarathy"
+              "url": "https://link.springer.com/book/10.1007/978-3-0348-0566-7",
+              "name": "An Introduction to Quantum Stochastic Calculus. by K.R.Parthasarathy"
             },
             {
-              "url":"https://www.cambridge.org/core/books/highdimensional-probability/797C466DA29743D2C8213493BD2D2102",
-              "name":"High-Dimensional Probability. by Roman Vershynin"
+              "url": "https://www.cambridge.org/core/books/highdimensional-probability/797C466DA29743D2C8213493BD2D2102",
+              "name": "High-Dimensional Probability. by Roman Vershynin"
             },
             {
-              "url":"https://link.springer.com/book/10.1007/978-0-8176-4583-0",
-              "name":"Metric Structures for Riemannian and Non-Riemannian Spaces. by M. Gromov"
+              "url": "https://link.springer.com/book/10.1007/978-0-8176-4583-0",
+              "name": "Metric Structures for Riemannian and Non-Riemannian Spaces. by M. Gromov"
             },
             {
-              "url":"https://link.springer.com/book/10.1007/978-93-86279-59-0",
-              "name":"Coding theorems of classical and quantum information theory. by K.R.Parthasarathy"
+              "url": "https://link.springer.com/book/10.1007/978-93-86279-59-0",
+              "name": "Coding theorems of classical and quantum information theory. by K.R.Parthasarathy"
             },
             {
-              "url":"https://link.springer.com/book/10.1007/978-3-319-16718-3",
-              "name":" The Functional Analysis of Quantum Information Theory. A Collection of Notes Based on Lectures by Gilles Pisier, K. R. Parthasarathy, Vern Paulsen and Andreas Winter"
+              "url": "https://link.springer.com/book/10.1007/978-3-319-16718-3",
+              "name": " The Functional Analysis of Quantum Information Theory. A Collection of Notes Based on Lectures by Gilles Pisier, K. R. Parthasarathy, Vern Paulsen and Andreas Winter"
             },
             {
-              "url":"https://link.springer.com/book/10.1007/978-1-4419-9982-5",
-              "name":"Introduction to smooth manifolds. by John M. Lee"
+              "url": "https://link.springer.com/book/10.1007/978-1-4419-9982-5",
+              "name": "Introduction to smooth manifolds. by John M. Lee"
             },
             {
-              "url":"https://link.springer.com/book/10.1007/978-3-319-91755-9",
-              "name":"Introduction to Riemannian manifolds. by John M. Lee"
+              "url": "https://link.springer.com/book/10.1007/978-3-319-91755-9",
+              "name": "Introduction to Riemannian manifolds. by John M. Lee"
             },
             {
-              "url":"https://bookstore.ams.org/gsm-244",
-              "name":"Introduction to Complex manifolds. by John M. Lee"
-            },   
+              "url": "https://bookstore.ams.org/gsm-244",
+              "name": "Introduction to Complex manifolds. by John M. Lee"
+            },
             {
-              "url":"https://link.springer.com/book/10.1007/978-3-031-41026-0",
-              "name":"Linear Algebra Done Right . by Sheldon Axler"
+              "url": "https://link.springer.com/book/10.1007/978-3-031-41026-0",
+              "name": "Linear Algebra Done Right . by Sheldon Axler"
             }
           ],
           "description": "To understand the following claim: In high dimensional subsystem of bipartite qbits, with high probability, a random selected state is almost maximally entangled. Topic of research skim through non-commutative probability theory (POVMs, partial trace, von Neumann entropy, tensor products), metric and measure spaces (L^2 spaces, complex projective spaces, Bargmann spaces), smooth manifolds (Riemannian manifolds, complex manifolds, kahler manifolds, compact lie groups), concentration of measure effect (levy family, high dimensional probability theory, maxwell-boltzmann distribution, invariant measures), representation theory (Majorana stellar representations, Weyl-Heisenberg group, symmetric products), quantum stochastic processes (coherent states), quantum information theory, and quantum computing. Who cares we start with Von Neumann algebra in the beginning?"
@@ -261,57 +398,96 @@
       "courses": [
         {
           "name": "CSE 332S (Object-Oriented Programming)",
-          "tags": ["C++", "Object-Oriented Programming", "Design Patterns"],
+          "tags": [
+            "C++",
+            "Object-Oriented Programming",
+            "Design Patterns"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Computer Science",
+            "Software Engineering"
+          ],
           "textbooks": [
             {
-              "url":"https://zhjwpku.com/assets/pdf/books/C++.Primer.Plus.6th.Edition.Oct.2011.pdf",
-              "name":"C++ primer plus. by Stephen Prata"
+              "url": "https://zhjwpku.com/assets/pdf/books/C++.Primer.Plus.6th.Edition.Oct.2011.pdf",
+              "name": "C++ primer plus. by Stephen Prata"
             }
           ],
           "description": "Intensive focus on practical aspects of designing, implementing and debugging software, using object-oriented, procedural, and generic programming techniques. The course emphasizes familiarity and proficiency with a wide range of C++ language features through hands-on practice completing studio exercises and lab assignments, supplemented with readings and summary presentations for each session. An evening midterm exam at which attendance is required will be given on March 25. Prerequisites: CSE 131 and CSE 247."
         },
         {
           "name": "CSE 559A (Computer vision)",
-          "tags": ["Computer vision", "Deep learning"],
+          "tags": [
+            "Computer vision",
+            "Deep learning"
+          ],
           "level": "Graduate",
+          "category": [
+            "Computer Science",
+            "Computer Vision"
+          ],
           "description": "This course introduces the fundamentals of designing computational systems that can \"look at\" images and reason about the physical objects and scenes they represent. Topics include the estimation of color, shape, geometry, and motion from images; image classification, segmentation, and object detection; and image restoration, enhancement, and synthesis. The focus of this course will be on mathematical foundations and practical algorithmic approaches, including: the physics and geometry of image formation; robust methods for estimating image motion and geometry; and deep-learning approaches for semantic image understanding. Students will be required to program in Python. Prerequisites: Any of: CSE 417T (ML), ESE417 (ML), CSE514A (Data Mining), CSE517A (ML)."
         },
         {
           "name": "Math 401 (Honors Seminar)",
-          "tags": ["Symmetric group", "Representation theory"],
+          "tags": [
+            "Symmetric group",
+            "Representation theory"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Mathematics",
+            "Representation Theory"
+          ],
           "textbooks": [
             {
-              "url":"https://www.cambridge.org/core/books/highdimensional-probability/797C466DA29743D2C8213493BD2D2102",
-              "name":"High-Dimensional Probability. by Roman Vershynin"
+              "url": "https://www.cambridge.org/core/books/highdimensional-probability/797C466DA29743D2C8213493BD2D2102",
+              "name": "High-Dimensional Probability. by Roman Vershynin"
             }
           ],
           "description": "This is the prerequisite for the Freiwald research program in the summer of 2025."
         },
         {
           "name": "Math 416 (Complex functions)",
-          "tags": ["Complex analysis", "Complex functions", "Complex integration", "Complex differential equations"],
+          "tags": [
+            "Complex analysis",
+            "Complex functions",
+            "Complex integration",
+            "Complex differential equations"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Mathematics",
+            "Complex Analysis"
+          ],
           "textbooks": [
             {
-              "url":"https://bookstore.ams.org/view?ProductCode=MBK/49",
-              "name":"Complex Function Theory: Second Edition. by Donald Sarason"
+              "url": "https://bookstore.ams.org/view?ProductCode=MBK/49",
+              "name": "Complex Function Theory: Second Edition. by Donald Sarason"
             }
           ],
           "description": "Analytic functions, elementary functions and their properties, line integrals, the Cauchy integral formula, power series, residues, poles, conformal mapping and applications. Prereq: Math 310 and (Math 318 or Math 4111) or permission of instructor."
         },
         {
           "name": "Math 4121 (Lebesgue integration)",
-          "tags": ["Lebesgue integration", "Lebesgue measure", "Lebesgue integral"],
+          "tags": [
+            "Lebesgue integration",
+            "Lebesgue measure",
+            "Lebesgue integral"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Mathematics",
+            "Real Analysis"
+          ],
           "textbooks": [
             {
-              "url":"https://www.cambridge.org/9780521884747",
-              "name":"A Radical Approach to Lebesgue's Theory of Integration. by David M. Bressoud"
+              "url": "https://www.cambridge.org/9780521884747",
+              "name": "A Radical Approach to Lebesgue's Theory of Integration. by David M. Bressoud"
             },
             {
-              "url":"https://old.maa.org/press/maa-reviews/principles-of-mathematical-analysis",
+              "url": "https://old.maa.org/press/maa-reviews/principles-of-mathematical-analysis",
               "name": "Principles of Mathematical Analysis. by Walter Rudin"
             }
           ],
@@ -324,29 +500,62 @@
       "courses": [
         {
           "name": "CSE 347 (Analysis of Algorithms)",
-          "tags": ["Analysis of Algorithms", "Greedy algorithms", "Dynamic programming"],
+          "tags": [
+            "Analysis of Algorithms",
+            "Greedy algorithms",
+            "Dynamic programming"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Computer Science",
+            "Algorithms"
+          ],
           "description": "Introduces techniques for the mathematical analysis of algorithms, including randomized algorithms and non-worst-case analyses such as amortized and competitive analysis. Introduces the standard paradigms of divide-and-conquer, greedy, and dynamic programming algorithms, as well as reductions. Also provides an introduction to the study of intractability and techniques to determine when good algorithms cannot be designed. Note: A Wednesday recitation section will be required. Times TBD based on students' schedules. Attendance is required for two evening exams. Evening exams will be October 22 and December 3 from 6:30 - 8:30pm. Prerequisites: (CSE 240 or Math 310) and CSE 247"
         },
         {
           "name": "CSE 442T (Cryptography)",
-          "tags": ["Cryptography", "Public-key cryptography", "Authentication", "Digital signature"],
+          "tags": [
+            "Cryptography",
+            "Public-key cryptography",
+            "Authentication",
+            "Digital signature"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Computer Science",
+            "Cryptography"
+          ],
           "description": "This course is an introduction to modern cryptography, with an emphasis on its theoretical foundations. Topics will include one-way functions, pseudorandom generators, public key encryption, digital signatures, and zero-knowledge proofs. Prerequisites: CSE 240 and 247"
         },
         {
           "name": "Jap 213D (Japanese Language Level 2 semester 1)",
-          "tags": ["Japanese Language", "Japanese Grammar", "Japanese Vocabulary"],
+          "tags": [
+            "Japanese Language",
+            "Japanese Grammar",
+            "Japanese Vocabulary"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Language",
+            "Japanese"
+          ],
           "description": "This is the first semester of an academic-year course in intermediate Japanese. The course emphasizes the acquisition of all four language skills (listening, speaking, reading, and writing) through meaningful communicative practices. It covers the basic vocabulary, expressions, and more grammatical structures and conjugation patterns. About 100 new kanji characters are introduced. Cultural aspects of the language are consistently incorporated in classroom practice to deepen students' cultural awareness and successful communication in the global era. After completing this course, students are able to understand and participate in daily conversation about their experience, past, present and future events in more complex Japanese, and to be able to express opinions/thoughts and present information. They are able to read and write more complex texts on topics related to oneself and their immediate environment with a solid understanding of main ideas and supporting details from a variety of texts. Prerequisite: L05 104D (grade of B- or better) or placement by examination."
         },
         {
           "name": "Math 4111 (Real analysis)",
-          "tags": ["Real analysis", "Real numbers", "Basic topology"],
+          "tags": [
+            "Real analysis",
+            "Real numbers",
+            "Basic topology"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Mathematics",
+            "Real Analysis"
+          ],
           "textbooks": [
             {
-              "url":"https://old.maa.org/press/maa-reviews/principles-of-mathematical-analysis",
+              "url": "https://old.maa.org/press/maa-reviews/principles-of-mathematical-analysis",
               "name": "Principles of Mathematical Analysis. by Walter Rudin"
             }
           ],
@@ -354,8 +563,19 @@
         },
         {
           "name": "CSE 561A (Large Language Models)",
-          "tags": ["Large Language Models", "LLM", "AI", "Transformer", "Attention Mechanism", "Prompt Engineering"],
+          "tags": [
+            "Large Language Models",
+            "LLM",
+            "AI",
+            "Transformer",
+            "Attention Mechanism",
+            "Prompt Engineering"
+          ],
           "level": "Graduate",
+          "category": [
+            "Computer Science",
+            "Large Language Models"
+          ],
           "description": "Large Language Models (LLMs) have revolutionized the field of artificial intelligence, offering unprecedented capabilities in understanding and generating human-like text. This is a research-oriented course that explores the capabilities and challenges of LLMs. Students will gain a comprehensive understanding of the underlying mechanisms that power these models, as well as reading frontier papers and working on projects to gain hands-on experience. Topics to be covered include LLM training, LLM capabilities, safety, ethical considerations, approaches to augment LLMs, efficiency of modeling and training LLMs, etc. Pre-reqs: basic understanding of machine learning (CSE 417 or ESE 417)"
         }
       ]
@@ -365,8 +585,16 @@
       "courses": [
         {
           "name": "Intensive training in Hand drawing illustration",
-          "tags": ["Hand drawing", "Tempera", "Painting"],
+          "tags": [
+            "Hand drawing",
+            "Tempera",
+            "Painting"
+          ],
           "level": "Unknown",
+          "category": [
+            "Art",
+            "Traditional Media"
+          ],
           "description": "As the trend of AI-generated images, I started to reinforce my hand drawing skills over the summer and started to learn tempera painting. For me that's actually easier than digital drawing since you can craft the color and texture you want directly by hand mixing the pigment and choose the brush you want instead of using a digital tool bending those rules of light."
         }
       ]
@@ -376,44 +604,94 @@
       "courses": [
         {
           "name": "Antro 160B (Cultural Anthropology)",
-          "tags": ["Cultrual Anthropology"],
+          "tags": [
+            "Cultrual Anthropology"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Humanities",
+            "Anthropology"
+          ],
           "description": "This course introduces the basic concepts, theories, and methods of Cultural Anthropology - an academic discipline that studies the diversity of human cultures and societies. The purpose is to provide a broad perspective on the types of research that anthropologists undertake, and to engage in a critical dialogue on how the work of anthropologists contributes to understanding the human condition. Introduction to Cultural Anthropology is a portal into more advanced anthropology courses and is a required course for anthropology majors."
         },
         {
           "name": "CSE 514A (Data Mining)",
-          "tags": ["Data Mining", "Supervised learning", "Data cleaning and preprocessing"],
+          "tags": [
+            "Data Mining",
+            "Supervised learning",
+            "Data cleaning and preprocessing"
+          ],
           "level": "Graduate",
+          "category": [
+            "Computer Science",
+            "Machine Learning"
+          ],
           "description": "With the vast advancement in science and technology, data acquisition in large quantities are routinely done in many fields. Examples of large data include various types of data on the internet, high-throughput sequencing data in biology and medicine, extraterrestrial data from telescopes in astronomy, and images from surveillance camera in security. Mining a large amount of data through data mining has become an effective means to extracting knowledge from data. This course introduces the basic concepts and methods for data mining and provides hands-on experience for processing, analyzing and modeling structured and unstructured data. Homework problems, examines and programming assignments will be administrated throughout the course to enhance the learning. Prerequisites: CSE 247 and ESE 326 (or Math 3200 or Engr 328) or their equivalent, or permission of the instructor."
         },
         {
           "name": "Econ 4011 (Intermediate Microeconomics)",
-          "tags": ["Microeconomics", "Game theory", "Market equilibrium"],
+          "tags": [
+            "Microeconomics",
+            "Game theory",
+            "Market equilibrium"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Economics"
+          ],
           "description": "Analytic theory of consumer and producer behavior under perfect and imperfect competition. Coverage of demand theory (indifference curves and utility functions and preferences under uncertainty, including expected utility and risk aversion). Development of general equilibrium under pure exchange, including the concepts of competitive equilibrium and Pareto efficiency. Discussion of the role of time as it pertains to interest rates, discounting and net present value. Analysis of standard monopoly and simple oligopoly problems. Development of non-cooperative game theory, including strategic and extensive-form equilibria and Nash and sub-game perfect equilibria. Thorough training in intermediate theory would require both Econ 4011 and Econ 4021. The Friday \"A\" subsection is an opportunity to obtain additional course help via a TA-led review session. Attendance at the subsection is recommended, but not required. Prerequisites: Econ 1011, Math 131, Math 132, and concurrent enrollment in, or prior completion of, either Econ 493 (\"Mathematical Economics\") or Math 233."
         },
         {
           "name": "Jap 104D (Japanese Language Level 1 semester 2)",
-          "tags": ["Japanese Language", "Japanese Grammar", "Japanese Vocabulary"],
+          "tags": [
+            "Japanese Language",
+            "Japanese Grammar",
+            "Japanese Vocabulary"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Language",
+            "Japanese"
+          ],
           "description": "This is the second semester of an academic-year course in beginning Japanese. This course emphasizes the acquisition of all four language skills (listening, speaking, reading, and writing) through meaningful communicative practices. It covers everyday vocabulary and expressions, and introduces approximately 90 kanji characters. More grammatical structures and conjugation patterns will be introduced and practiced. Cultural aspects of the language are also incorporated in classroom practice to deepen students' cultural awareness and successful communication in the global era. After completing this course, students are able to understand and participate in daily conversation such as making requests, comparing things, expressing one's ideas and desires, and describing one's family members. They will be able to understand how to read and write novice-level materials on topics related to oneself and their immediate environment. Prerequisite: Prerequisite: L05 103D (grade of B- or better) or placement by examination."
         },
         {
           "name": "Math 429 (Linear Algebra)",
-          "tags": ["Linear Algebra", "Vector space", "Linear transformation", "Jacobian matrix", "Adjoint matrix", "Operator theory"],
+          "tags": [
+            "Linear Algebra",
+            "Vector space",
+            "Linear transformation",
+            "Jacobian matrix",
+            "Adjoint matrix",
+            "Operator theory"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Mathematics",
+            "Linear Algebra"
+          ],
           "textbooks": [
             {
-              "url":"https://link.springer.com/book/10.1007/978-3-031-41026-0",
-              "name":"Linear Algebra Done Right . by Sheldon Axler"
+              "url": "https://link.springer.com/book/10.1007/978-3-031-41026-0",
+              "name": "Linear Algebra Done Right . by Sheldon Axler"
             }
           ],
           "description": "Introduction to the linear algebra of finite-dimensional vector spaces. Includes systems of equations, matrices, determinants, inner product spaces, spectral theory. Prerequisite: Math 310 or permission of instructor. Math 309 is not an explicit prerequisite but students should already be familiar with such basic topics from matrix theory as matrix operations, linear systems, row reduction and Gaussian elimination. Material on these topics in early chapters of the text will be covered very quickly."
         },
         {
           "name": "CSE 546T (Computational Geometry)",
-          "tags": ["Computational Geometry", "Lower-dimensional geometry", "Convex hull", "Voronoi diagram", "Delaunay triangulation"],
+          "tags": [
+            "Computational Geometry",
+            "Lower-dimensional geometry",
+            "Convex hull",
+            "Voronoi diagram",
+            "Delaunay triangulation"
+          ],
           "level": "Graduate",
+          "category": [
+            "Computer Science",
+            "Computational Geometry"
+          ],
           "description": "Computational geometry is the algorithmic study of problems that involve geometric shapes such as points, lines, and polygons. Such problems appear in computer graphics, vision, robotics, animation, visualization, molecular biology, and geographic information systems. This course covers data structures that are unique to geometric computing, such as convex hull, Voronoi diagram, Delaunay triangulation, arrangement, range searching, KD-trees, and segment trees. Also covered are algorithms for polygon triangulation, path planning, and the art gallery problem. Prerequisite: CSE 347."
         }
       ]
@@ -423,41 +701,85 @@
       "courses": [
         {
           "name": "Bio 2970 (Principles of Biology II)",
-          "tags": ["Biology", "Genetics", "Evolution", "Cell biology"],
+          "tags": [
+            "Biology",
+            "Genetics",
+            "Evolution",
+            "Cell biology"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Biology"
+          ],
           "description": "A broad overview of genetics, including Mendelian assortment, linkage, chromosomal aberrations, variations in chromosome number, mutation, developmental genetics, quantitative genetics, population genetics, mechanisms of evolution, and phylogenetics. Three lecture/problem solving sections and one laboratory period per week. Does not fulfill the laboratory requirement of the biology major. Prereq: Bio 2960, or permission of instructor. This course must be taken for a grade to count towards the Biology major."
         },
         {
           "name": "Econ 1011 (Introduction to Microeconomics)",
-          "tags": ["Microeconomics"],
+          "tags": [
+            "Microeconomics"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Economics"
+          ],
           "description": "Determination of prices; supply & demand; consumer theory; elasticity; theory of the firm (production). For a thorough introduction to economics, Econ 1021 should also be taken. EXAMINATION SCHEDULE: IN-PERSON evening exams are Monday, Oct. 2 (7-8:30 pm), Monday, Nov. 6 (7-8:30 pm), and Thursday, Dec. 14 (8:30-10:30 pm)."
         },
         {
           "name": "ESE 417 (Machine Learning)",
-          "tags": ["Machine Learning", "Supervised learning", "Unsupervised learning"],
+          "tags": [
+            "Machine Learning",
+            "Supervised learning",
+            "Unsupervised learning"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Computer Science",
+            "Machine Learning"
+          ],
           "description": "This course provides a broad introduction to machine learning and statistical pattern classification. Students will study theoretical foundations of learning and several important supervised and unsupervised machine learning methods and algorithms including linear model of regression and classification, logistic regression, Bayesian learning methods, neural networks, nearest neighbor method, support vector machines methods, clustering methods and principal component analysis. Students will also learn to use Python programming language to implement learned models and methods to solve pattern classification problems. Pre-requisites: ESE326, Math 233, Python Programming Experience"
         },
         {
           "name": "Jap 103D (Japanese Language Level 1 semester 1)",
-          "tags": ["Japanese Language", "Japanese Grammar", "Japanese Vocabulary"],
+          "tags": [
+            "Japanese Language",
+            "Japanese Grammar",
+            "Japanese Vocabulary"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Language",
+            "Japanese"
+          ],
           "description": "This is the first semester of an academic-year course in beginning Japanese. It is designed for students who have had no prior study of Japanese. The course emphasizes the acquisition of all four language skills (listening, speaking, reading, and writing) through meaningful communicative practices. It covers everyday vocabulary, expressions and basic grammatical structures and introduces all Japanese phonetic syllabaries (hiragana and katakana) as well as kanji characters. Cultural aspects of the language will also be introduced to deepen students' cultural awareness and to communicate appropriately in the global era. After completing this course, students are able to have basic conversations such as self-introduction, shopping, making invitations, describing locations, etc. They are able to read and write simple texts on topics related to oneself. Note: students with some previous Japanese language background must take a placement test; students who misrepresent the extent of their background so as to gain entrance to this course will be dropped from this course. Minimum grade of B- required for continuation to Japanese 104D."
         },
         {
           "name": "Jap 226C (Japanese Culture)",
-          "tags": ["Japanese Culture", "Japanese History", "Japanese Literature"],
+          "tags": [
+            "Japanese Culture",
+            "Japanese History",
+            "Japanese Literature"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Language",
+            "Japanese"
+          ],
           "description": "This course will present a comprehensive overview of Japan, its history, its institutions and cultural products, and its society and people. The first half of the course will comprise a survey of Japanese history, with an emphasis on its social and cultural aspects, from the earliest period to the present day. Having established the historical framework- with its interweave of native and foreign elements, Kyoto-based imperial aristocracy, the samurai class and their crucial role, Zen-inspired meditative arts, and exquisitely diverse cultural products- the class will move on, in the second half, to an examination of recent and contemporary trends and issues. These will center on Japanese education, social and family structures, urban centers and the rural periphery, economic and socio-political trends, Japan's distinctive and vibrant popular culture, contemporary problems and challenges, and the nation's dramatically shifting position in East Asia and in the 21st-century global order."
         },
         {
           "name": "Math 310W (Introduction to Higher Mathematics, writing intensive)",
-          "tags": ["Higher Mathematics", "Writing in Mathematics"],
+          "tags": [
+            "Higher Mathematics",
+            "Writing in Mathematics"
+          ],
           "level": "Undergraduate",
-          "textbooks":[
+          "category": [
+            "Mathematics",
+            "Foundations"
+          ],
+          "textbooks": [
             {
-              "url":"https://old.maa.org/press/maa-reviews/a-concise-introduction-to-pure-mathematics-0",
+              "url": "https://old.maa.org/press/maa-reviews/a-concise-introduction-to-pure-mathematics-0",
               "name": "A Concise Introduction to Pure Mathematics. by Martin Liebeck"
             }
           ],
@@ -470,20 +792,47 @@
       "courses": [
         {
           "name": "CSE 330 (Rapid Prototype Development)",
-          "tags": ["Rapid Prototyping", "Full-stack development", "Web development"],
+          "tags": [
+            "Rapid Prototyping",
+            "Full-stack development",
+            "Web development"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Computer Science",
+            "Web Development"
+          ],
           "description": "This course uses web development as a vehicle for developing skills in rapid prototyping. Students acquire the skills to build a Linux web server in Apache, to write a web site from scratch in PHP, to run an SQL database, to perform scripting in Python, to employ the AngularJS web framework and to develop modern web applications in client-side and server-side JavaScript. The course culminates with a creative project in which students are able to synthesize the course material into a project of their own interest. The course implements an interactive studio format: after a formal presentation of a topic, students develop a related project under the supervision of the instructor. Prerequisite: CSE 131"
         },
         {
           "name": "Math 493, now SDS 493 (Probability Theory)",
-          "tags": ["Probability Theory", "Probability distribution", "Probability density function"],
+          "tags": [
+            "Probability Theory",
+            "Probability distribution",
+            "Probability density function"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Mathematics",
+            "Probability Theory"
+          ],
           "description": "Mathematical theory and application of probability at the advanced undergraduate level; a calculus based introduction to probability theory. Topics include the computational basics of probability theory, combinatorial methods, conditional probability including Bayes' theorem, random variables and distributions, expectations and moments, the classical distributions, and the central limit theorem. permission of the instructor. Prerequisites: Math 233. Math 310 is recommended but not required."
         },
         {
           "name": "Math 309 (Matrix Algebra)",
-          "tags": ["Matrix Algebra", "Linear algebra", "Matrix decomposition", "Eigenvalue", "Eigenvector", "Singular value decomposition"],
+          "tags": [
+            "Matrix Algebra",
+            "Linear algebra",
+            "Matrix decomposition",
+            "Eigenvalue",
+            "Eigenvector",
+            "Singular value decomposition"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Mathematics",
+            "Linear Algebra"
+          ],
           "description": "Theory of matrices and vector spaces from a concrete, computational point of view. Topics: row reduction (pivot method), rank and dimension, determinants, eigenvalues and eigenvectors, and diagonalization of symmetrical matrices. Prerequisite: Math 132."
         }
       ]
@@ -493,32 +842,73 @@
       "courses": [
         {
           "name": "Bio 2960 (Principles of Biology I)",
-          "tags": ["Biology", "Central dogma of biology"],
+          "tags": [
+            "Biology",
+            "Central dogma of biology"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Biology"
+          ],
           "description": "The course provides an introduction to cell biology, biochemistry, and molecular biology. An understanding of cellular structure and mechanisms, and the properties of biological macromolecules are integrated with a discussion of the flow of genetic information within cells. Examples of how these concepts can be applied to selected areas in modern biology will be discussed. Weekly labs reinforce material from lectures and explore common laboratory techniques and computer-based resources. Completion of Chem 105 or Chem 111A and concurrent enrollment in Chem 106 or Chem 112A are strongly recommended but not required. Three hours of lecture and 2 hours of lab per week. Examination schedule: Exams will be given from 6:30pm - 8:30pm on the following Monday evenings: TBD Large Class and small lab sections. Credit 4 units. Hafer, Kunkel. IMPORTANT: Students will only receive class participation credit for work done in the lecture section for which they are registered."
         },
         {
           "name": "Chem 106 & Chem 132 (General Chemistry II)",
-          "tags": ["General Chemistry", "Chemical bonding", "Chemical reactions", "Chemical properties", "Inorganic chemistry", "Lab experiments"],
+          "tags": [
+            "General Chemistry",
+            "Chemical bonding",
+            "Chemical reactions",
+            "Chemical properties",
+            "Inorganic chemistry",
+            "Lab experiments"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Chemistry"
+          ],
           "description": "This course covers chemical equilibrium, thermodynamics, and kinetics at a fundamental level, with an emphasis on problem solving. Gas-phase reactions, heterogeneous (multi-phase) reactions, acid-base reactions, and solubility equilibria are introduced first. Chemical thermodynamics is then taught in its relation to chemical equilibrium. The course finishes with chemical kinetics and rate laws. The content is similar to that in Chem 112A, but advanced applications are omitted to allow more in-class guided active learning. Prerequisites:Two years of high-school math, one year of high-school chemistry or physics, and Chemistry 105 or 111A, or by permission of the instructors. Exams at which attendance is required will be given from 6:30 to 8:00 p.m. on Tuesdays, February 14, March 21, and April 18."
         },
         {
           "name": "CSE 132 (Introduction to Computer Engineering)",
-          "tags": ["Computer Engineering", "Assembly language", "Arduino"],
+          "tags": [
+            "Computer Engineering",
+            "Assembly language",
+            "Arduino"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Computer Science",
+            "Computer Engineering"
+          ],
           "description": "CSE 132 introduces students to fundamental concepts in the basic operation of computers, ranging from desktops and servers to microcontrollers and handheld devices. Subjects include digital and analog input/output, sensing the physical world, information representation, basic computer architecture and machine language, time-critical computation, machine-to-machine communication and protocol design. Students will use both desktop systems and handheld microcontrollers for laboratory experiments. Active-learning sessions are conducted in a studio setting in which students interact with each other and the professor to solve problems collaboratively. Evening exams will be held, dates are the following: 02/21 (6:30-8:30p) and 04/04(6:30-8:30p). Prerequisite CSE 131"
         },
         {
           "name": "Math 3200, now SDS 3200 (Introduction to Statistics)",
-          "tags": ["Statistics", "Probability Theory", "R Language", "Data visualization"],
+          "tags": [
+            "Statistics",
+            "Probability Theory",
+            "R Language",
+            "Data visualization"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Mathematics",
+            "Statistics"
+          ],
           "description": "An introduction to probability and statistics. Major topics include elementary probability, special distributions, experimental design, exploratory data analysis, estimation of mean and proportion, hypothesis testing and confidence, regression, and analysis of variance. Emphasis is placed on development of statistical reasoning, basic analytic skills, and critical thinking in empirical research studies. The use of the statistical software R is integrated into lectures and weekly assignments. Required for students pursuing a major or minor in mathematics or wishing to take 400 level or above statistics courses. Prereqs: Math 132. Though Math 233 is not essential, it is recommended. Examination Schedule: Tests at which attendance is required will be given from 6:30-8:30PM on Wednesday Feb 8, Wednesday Mar 8, Wednesday Apr 19."
         },
         {
           "name": "Phil 125C (Great Philosophers)",
-          "tags": ["Philosophy", "Philosophy of science", "Philosophy of mind"],
+          "tags": [
+            "Philosophy",
+            "Philosophy of science",
+            "Philosophy of mind"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Humanities",
+            "Philosophy"
+          ],
           "description": "In this course we focus on some of the most important texts in the history of Western philosophy in order to discuss a wide range of central philosophical problems. Among the philosophers most likely to be studied are Plato, Aristotle, Descartes, Hume, Kant, Mill, Marx, Nietzsche, and Wittgenstein. Our goal is not just to appreciate the genius of some great philosophers but also to grapple with the current philosophical problems they have bequeathed to us."
         }
       ]
@@ -528,20 +918,53 @@
       "courses": [
         {
           "name": "IBM Full Stack Software Developer",
-          "tags": ["Full Stack Software Developer", "IBM", "CI/CD", "Docker", "Kubernetes", "Git", "React", "Node.js", "Express"],
+          "tags": [
+            "Full Stack Software Developer",
+            "IBM",
+            "CI/CD",
+            "Docker",
+            "Kubernetes",
+            "Git",
+            "React",
+            "Node.js",
+            "Express"
+          ],
           "level": "Coursera",
+          "category": [
+            "Computer Science",
+            "Web Development"
+          ],
           "description": "An introduction to full stack software development, covering the basic concepts of full stack software development from IBM."
         },
         {
           "name": "DeepLearning.AI TensorFlow Developer",
-          "tags": ["TensorFlow", "Deep Learning", "Machine Learning", "Artificial Intelligence"],
+          "tags": [
+            "TensorFlow",
+            "Deep Learning",
+            "Machine Learning",
+            "Artificial Intelligence"
+          ],
           "level": "Coursera",
+          "category": [
+            "Computer Science",
+            "Machine Learning"
+          ],
           "description": "An introduction to deep learning, covering the basic concepts of deep learning, TensorFlow, and machine learning."
         },
         {
           "name": "Google Data Analytics",
-          "tags": ["Data Analytics", "Google", "SQL", "R", "Python"],
+          "tags": [
+            "Data Analytics",
+            "Google",
+            "SQL",
+            "R",
+            "Python"
+          ],
           "level": "Coursera",
+          "category": [
+            "Computer Science",
+            "Data Analytics"
+          ],
           "description": "An introduction to data analytics, covering the basic concepts of data analytics, Google, SQL, R, and Python."
         }
       ]
@@ -551,32 +974,79 @@
       "courses": [
         {
           "name": "Chem 105 (General Chemistry I)",
-          "tags": ["General Chemistry", "Chemical bonding", "Chemical reactions", "Chemical properties", "Inorganic chemistry", "Lab experiments"],
+          "tags": [
+            "General Chemistry",
+            "Chemical bonding",
+            "Chemical reactions",
+            "Chemical properties",
+            "Inorganic chemistry",
+            "Lab experiments"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Chemistry"
+          ],
           "description": "This course traces the development of chemistry from early atomic theory to modern descriptions of structure, bonding, and intermolecular interactions. Over the course of the semester, the students learn how macroscopic observations of stoichiometry, chemical reactions, the properties of elements and compounds, and chemical periodicity developed into the microscopic understanding of molecular structure and bonding. The semester begins with fundamentals related to stoichiometry, chemical reactions, solution chemistry, and gas properties, with an emphasis on quantitative problem solving. The octet rule, Lewis structures, and valence-shell-electron-pair repulsion (VSEPR) theory are then introduced as early efforts to describe the stability and structures of molecules. The localized electron model (LEM) and molecular-orbital theory (MOT) are next described as modern descriptions of chemical bonding. The course concludes with intermolecular forces such as hydrogen bonding and van der Waals interactions. This course will be a serious introductory series that requires and develops algebraic-computation and problem-solving skills. Pre-requisite: Two years of high-school math, and one year of high-school chemistry or physics, or by permission of the instructors. Students who register for Chem 105 are required for one of the subsections. Exams, at which attendance is required, dates are TBA.."
         },
         {
           "name": "CSE 247 (Algorithms)",
-          "tags": ["Algorithms", "Sorting", "Searching", "Graph algorithms"],
+          "tags": [
+            "Algorithms",
+            "Sorting",
+            "Searching",
+            "Graph algorithms"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Computer Science",
+            "Algorithms"
+          ],
           "description": "Study of fundamental algorithms, data structures, and their effective use in a variety of applications. Emphasizes importance of data structure choice and implementation for obtaining the most efficient algorithm for solving a given problem. A key component of this course is worst-case asymptotic analysis, which provides a quick and simple method for determining the scalability and effectiveness of an algorithm. Online textbooks purchase required. Prerequisite: CSE 131/501N, and fluency with summations, derivatives, and proofs by induction. Attendance is required for two evening exams on Wednesday Week 6 (10/5), 6:30-8:30pm and Wed. Week 12 (11/16) 6:30-8:30pm, and one daytime exam on Wed. (12/14) 10:00am-12:00pm. Lab fee: $68. The lab fee will cover the interactive online textbooks for the course. There will be no additional textbooks to purchase."
         },
         {
           "name": "CWP 118 (College Writing Program)",
-          "tags": ["College Writing", "Writing", "Critical thinking", "Argumentation"],
+          "tags": [
+            "College Writing",
+            "Writing",
+            "Critical thinking",
+            "Argumentation"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Writing"
+          ],
           "description": "Writing is a technology that allows one to read the thoughts of others across space and time. Our course's theme -- technology -- is the subject matter that we will be reading to hone skills such as analysis, argumentation, and critical thinking. This does not mean that a student must be a budding technologist to succeed in this course, nor will this course seek to transform a student into one. Rather, this course treats \"technology\" in its broadest sense, from its root in the Greek techne (which means \"craftsmanship,\" \"craft,\" \"art,\" or \"rhetoric\") to its contemporary definition as the realm of knowledge that deals with the mechanical arts and applied sciences. In writing about technology, we will consider perspectives across the university curriculum in order to better comprehend our relationship with our tools and to scrutinize the dynamic interaction, communication, and interdependence of different kinds of tools for various means of communication and representation. We will strive to think critically about ourselves as part of larger communities and systems by attending closely to the ways we communicate with and about others through technologies such as writing, film, and social media. In writing creative, analytical, argumentative, and researched essays, we will address responsible uses of technology and the effects that technologies have on different communities and individuals, and we will try to answer questions like the following: How does technology affect us when we use it? How do technologies intersect and affect one another? What roles does technology play in our everyday lives? What roles do we want it to play in our future? THIS COURSE SATISFIES THE FIRST-YEAR WRITING REQUIREMENT FOR ALL DIVISIONS."
         },
         {
           "name": "FYP 120A (Psychology, neuroscience, and Philosophy intro I)",
-          "tags": ["Psychology", "Neuroscience", "Philosophy"],
+          "tags": [
+            "Psychology",
+            "Neuroscience",
+            "Philosophy"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Humanities",
+            "Cognitive Science"
+          ],
           "description": "A consideration of three primary areas of research in cognitive science: attention, memory, and language. These topics are used to illustrate the techniques by which mental abilities are investigated and explained in psychology and neuroscience: the focus, in particular, is on the use of reaction time studies, brain imaging, and cell recordings to isolate the basic components that make up complex functions. In addition to the central concepts and theories in each area, the course will address philosophical implications of this research concerning how the mind and brain are related, how the mind-brain encodes or represents information, and the nature of consciousness. And there will be an emphasis on applying these findings to important problems, such as Alzheimer's disease and deficits due to brain damage. The class is taught by three members of the faculty from different disciplines and combines a whole-group lecture with small discussion classes. The goal is to give students a good understanding of the interdisciplinary nature of cognitive science and to help them develop the ability to think and write critically about scientific research into the mind-brain. Prerequisite: admission to the Hewlett Program in the Study of the Mind-Brain."
         },
         {
           "name": "Math 233 (Calculus III)",
-          "tags": ["Calculus", "Multivariable calculus", "Vector calculus", "Line integral", "Surface integral", "Divergence theorem", "Stokes' theorem"],
+          "tags": [
+            "Calculus",
+            "Multivariable calculus",
+            "Vector calculus",
+            "Line integral",
+            "Surface integral",
+            "Divergence theorem",
+            "Stokes' theorem"
+          ],
           "level": "Undergraduate",
+          "category": [
+            "Mathematics",
+            "Calculus"
+          ],
           "description": "Differential and integral calculus of functions of two and three variables. Vectors, curves and surfaces in space, partial derivatives, multiple integrals, line integrals, vector calculus through Green's Theorem. Prerequisite: Math 132, or a score of 4 or 5 on the Advanced Placement Calculus Examination (BC version). Examination Schedule: Tests at which attendance is required will be given from 6:30-8:30PM on Tues Sept 20, Tues Oct 18, Tues Nov 15."
         }
       ]
@@ -586,8 +1056,16 @@
       "courses": [
         {
           "name": "Intensive training in Digital Illustration",
-          "tags": ["Digital Illustration", "Digital painting", "Digital drawing"],
+          "tags": [
+            "Digital Illustration",
+            "Digital painting",
+            "Digital drawing"
+          ],
           "level": "Unknown",
+          "category": [
+            "Art",
+            "Digital Media"
+          ],
           "description": "As the end of high school, I started to learn digital illustration via Procreate and Photoshop."
         }
       ]
@@ -597,14 +1075,33 @@
       "courses": [
         {
           "name": "General Programming",
-          "tags": ["Python", "C++", "Java", "JavaScript", "HTML", "CSS"],
+          "tags": [
+            "Python",
+            "C++",
+            "Java",
+            "JavaScript",
+            "HTML",
+            "CSS"
+          ],
           "level": "High school",
+          "category": [
+            "Computer Science",
+            "Software Engineering"
+          ],
           "description": "I learned general programming skills in high school, and algorithms in competitive programming."
         },
         {
           "name": "Game Development",
-          "tags": ["Unity", "Blender", "C#"],
+          "tags": [
+            "Unity",
+            "Blender",
+            "C#"
+          ],
           "level": "High school",
+          "category": [
+            "Computer Science",
+            "Game Development"
+          ],
           "description": "This is the time when I started to learn game development, and I built a few game fragments with my friends via Unity and Blender."
         }
       ]
@@ -638,6 +1135,10 @@
         "Metric and Measure spaces",
         "Quantum Information Theory",
         "Concentration of measure effect"
+      ],
+      "category": [
+        "Mathematics",
+        "Quantum Information Theory"
       ]
     },
     {
@@ -652,6 +1153,10 @@
         "Deep Learning",
         "Unsupervised Learning",
         "Monocular Depth Estimation"
+      ],
+      "category": [
+        "Computer Science",
+        "Computer Vision"
       ]
     },
     {
@@ -663,6 +1168,10 @@
       "url": "https://resume.trance-0.com/files/Freiwald_Presentation_1.pdf",
       "skills": [
         "Non-commutative probability theory"
+      ],
+      "category": [
+        "Mathematics",
+        "Quantum Information Theory"
       ]
     },
     {
@@ -674,6 +1183,10 @@
       "url": "https://resume.trance-0.com/files/Freiwald_Presentation_2.pdf",
       "skills": [
         "Non-commutative probability theory"
+      ],
+      "category": [
+        "Mathematics",
+        "Quantum Information Theory"
       ]
     },
     {
@@ -681,7 +1194,11 @@
       "event": "Lectures on Honor Seminar for Mathematics",
       "date": "2025-05",
       "location": "Washington University in St. Louis",
-      "description": "An introduction to information theory and Shannon entropy."
+      "description": "An introduction to information theory and Shannon entropy.",
+      "category": [
+        "Mathematics",
+        "Information Theory"
+      ]
     },
     {
       "name": "Language Model Reasoning via Chain of Thought",
@@ -689,13 +1206,21 @@
       "date": "2024-09-10",
       "location": "Washington University in St. Louis",
       "description": "An introduction to language model reasoning via chain of thought.",
-      "url": "https://teapot123.github.io/files/CSE561A/Lecture_5.pdf"
+      "url": "https://teapot123.github.io/files/CSE561A/Lecture_5.pdf",
+      "category": [
+        "Computer Science",
+        "Large Language Models"
+      ]
     }
   ],
   "portfolio": [
     {
       "name": "WashU Chinese Geeks Club",
       "category": "Club",
+      "topicCategory": [
+        "Community",
+        "Club"
+      ],
       "date": "Sep 2024 - Present",
       "description-keys": [
         "Built a club for Chinese students in WashU to share their interests and experiences regarding computer science and career development.",
@@ -718,6 +1243,10 @@
     {
       "name": "ImGenHCT",
       "category": "Computer Vision, Image Generation",
+      "topicCategory": [
+        "Computer Science",
+        "Computer Vision"
+      ],
       "date": "Nov 2025 - Dec 2025",
       "description-keys": [
         "Serve as final project for CSE 5519: Advances in Computer Vision.",
@@ -743,6 +1272,10 @@
     {
       "name": "ATTPDRL",
       "category": "Deep Reinforcement Learning, Autonomous Vehicles",
+      "topicCategory": [
+        "Computer Science",
+        "Deep Reinforcement Learning"
+      ],
       "date": "Nov 2025 - Dec 2025",
       "description-keys": [
         "Serve as final project for CSE 5100: Deep Reinforcement Learning.",
@@ -767,8 +1300,37 @@
       ]
     },
     {
+      "name": "IMSB personality test site",
+      "category": "Web Application",
+      "topicCategory": [
+        "Computer Science",
+        "Web Development"
+      ],
+      "date": "Apr 2026 - Apr 2026",
+      "description-keys": [
+        "Built an pranking site for personality test but just giving random matching rates to encouraging users to waste time on choosing questions without actual personality analysis.",
+        "2K test taker in 7 days, all done in 4 hours with video on streaming platform for advertising."
+      ],
+      "skills": [
+        "Front-End Development",
+        "Back-End Web Development",
+        "Databases",
+        "Docker"
+      ],
+      "links": [
+        {
+          "label": "Frontend on GitHub",
+          "url": "https://github.com/Ogjerry/Sophia"
+        }
+      ]
+    },
+    {
       "name": "SophiasPath",
       "category": "Web Application",
+      "topicCategory": [
+        "Computer Science",
+        "Web Development"
+      ],
       "date": "Sep 2024 - Jan 2025",
       "description-keys": [
         "Built an interactive website for delivering stories and content about philosophers.",
@@ -795,6 +1357,10 @@
     {
       "name": "Mon3tr",
       "category": "Computer vision",
+      "topicCategory": [
+        "Computer Science",
+        "Computer Vision"
+      ],
       "date": "Jun 2025 - June 2025",
       "description-keys": [
         "named from, Matching and smOoth difussioN for 3d reconsTRuction",
@@ -816,6 +1382,10 @@
     {
       "name": "Flow-of-Thought",
       "category": "Large Language Models, Chain of Thought, self-RAG",
+      "topicCategory": [
+        "Computer Science",
+        "Large Language Models"
+      ],
       "date": "May 2024 - May 2024",
       "description-keys": [
         "This is an experimental project as Final project of Fall 2024 CSE 561A Large Language Models course at Washington University in St. Louis.",
@@ -836,6 +1406,10 @@
     {
       "name": "Odoru",
       "category": "Web Application (HackWashU Hackathon 2024)",
+      "topicCategory": [
+        "Computer Science",
+        "Computer Vision"
+      ],
       "date": "Nov 2024 - Dec 2024",
       "description-keys": [
         "Video Streaming: Users can select a dance video and view it while recording their dance through a webcam.",
@@ -856,8 +1430,64 @@
       ]
     },
     {
+      "name": "Cobalt-4",
+      "category": "Game Development",
+      "topicCategory": [
+        "Computer Science",
+        "Game Development"
+      ],
+      "date": "Jan 2026 - Now",
+      "description-keys": [
+        "Initiated a new rhythm game project. Design art and do code reviews.",
+        "2.5 D Rhythm game. It works with moving tracks and 4 key notes."
+      ],
+      "skills": [
+        "Unity",
+        "Digital Illustration",
+        "Programming"
+      ]
+    },
+    {
+      "name": "Khaki-51",
+      "category": "Game Development",
+      "topicCategory": [
+        "Computer Science",
+        "Game Development"
+      ],
+      "date": "Sep 2023 - Oct 2023",
+      "description-keys": [
+        "Initiated a new chess game project.",
+        "It works like chess (no it doesn't) but have action points that can do various operations to move the chess."
+      ],
+      "skills": [
+        "Unity",
+        "Programming"
+      ]
+    },
+    {
+      "name": "Raven-24",
+      "category": "Game Development",
+      "topicCategory": [
+        "Computer Science",
+        "Game Development"
+      ],
+      "date": "Mar 2022 - Sep 2022",
+      "description-keys": [
+        "Initiated a new puzzle solving game project.",
+        "A girl living in a small town using property of time to save her friend, but find her trapped in an endless cycle."
+      ],
+      "skills": [
+        "Unity",
+        "Programming"
+      ]
+    },
+    {
       "name": "Graphical Applets for Computational Geometry Algorithms",
       "category": "Web Application",
+      "topicCategory": [
+        "Computer Science",
+        "Computational Geometry"
+      ],
       "date": "Dec 2023 - Present",
       "description-keys": [
         "Developed graphical applets using JavaScript to visualize computational geometry algorithms.",
@@ -877,6 +1507,10 @@
     {
       "name": "NoteNextra (Notechondria)",
       "category": "Full-Stack Application",
+      "topicCategory": [
+        "Computer Science",
+        "Web Development"
+      ],
       "date": "Nov 2023 - Present",
       "description-keys": [
         "Built a memory archive with LLM to retrieve notes and provide utilities for personal interest.",
@@ -904,6 +1538,10 @@
     {
       "name": "Web Development & Personal Website",
       "category": "Web Development",
+      "topicCategory": [
+        "Computer Science",
+        "Web Development"
+      ],
       "date": "Feb 2020 - Present",
       "description-keys": [
         "Built a website containing learning material in computer science and shared personal interests at www.trance-0.com.",
@@ -925,6 +1563,10 @@
     {
       "name": "Cookistry",
       "category": "Full-Stack Application",
+      "topicCategory": [
+        "Computer Science",
+        "Web Development"
+      ],
       "date": "Jul 2023 - Sep 2023",
       "description-keys": [
         "Initialized project in Insite x ACM x Skandalaris No-Code HackAThon 2023.",
@@ -944,6 +1586,10 @@
     {
       "name": "Using Machine Learning to Analyze Apartheid in South Africa",
       "category": "Data Science",
+      "topicCategory": [
+        "Computer Science",
+        "Machine Learning"
+      ],
       "date": "Sep 2022 - Nov 2022",
       "organization": "Washington University in St. Louis",
       "description-keys": [
@@ -958,6 +1604,10 @@
     {
       "name": "TimeBlocks",
       "category": "Mobile Application",
+      "topicCategory": [
+        "Computer Science",
+        "Mobile Development"
+      ],
       "date": "Feb 2021 - Feb 2022",
       "description-keys": [
         "Developed an app to help users enhance concentration and relax scientifically by recording concentration time and finding optimal work-relax cycles.",
@@ -973,6 +1623,10 @@
     {
       "name": "Gray-75",
       "category": "Game Development",
+      "topicCategory": [
+        "Computer Science",
+        "Game Development"
+      ],
       "date": "Feb 2020 - Feb 2022",
       "description-keys": [
         "Initiated a demo project for a first-person puzzle-solving game about Alzheimer's disease.",
@@ -987,6 +1641,10 @@
     {
       "name": "Robot Open Autonomous Racing (ROAR)",
       "category": "AI/Robotics",
+      "topicCategory": [
+        "Computer Science",
+        "AI/Robotics"
+      ],
       "date": "Apr 2019 - Nov 2021",
       "organization": "UC-Berkeley FHL Vive Center for Enhanced Reality",
       "description-keys": [

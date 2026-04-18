@@ -8,13 +8,53 @@ Copied to _includes/skill-tree.html by scripts/skill-tree-graph/prebuild.sh
 <link rel="stylesheet" href="{{ '/scripts/skill-tree-graph/skill-tree.css' | relative_url }}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xyflow/react@12/dist/style.css">
 
-<div class="stg-wrapper">
+<div class="stg-wrapper" id="stg-wrapper">
   <script id="stg-cv-data" type="application/json">{{ site.data.cv | jsonify | replace: "</", "<\/" }}</script>
   <div id="stg-root" class="stg-root" role="region" aria-label="Skill tree graph">
     <div class="stg-loading">Loading skill tree…</div>
   </div>
-  <p class="stg-hint">Drag to pan · scroll to zoom · click a node to open its first link. Dashed grey edges link projects &amp; talks back to the course where the skill was first introduced.</p>
+  <button type="button" class="stg-fs-btn" id="stg-fullscreen-btn" aria-label="Toggle skill tree fullscreen">
+    <i class="fa fa-expand" id="stg-fs-icon"></i>
+    <span id="stg-fs-label">Fullscreen</span>
+  </button>
+  <p class="stg-hint">Drag to pan · scroll to zoom · click a discipline label (left) to expand its sub-branches; click a node to open its first link. Vertical axis = topic, horizontal axis = time — node width reflects duration. Disciplines start collapsed to one row.</p>
 </div>
+
+<script>
+  (function () {
+    var wrapper = document.getElementById('stg-wrapper');
+    var btn = document.getElementById('stg-fullscreen-btn');
+    var icon = document.getElementById('stg-fs-icon');
+    var label = document.getElementById('stg-fs-label');
+    if (!wrapper || !btn) return;
+    var placeholder = null;
+    function setState(open) {
+      if (open && !placeholder) {
+        placeholder = document.createComment('stg-wrapper-placeholder');
+        wrapper.parentNode.insertBefore(placeholder, wrapper);
+        document.body.appendChild(wrapper);
+      } else if (!open && placeholder) {
+        placeholder.parentNode.insertBefore(wrapper, placeholder);
+        placeholder.parentNode.removeChild(placeholder);
+        placeholder = null;
+      }
+      wrapper.classList.toggle('stg-fullscreen', open);
+      document.body.classList.toggle('stg-fullscreen-open', open);
+      if (label) label.textContent = open ? 'Quit fullscreen' : 'Fullscreen';
+      if (icon) {
+        icon.classList.toggle('fa-expand', !open);
+        icon.classList.toggle('fa-compress', open);
+      }
+      window.dispatchEvent(new Event('resize'));
+    }
+    btn.addEventListener('click', function () {
+      setState(!wrapper.classList.contains('stg-fullscreen'));
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && wrapper.classList.contains('stg-fullscreen')) setState(false);
+    });
+  })();
+</script>
 
 <script type="importmap">
 {
@@ -22,8 +62,7 @@ Copied to _includes/skill-tree.html by scripts/skill-tree-graph/prebuild.sh
     "react": "https://esm.sh/react@18.3.1",
     "react-dom": "https://esm.sh/react-dom@18.3.1",
     "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
-    "@xyflow/react": "https://esm.sh/@xyflow/react@12?deps=react@18.3.1,react-dom@18.3.1",
-    "@dagrejs/dagre": "https://esm.sh/@dagrejs/dagre@1"
+    "@xyflow/react": "https://esm.sh/@xyflow/react@12?deps=react@18.3.1,react-dom@18.3.1"
   }
 }
 </script>

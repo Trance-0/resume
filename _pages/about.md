@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Zheyuan Wu is a student at Washington University in St. Louis, pursuing a Bachelor of Science in Computer Science and Mathematics. He is interested in the intersection of computer science and mathematics, and is currently researching on various topics that he finds interesting.
+Zheyuan Wu is an insatiable learner, and is always looking for new challenges and opportunities to learn new things. He believes that the meaning of life is created in those experiences of realizing the potentials of his intelligence and interacting with those great minds.
 
 Some of the topics he is currently actively researching on are:
 
@@ -15,19 +15,22 @@ Some of the topics he is currently actively researching on are:
 - Computer Vision
 - Large Language Models
 
-## Proposition 1
+## Axiom 1
 
-Zheyuan Wu is an insatiable learner, and is always looking for new challenges and opportunities to learn new things. He believes that the meaning of life is created in those experiences of realizing the potentials of his intelligence and interacting with those great minds.
+The universe, to best of our knowledge, is a _**playground**_ [where we exists, live, and die eventually] that enables different stories, believes, and interpretations.
 
-## Proposition 2
+There exists a series of _**Game**_ that we can create, play, and sharing with others, there exists no _**standardized**_ [that we should believe as only truth] meaning, evaluation functions, and any other rules except the law of _**physics**_ [a mathematical model that predicts the universe that passes statistic tests of observations].
 
-Zheyuan Wu is an active creator of various kinds of content, including but not limited to:
+## Axiom 2
 
-- [Full-stack web apps](https://github.com/trance-0)
-- Unity Games
-- Digital Illustration
-- [Class notes](https://notenextra.trance-0.com)
+Time is a non-commutative operator that acts on the universe, which is not computable, and not invertable generally.
 
-## Proposition 3
+The past will never die, and irreversible actions happens any time and making part (possibly all) of ourselves into eternity.
 
-As a Full-stack web developer, Zheyuan Wu is able to build a website from scratch or deploy existing services via various tools and frameworks. However, as a pragmatist, he use a complex hybrid system of IaaS (Home servers, VPS), PaaS (GitHub Pages, Vercel, Cloudflare), and SaaS (Dify, NextCloud, WeChat bots, etc.) to build his services, which results in a complex system that is hard to maintain. To see the details, please refer to [status page](https://status.trance-0.com) in case of any service outage.
+We are physically living in the present but can hardly perceive it.
+
+We are natural predictor of the future and living on those assumptions.
+
+## Axiom 3
+
+_**Life**_ [the subsystem that actively interact, and change the environment around it, measure by degree of connection, entropy, and impacts] 
