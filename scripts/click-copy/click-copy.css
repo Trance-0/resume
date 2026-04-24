@@ -1,0 +1,36 @@
+.click-copy {
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background-color 0.12s ease;
+}
+
+.click-copy:hover {
+  background-color: rgba(0, 120, 255, 0.10);
+}
+
+.click-copy:active {
+  background-color: rgba(0, 120, 255, 0.18);
+}
+
+.click-copy-popup {
+  position: fixed;
+  z-index: 99999;
+  pointer-events: none;
+  transform: translate(-50%, -100%);
+  background: rgba(33, 33, 33, 0.92);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.2;
+  font-family: inherit;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  white-space: nowrap;
+}
+
+.click-copy-popup.is-visible {
+  opacity: 1;
+  transform: translate(-50%, -120%);
+}
