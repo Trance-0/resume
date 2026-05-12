@@ -105,6 +105,24 @@ A narrative index of what I've actually been working on. Each section is collaps
 {% assign lifehack_subs = "Web Development,Mobile Development,Club" | split: "," %}
 {% assign narrative_subs = "Game Development" | split: "," %}
 
+{% if cv.solution.qa.items %}
+<details class="solution-group" open>
+  <summary>
+    <h3>{{ cv.solution.qa.title }}</h3>
+    <span class="solution-blurb">{{ cv.solution.qa.blurb }}</span>
+  </summary>
+  <div class="solution-body">
+    {% for item in cv.solution.qa.items %}
+      <div class="solution-card">
+        <h4>Q: {{ item.question }}</h4>
+        <p style="margin: 0.25rem 0; font-size: 0.92rem;"><strong>A:</strong> {{ item.answer }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</details>
+
+{% endif %}
+
 <details class="solution-group">
   <summary>
     <h3>I'm experimenting with frontier research fields</h3>

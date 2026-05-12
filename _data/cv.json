@@ -21,9 +21,21 @@
       {
         "network": "LinkedIn",
         "username": "Zheyuan Wu",
-        "url": "https://www.linkedin.com/in/zheyuan-wu-742b1a227/"
+        "url": "https://www.linkedin.com/in/zheyuan-wu/"
       }
     ]
+  },
+  "solution": {
+    "qa": {
+      "title": "Q&A",
+      "blurb": "Short answers to common prompts about my experience.",
+      "items": [
+        {
+          "question": "Describe infra experience",
+          "answer": "My infrastructure experience is strongest in self-hosted systems, Docker-based deployment, backend services, and developer tooling. I have maintained a personal infrastructure stack with Dockerized services including a git server, cloud storage, media hosting, Jenkins CI/CD, a password manager, and chatbots integrated across QQ, WeChat, Telegram, and Discord. Through projects such as SophiasPath and NoteNextra, I have also worked with backend service deployment, Django REST Framework, PostgreSQL, reverse proxy tooling, and Python-based application infrastructure."
+        }
+      ]
+    }
   },
   "work": [
     {
