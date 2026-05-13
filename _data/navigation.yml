@@ -23,6 +23,9 @@ main:
   - title: "Portfolio"
     url: /portfolio/
 
+  - title: "Q&A"
+    url: /qa/
+
   - title: "Notes"
     url: https://notenextra.trance-0.com
     
