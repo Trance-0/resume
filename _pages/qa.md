@@ -13,9 +13,9 @@ author_profile: true
 
 {% if cv.qa.items %}
 
-Here is a list of common questions that interviewers might ask, and I'm happy to share my answers with everyone. Click any answer to copy it to your clipboard.
+{{ cv.qa.intro }}
 
-Last updated on 2026-05-25
+Last updated on {{ cv.qa.last_updated }}
 
 <details class="detail-group">
   <summary>
