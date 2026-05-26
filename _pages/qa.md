@@ -13,32 +13,27 @@ author_profile: true
 
 {% if cv.qa.items %}
 
-{{ cv.qa.intro }}
+<h2>{{ cv.qa.title }}</h2>
+<p>{{ cv.qa.blurb }}</p>
+<p>{{ cv.qa.intro }}</p>
+<p>Last updated on {{ cv.qa.last_updated }}</p>
 
-Last updated on {{ cv.qa.last_updated }}
-
+{% for item in cv.qa.items %}
 <details class="detail-group">
   <summary>
-    <h3>{{ cv.qa.title }}</h3>
-    <span class="detail-blurb">{{ cv.qa.blurb }}</span>
+    <h3>Q: {{ item.question }}</h3>
   </summary>
-  <div class="detail-body">
-    {% for item in cv.qa.items %}
-    <details>
-      <summary><strong>Q: {{ item.question }}</strong></summary>
-      <div class="click-copy">
-        {% assign paragraphs = item.answer | split: '\n\n' %}
-        {% for paragraph in paragraphs %}
-          {% assign trimmed = paragraph | strip %}
-          {% if trimmed != '' %}
-            <p>{{ trimmed | newline_to_br }}</p>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </details>
+  <div class="detail-body click-copy">
+    {% assign paragraphs = item.answer | split: '\n\n' %}
+    {% for paragraph in paragraphs %}
+      {% assign trimmed = paragraph | strip %}
+      {% if trimmed != '' %}
+        <p>{{ trimmed | newline_to_br }}</p>
+      {% endif %}
     {% endfor %}
   </div>
 </details>
+{% endfor %}
 
 {% endif %}
 
