@@ -10,7 +10,7 @@ author_profile: true
 
 <link rel="stylesheet" href="{{ '/scripts/detail-sections/detail-sections.css' | relative_url }}">
 
-A narrative index of what I've actually been working on. Each section is collapsed by default â€?click to unfold the projects and coursework behind it.
+A narrative index of what I've actually been working on. Each section is collapsed by default â€” click to unfold the projects and coursework behind it.
 
 {% assign frontier_subs = "Computer Vision,Large Language Models,Deep Reinforcement Learning,Machine Learning,AI/Robotics" | split: "," %}
 {% assign lifehack_subs = "Web Development,Mobile Development,Club" | split: "," %}
@@ -19,7 +19,7 @@ A narrative index of what I've actually been working on. Each section is collaps
 <details class="detail-group">
   <summary>
     <h3>I'm experimenting with frontier research fields</h3>
-    <span class="detail-blurb">SOTA work in large language models, computer vision, and deep reinforcement learning â€?where the tools are still being invented.</span>
+    <span class="detail-blurb">SOTA work in large language models, computer vision, and deep reinforcement learning â€” where the tools are still being invented.</span>
   </summary>
   <div class="detail-body">
     {% for p in cv.portfolio %}
@@ -75,7 +75,7 @@ A narrative index of what I've actually been working on. Each section is collaps
 <details class="detail-group">
   <summary>
     <h3>I'm testing the boundary of my intelligence</h3>
-    <span class="detail-blurb">Pure math and theoretic coursework â€?the stuff I take to find out where the ceiling actually is.</span>
+    <span class="detail-blurb">Pure math and theoretic coursework â€” the stuff I take to find out where the ceiling actually is.</span>
   </summary>
   <div class="detail-body">
     {% for section in cv.skills %}
@@ -102,7 +102,7 @@ A narrative index of what I've actually been working on. Each section is collaps
 <details class="detail-group">
   <summary>
     <h3>I'm creating new narratives</h3>
-    <span class="detail-blurb">Games and worlds I've built â€?interactive stories rather than shipped products.</span>
+    <span class="detail-blurb">Games and worlds I've built â€” interactive stories rather than shipped products.</span>
   </summary>
   <div class="detail-body">
     {% for p in cv.portfolio %}
