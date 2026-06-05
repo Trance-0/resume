@@ -14,7 +14,7 @@ author_profile: true
 
 <ul>
   {% for portfolio in cv.portfolio %}
-  <li>
+  <li id="{{ portfolio.name | slugify }}">
     <div class="archive__item-header">
       <h3 class="archive__item-title">
         <span class="click-copy">{{ portfolio.name }}</span>

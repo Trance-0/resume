@@ -107,6 +107,106 @@
   }
 }
 
+/*
+   Homepage axiom notes
+   ========================================================================== */
+
+.axiom-note {
+  position: relative;
+  display: inline-block;
+  color: var(--global-link-color-hover);
+  cursor: help;
+
+  &:focus {
+    outline: 2px solid var(--global-link-color);
+    outline-offset: 2px;
+  }
+
+  &:hover,
+  &:focus {
+    .axiom-note__panel {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+      visibility: visible;
+    }
+  }
+}
+
+.axiom-note__term {
+  border-bottom: 1px dotted currentColor;
+}
+
+.axiom-note__panel {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 0.6em);
+  z-index: 15;
+  display: block;
+  width: min(28rem, 80vw);
+  padding: 0.85em 1em;
+  color: var(--global-text-color);
+  font-family: $sans-serif;
+  font-size: $type-size-6;
+  line-height: 1.45;
+  text-align: left;
+  border: 1px solid var(--global-border-color);
+  border-radius: $border-radius;
+  background: var(--global-bg-color);
+  box-shadow: 0 8px 24px rgba(#000, 0.16);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.35em);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+  visibility: hidden;
+
+  a {
+    font-weight: bold;
+  }
+
+  @include breakpoint(max-width $small) {
+    position: fixed;
+    left: 1em;
+    right: 1em;
+    bottom: 1em;
+    width: auto;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+}
+
+.axiom-note__title,
+.axiom-note__project,
+.axiom-note__project span {
+  display: block;
+}
+
+.axiom-note__title {
+  margin-bottom: 0.45em;
+  color: var(--global-text-color-light);
+  font-size: $type-size-7;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.axiom-note__project {
+  padding: 0.5em 0;
+  border-top: 1px solid var(--global-border-color);
+
+  span {
+    margin-top: 0.15em;
+    color: var(--global-text-color);
+  }
+}
+
+.archive li[id] {
+  scroll-margin-top: $masthead-height + 20px;
+}
+
+.archive li[id]:target {
+  background: color-mix(in srgb, var(--global-link-color) 8%, transparent);
+}
+
 .page__hero {
   position: relative;
   margin-bottom: 2em;
