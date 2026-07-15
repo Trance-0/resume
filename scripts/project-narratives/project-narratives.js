@@ -1,8 +1,9 @@
-﻿const narrativeGroups = document.querySelectorAll('[data-project-narratives]');
+const narrativeGroup = document.querySelector('[data-project-narratives]');
 
-narrativeGroups.forEach((group) => {
-  const tabs = Array.from(group.querySelectorAll('[data-narrative-tab]'));
-  const panels = Array.from(group.querySelectorAll('[data-narrative-panel]'));
+if (narrativeGroup) {
+  const tabs = Array.from(narrativeGroup.querySelectorAll('[data-narrative-tab]'));
+  const panels = Array.from(narrativeGroup.querySelectorAll('[data-narrative-panel]'));
+  const page = narrativeGroup.querySelector('[data-project-narratives-content]');
 
   const activate = (selectedTab, moveFocus = false) => {
     const selectedName = selectedTab.dataset.narrativeTab;
@@ -16,6 +17,8 @@ narrativeGroups.forEach((group) => {
     panels.forEach((panel) => {
       panel.hidden = panel.dataset.narrativePanel !== selectedName;
     });
+
+    page.setAttribute('aria-labelledby', selectedTab.id);
 
     if (moveFocus) selectedTab.focus();
   };
@@ -35,4 +38,4 @@ narrativeGroups.forEach((group) => {
       activate(tabs[nextIndex], true);
     });
   });
-});
+}

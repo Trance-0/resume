@@ -12,6 +12,14 @@ author_profile: true
 <link rel="stylesheet" href="{{ '/scripts/project-narratives/project-narratives.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/scripts/project-filter/project-filter.css' | relative_url }}">
 
+<div class="project-narratives" data-project-narratives>
+  <div class="project-narratives__tabs" role="tablist" aria-label="Project description format">
+    <button type="button" id="project-narrative-plain-tab" role="tab" aria-selected="true" aria-controls="project-narrative-page" data-narrative-tab="plain">Plaintext</button>
+    <button type="button" id="project-narrative-star-tab" role="tab" aria-selected="false" aria-controls="project-narrative-page" tabindex="-1" data-narrative-tab="star">STAR</button>
+    <button type="button" id="project-narrative-tldr-tab" role="tab" aria-selected="false" aria-controls="project-narrative-page" tabindex="-1" data-narrative-tab="tldr">TL;DR</button>
+  </div>
+
+  <div id="project-narrative-page" class="project-narratives__page" role="tabpanel" aria-labelledby="project-narrative-plain-tab" data-project-narratives-content>
 <section class="project-filter" data-project-filter aria-labelledby="project-filter-title">
   <div class="project-filter__header">
     <h2 id="project-filter-title">Filter</h2>
@@ -24,7 +32,6 @@ author_profile: true
 
 <ul class="portfolio-list" id="portfolio-projects">
   {% for portfolio in cv.portfolio %}
-  {% assign narrative_id = "project-narrative-" | append: forloop.index %}
   {% assign project_job_tags = portfolio["job-tags"] %}
   <li id="{{ portfolio.name | slugify }}" class="portfolio-project" data-job-tags="{{ project_job_tags | join: '|' }}">
     <div class="archive__item-header">
@@ -60,16 +67,9 @@ author_profile: true
       </ul>
       {% endif %}
 
-      <div class="project-narratives" data-project-narratives>
-        <div class="project-narratives__tabs" role="tablist" aria-label="Description format for {{ portfolio.name | escape }}">
-          <button type="button" id="{{ narrative_id }}-plain-tab" role="tab" aria-selected="true" aria-controls="{{ narrative_id }}-plain" data-narrative-tab="plain">Plaintext</button>
-          {% if portfolio.star %}<button type="button" id="{{ narrative_id }}-star-tab" role="tab" aria-selected="false" aria-controls="{{ narrative_id }}-star" tabindex="-1" data-narrative-tab="star">STAR</button>{% endif %}
-          {% if portfolio.tldr %}<button type="button" id="{{ narrative_id }}-tldr-tab" role="tab" aria-selected="false" aria-controls="{{ narrative_id }}-tldr" tabindex="-1" data-narrative-tab="tldr">TL;DR</button>{% endif %}
-        </div>
-
-        {% capture desc_copy %}{% for description in portfolio.description-keys %}{{ description }}
+      {% capture desc_copy %}{% for description in portfolio.description-keys %}{{ description }}
 {% endfor %}{% endcapture %}
-        <div id="{{ narrative_id }}-plain" class="project-narratives__panel archive__item-excerpt click-copy" role="tabpanel" aria-labelledby="{{ narrative_id }}-plain-tab" data-narrative-panel="plain" data-copy="{{ desc_copy | strip | escape }}">
+        <div class="project-narratives__panel archive__item-excerpt click-copy" data-narrative-panel="plain" data-copy="{{ desc_copy | strip | escape }}">
           <ul>
             {% for description in portfolio.description-keys %}
             <li>{{ description }}</li>
@@ -82,7 +82,7 @@ author_profile: true
 Task: {{ portfolio.star.task }}
 Action: {{ portfolio.star.action }}
 Result: {{ portfolio.star.result }}{% endcapture %}
-        <div id="{{ narrative_id }}-star" class="project-narratives__panel click-copy" role="tabpanel" aria-labelledby="{{ narrative_id }}-star-tab" data-narrative-panel="star" data-copy="{{ star_copy | strip | escape }}" hidden>
+        <div class="project-narratives__panel click-copy" data-narrative-panel="star" data-copy="{{ star_copy | strip | escape }}" hidden>
           <dl class="project-star">
             <div><dt>Situation</dt><dd>{{ portfolio.star.situation }}</dd></div>
             <div><dt>Task</dt><dd>{{ portfolio.star.task }}</dd></div>
@@ -93,19 +93,18 @@ Result: {{ portfolio.star.result }}{% endcapture %}
         {% endif %}
 
         {% if portfolio.tldr %}
-        <div id="{{ narrative_id }}-tldr" class="project-narratives__panel project-narratives__tldr click-copy" role="tabpanel" aria-labelledby="{{ narrative_id }}-tldr-tab" data-narrative-panel="tldr" data-copy="{{ portfolio.tldr | escape }}" hidden>
+        <div class="project-narratives__panel project-narratives__tldr click-copy" data-narrative-panel="tldr" data-copy="{{ portfolio.tldr | escape }}" hidden>
           <p>{{ portfolio.tldr }}</p>
         </div>
         {% endif %}
-      </div>
-
       <p class="archive__item-skills">Skills: {% for skill in portfolio.skills %}<span class="click-copy">{{ skill }}</span>{% if forloop.last == false %}, {% endif %}{% endfor %}</p>
     </div>
   </li>
   {% endfor %}
 </ul>
+  </div>
+</div>
 
 <script src="{{ '/scripts/project-filter/project-filter.js' | relative_url }}"></script>
 <script src="{{ '/scripts/project-narratives/project-narratives.js' | relative_url }}"></script>
 <script src="{{ '/scripts/click-copy/click-copy.js' | relative_url }}"></script>
-

@@ -15,7 +15,7 @@
 }
 
 .project-narratives {
-  margin-top: 0.8rem;
+  margin-top: 0.5rem;
 }
 
 .project-narratives__tabs {
@@ -53,6 +53,10 @@
 .project-narratives__tabs button[aria-selected="true"] {
   border-bottom-color: #2563eb;
   color: #1d4ed8;
+}
+
+.project-narratives__page {
+  padding-top: 1rem;
 }
 
 .project-narratives__panel {
