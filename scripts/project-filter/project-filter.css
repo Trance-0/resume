@@ -1,0 +1,132 @@
+﻿.project-filter {
+  margin: 0 0 1.5rem;
+  padding: 0.8rem 0 1rem;
+  border-top: 1px solid #d8dee6;
+  border-bottom: 1px solid #d8dee6;
+}
+
+.project-filter__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.65rem;
+}
+
+.project-filter__header h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.project-filter__status {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.78rem;
+}
+
+.project-filter__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.project-filter__options button {
+  min-height: 2rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #c6ced8;
+  border-radius: 4px;
+  background: #fff;
+  color: #334155;
+  font: inherit;
+  font-size: 0.78rem;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.project-filter__options button:hover {
+  border-color: #64748b;
+}
+
+.project-filter__options button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.project-filter__options button[aria-pressed="true"] {
+  border-color: #1f2937;
+  background: #1f2937;
+  color: #fff;
+}
+
+.portfolio-project[hidden] {
+  display: none;
+}
+
+.project-job-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0.45rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-job-tags li {
+  padding: 0.15rem 0.4rem;
+  border-left: 2px solid #64748b;
+  border-radius: 3px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+html[data-theme="dark"] .project-filter,
+body.dark .project-filter {
+  border-color: #475569;
+}
+
+html[data-theme="dark"] .project-filter__status,
+body.dark .project-filter__status {
+  color: #aeb8c5;
+}
+
+html[data-theme="dark"] .project-filter__options button,
+body.dark .project-filter__options button {
+  border-color: #596579;
+  background: #202733;
+  color: #e5e7eb;
+}
+
+html[data-theme="dark"] .project-filter__options button:hover,
+body.dark .project-filter__options button:hover {
+  border-color: #94a3b8;
+}
+
+html[data-theme="dark"] .project-filter__options button[aria-pressed="true"],
+body.dark .project-filter__options button[aria-pressed="true"] {
+  border-color: #e5e7eb;
+  background: #e5e7eb;
+  color: #111827;
+}
+
+html[data-theme="dark"] .project-job-tags li,
+body.dark .project-job-tags li {
+  border-left-color: #94a3b8;
+  background: #283240;
+  color: #d1d5db;
+}
+
+@media (max-width: 600px) {
+  .project-filter__header {
+    display: block;
+  }
+
+  .project-filter__status {
+    margin-top: 0.25rem;
+  }
+
+  .project-filter__options button {
+    min-height: 2.25rem;
+  }
+}

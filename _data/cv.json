@@ -1224,9 +1224,9 @@
       ],
       "date": "Sep 2024 - Present",
       "description-keys": [
-        "Built a club for Chinese students in WashU to share their interests and experiences regarding computer science and career development.",
-        "Organized events and activities to promote students engage in learning algorithms via leetcode and enhance their interview skills.",
-        "Hosted a series of events to share experiences about course selection and academic planning in learning computer science and mathematics in WashU."
+        "Serve as an event planner for a community of more than 300 WashU Chinese students interested in computer science and career development.",
+        "Organized and participated in non-hackathon events covering LeetCode practice, interview skills, course selection, and academic planning.",
+        "Supported a course helper program that assisted 15 students with schedule planning."
       ],
       "skills": [
         "Event Planning",
@@ -1239,6 +1239,58 @@
           "label": "Website",
           "url": "https://wucg.club"
         }
+      ],
+      "star": {
+        "situation": "WashU Chinese students needed a supportive community for sharing computer science interests, career experience, and academic guidance.",
+        "task": "As an event planner, I was responsible for organizing learning and community events around algorithms, interviews, and course planning.",
+        "action": "I planned and participated in the club's non-hackathon events, including LeetCode practice and course-selection sessions, and supported the course helper program.",
+        "result": "The club grew to more than 300 members, and its course helper program assisted 15 students with schedule planning."
+      },
+      "tldr": "Event planner for a 300+ member WashU community supporting Chinese students through computer science, interview, and academic-planning events.",
+      "job-tags": [
+        "project-management",
+        "event-planning"
+      ]
+    },
+    {
+      "name": "circtime",
+      "category": "Infrastructure Monitoring, Web Application",
+      "topicCategory": [
+        "Computer Science",
+        "Web Development"
+      ],
+      "date": "Jul 2026 - Present",
+      "description-keys": [
+        "Extended a React and TypeScript uptime dashboard into an interactive 3D radar for visualizing infrastructure, services, and network dependencies.",
+        "Implemented configuration-driven URL and TCP monitoring, degraded-state detection, dependency analysis, DNS topology discovery, and up to one year of uptime history.",
+        "Automated checks every 15 minutes and static deployment through GitHub Actions and GitHub Pages, currently mapping 67 configured infrastructure, service, and network nodes without a separate backend."
+      ],
+      "star": {
+        "situation": "My hybrid-cloud environment spans VPS hosts, a NAS, GPU infrastructure, DNS and routing layers, and many self-hosted services that need to be inspected as one system.",
+        "task": "Create a reusable, configuration-driven dashboard that monitors the infrastructure and communicates service health, history, and dependency relationships without a dedicated monitoring backend.",
+        "action": "I extended the initial React and TypeScript dashboard with a Three.js concentric 3D visualization, a YAML configuration pipeline, URL and TCP probes, degraded-state thresholds, dependency diagnosis, DNS discovery tools, administrative debugging, and a GitHub Actions monitoring workflow.",
+        "result": "The dashboard maps 67 configured nodes, checks available endpoints every 15 minutes, retains up to 365 days of history, and deploys as a static GitHub Pages application configured through one YAML file."
+      },
+      "tldr": "A configuration-driven 3D uptime radar that maps 67 infrastructure, service, and network nodes while monitoring available endpoints through GitHub Actions and GitHub Pages.",
+      "skills": [
+        "React",
+        "TypeScript",
+        "Three.js",
+        "GitHub Actions",
+        "Infrastructure Monitoring",
+        "DNS",
+        "DevOps"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Trance-0/circtime"
+        }
+      ],
+      "job-tags": [
+        "front-end",
+        "devops",
+        "data-visualization"
       ]
     },
     {
@@ -1250,10 +1302,10 @@
       ],
       "date": "Nov 2025 - Dec 2025",
       "description-keys": [
-        "Serve as final project for CSE 5519: Advances in Computer Vision.",
+        "Served as the final project for CSE 5519: Advances in Computer Vision.",
         "Explored highly compressed image tokenization combined with text-to-image generation, using a TiTok-style 1D tokenizer to encode images into minimal latent representations.",
-        "Built an encoder-decoder pipeline that leverages CLIP scores and VQA metrics to evaluate and optimize semantic alignment between generated images and text prompts.",
-        "Investigated trade-offs between compression ratio and generation quality for text-to-image alignment assessment."
+        "Built an encoder-decoder pipeline that uses CLIP and VQA metrics to evaluate semantic alignment between generated images and text prompts.",
+        "Trained a token-to-token model on 400,000 samples for 35 epochs; it reached a 0.79 VQA score over 50 prompts with five seeds each, compared with 0.75 for VQA-based optimization."
       ],
       "skills": [
         "Computer Vision",
@@ -1268,6 +1320,17 @@
           "label": "GitHub",
           "url": "https://github.com/Trance-0/ImGenHCT"
         }
+      ],
+      "star": {
+        "situation": "Diffusion models provide strong image quality but require iterative denoising, while one-step generators often sacrifice fidelity.",
+        "task": "Investigate whether highly compressed 1D TiTok image tokens could support efficient one-step text-to-image generation.",
+        "action": "I co-led the project, designed blocks of the token-to-token model, reviewed code, tested test-time generation on home computers, created visualizations, and co-wrote the paper.",
+        "result": "After training on 400,000 samples for 35 epochs, the model reached a 0.79 VQA score across 50 prompts with five seeds each, outperforming VQA optimization at 0.75 while generating images in one step."
+      },
+      "tldr": "A one-step text-to-image pipeline that maps text directly into compressed 1D TiTok image tokens and reached a 0.79 VQA score.",
+      "job-tags": [
+        "machine-learning",
+        "data-analysis"
       ]
     },
     {
@@ -1279,10 +1342,9 @@
       ],
       "date": "Nov 2025 - Dec 2025",
       "description-keys": [
-        "Serve as final project for CSE 5100: Deep Reinforcement Learning.",
-        "Autonomous Trailer-Truck Parking with Deep Reinforcement Learning: trained agents to park trailer trucks in designated spots while avoiding collisions, tackling the nonlinear dynamics that make trailer trucks harder to control than standard cars.",
-        "Modeled parking as an environment with continuous states (position, angle) and discrete actions (steering, direction), and implemented and compared DQN, PPO, DDPG, and TD3.",
-        "Built simulation environments, reference implementations, and comparative analyses across multiple RL algorithms for this specialized autonomous parking problem."
+        "Served as the final project for CSE 5100: Deep Reinforcement Learning.",
+        "Modeled trailer-truck steering in a Gymnasium environment using Shapely and Pygame, and compared DQN, PPO, and DDPG in trajectory-free scenarios.",
+        "DQN converged after about 400,000 steps for forward driving and 800,000 steps for backward driving, but failed to solve the 90-degree steering task after 5 million steps."
       ],
       "skills": [
         "Deep Reinforcement Learning",
@@ -1290,7 +1352,6 @@
         "DQN",
         "PPO",
         "DDPG",
-        "TD3",
         "Python"
       ],
       "links": [
@@ -1298,6 +1359,19 @@
           "label": "GitHub",
           "url": "https://github.com/Trance-0/ATTPDRL"
         }
+      ],
+      "star": {
+        "situation": "Trailer trucks have nonlinear articulated dynamics that make steering and parking in constrained spaces substantially harder than controlling standard cars.",
+        "task": "Design a trajectory-free simulation environment and evaluate whether deep reinforcement learning could steer a trailer truck while avoiding collisions and jackknifing.",
+        "action": "I modeled the vehicle kinematics, implemented the environment with Gymnasium, Shapely, and Pygame, compared DQN, PPO, and DDPG, and ran reward-function ablations.",
+        "result": "DQN converged around 400,000 steps for forward driving and 800,000 steps for backward driving, but the 90-degree steering task still failed after 5 million steps, showing the limits of the trajectory-free reward design."
+      },
+      "tldr": "A trailer-truck reinforcement-learning simulator where DQN learned straight forward and backward control but exposed the limits of trajectory-free steering rewards.",
+      "job-tags": [
+        "machine-learning",
+        "algorithm",
+        "data-analysis",
+        "robotics"
       ]
     },
     {
@@ -1309,8 +1383,8 @@
       ],
       "date": "Apr 2026 - Apr 2026",
       "description-keys": [
-        "Built an pranking site for personality test but just giving random matching rates to encouraging users to waste time on choosing questions without actual personality analysis.",
-        "2K test taker in 7 days, all done in 4 hours with video on streaming platform for advertising."
+        "Built a prank personality-test site that returns random matching rates rather than performing personality analysis.",
+        "Completed the site in four hours and promoted it with a streaming-platform video, attracting 2,000 test takers in seven days."
       ],
       "skills": [
         "Front-End Development",
@@ -1323,6 +1397,18 @@
           "label": "Frontend on GitHub",
           "url": "https://github.com/Ogjerry/Sophia"
         }
+      ],
+      "star": {
+        "situation": "A prank personality-test concept needed a complete web experience that looked credible while intentionally returning random matches.",
+        "task": "Build and promote the full site within a very short development window.",
+        "action": "I completed the site in four hours and used a video on a streaming platform to advertise it.",
+        "result": "The site attracted 2,000 test takers during its first seven days."
+      },
+      "tldr": "A prank personality-test site built in four hours that attracted 2,000 test takers in one week.",
+      "job-tags": [
+        "full-stack",
+        "front-end",
+        "back-end"
       ]
     },
     {
@@ -1335,8 +1421,8 @@
       "date": "Sep 2024 - Jan 2025",
       "description-keys": [
         "Built an interactive website for delivering stories and content about philosophers.",
-        "Utilized Django backend with Django REST Framework for blog content delivery.",
-        "Deployed scalable services using Docker and reverse proxy tools."
+        "Built a Django and Django REST Framework backend with an administrative dashboard for content management.",
+        "Completed and deployed the full-stack service with Docker and reverse-proxy tooling; feature updates ended when the content provider stopped supplying updates."
       ],
       "skills": [
         "Front-End Development",
@@ -1353,6 +1439,19 @@
           "label": "Backend on GitHub",
           "url": "https://github.com/Trance-0/SophiasPathBackend"
         }
+      ],
+      "star": {
+        "situation": "A content provider needed an interactive site for publishing stories and educational material about philosophers.",
+        "task": "Deliver the full-stack application and provide an administrative workflow for managing its content.",
+        "action": "I built the backend with Django and Django REST Framework, added an admin dashboard, and deployed the service with Docker and reverse-proxy tooling.",
+        "result": "The full-stack site was completed and deployed; feature development ended after the content provider stopped supplying updates."
+      },
+      "tldr": "A completed Django-based philosophy storytelling site with a REST backend, admin dashboard, and containerized deployment.",
+      "job-tags": [
+        "full-stack",
+        "front-end",
+        "back-end",
+        "devops"
       ]
     },
     {
@@ -1364,9 +1463,9 @@
       ],
       "date": "Jun 2025 - June 2025",
       "description-keys": [
-        "named from, Matching and smOoth difussioN for 3d reconsTRuction",
-        "This is an experimental project as Final project of Spring 2025 CSE 559A Computer Vision course at Washington University in St. Louis.",
-        "Combines MASt3R and Smooth-Diffusion. To test if we can use 2D image generation model to improve 3D reconstruction."
+        "Served as the final project for Spring 2025 CSE 559A Computer Vision at Washington University in St. Louis.",
+        "Combined MASt3R and Smooth-Diffusion to test whether 2D image generation could improve 3D reconstruction.",
+        "Implemented the generation pipeline and bridged gaps between the models, but the generated 3D reconstruction was not yet satisfactory or usable."
       ],
       "skills": [
         "Computer Vision",
@@ -1378,6 +1477,17 @@
           "label": "GitHub",
           "url": "https://github.com/Trance-0/Mon3tr"
         }
+      ],
+      "star": {
+        "situation": "The project explored whether a 2D diffusion model could fill missing visual information during image-based 3D reconstruction.",
+        "task": "Connect MASt3R and Smooth-Diffusion and build the generation stage of the reconstruction pipeline.",
+        "action": "I focused on coding the generation pipeline and connecting the outputs required to bridge the two models.",
+        "result": "The pipeline filled part of the integration gap, but the generated 3D model was still unsatisfactory and not usable."
+      },
+      "tldr": "An experimental MASt3R and Smooth-Diffusion pipeline that bridged 2D generation and 3D reconstruction but did not yet produce usable models.",
+      "job-tags": [
+        "machine-learning",
+        "data-analysis"
       ]
     },
     {
@@ -1402,6 +1512,17 @@
           "label": "GitHub",
           "url": "https://github.com/Trance-0/Flow-of-Thoughts"
         }
+      ],
+      "star": {
+        "situation": "This course project examined whether multiple language-model agents could improve performance on long tasks.",
+        "task": "Implement a multi-agent self-RAG workflow based on Chain of Thought and a Graph of Thoughts pipeline.",
+        "action": "I implemented the multi-agent self-RAG pipeline and tested subagent-based processing for longer tasks.",
+        "result": "Subagents improved long-task performance, but the improvement came with a cost-versus-accuracy trade-off."
+      },
+      "tldr": "A multi-agent self-RAG experiment showing that subagents can improve long-task accuracy at increased cost.",
+      "job-tags": [
+        "machine-learning",
+        "algorithm"
       ]
     },
     {
@@ -1413,10 +1534,9 @@
       ],
       "date": "Nov 2024 - Dec 2024",
       "description-keys": [
-        "Video Streaming: Users can select a dance video and view it while recording their dance through a webcam.",
-        "Real-Time Pose Detection: The app uses machine learning and computer vision models to detect the user’s skeleton in real-time from the video stream.",
-        "Motion Similarity Scoring: The app calculates scores by comparing the user's skeletal movements with the reference dance video, providing feedback on their performance.",
-        "Responsive UI: The app provides a seamless interface for users to interact with the video, record themselves, and receive ongoing feedback during their performance."
+        "Built a HackWashU prototype that streams a reference dance while capturing the user's movement through a webcam.",
+        "Used real-time pose detection and skeletal-motion similarity to provide a continuously updated dance score.",
+        "Focused on frontend implementation and UI design; the hackathon prototype was not deployed after the event."
       ],
       "skills": [
         "Machine Learning",
@@ -1428,6 +1548,18 @@
           "label": "GitHub",
           "url": "https://github.com/Weizhi-Du/odoru"
         }
+      ],
+      "star": {
+        "situation": "A HackWashU team wanted to give dancers real-time visual feedback by comparing webcam movement with a reference video.",
+        "task": "Build the frontend and interaction design for the dance-companion prototype.",
+        "action": "I implemented the frontend and UI for video selection, webcam capture, live pose feedback, and continuously updated scoring.",
+        "result": "The team completed a working hackathon prototype with real-time pose comparison, but did not deploy it after the event."
+      },
+      "tldr": "A hackathon dance companion with a frontend for webcam pose comparison and live movement-similarity scoring.",
+      "job-tags": [
+        "front-end",
+        "machine-learning",
+        "ui-design"
       ]
     },
     {
@@ -1439,8 +1571,9 @@
       ],
       "date": "Jan 2026 - Now",
       "description-keys": [
-        "Initiated a new rhythm game project. Design art and do code reviews.",
-        "2.5 D Rhythm game. It works with moving tracks and 4 key notes."
+        "Initiated a 2.5D rhythm-game project built around moving tracks and four-key notes.",
+        "Focused on art and UI design and contributed code reviews.",
+        "Completed an internal prototype that has not yet been published."
       ],
       "skills": [
         "Unity",
@@ -1452,6 +1585,17 @@
           "label": "Colorful number project repo - Cobalt-4",
           "url": "https://github.com/colorful-numbers/Cobalt-4"
         }
+      ],
+      "star": {
+        "situation": "The team initiated a 2.5D rhythm game using moving tracks and a four-key note system.",
+        "task": "Define the project's visual presentation and user interface while reviewing implementation work.",
+        "action": "I focused on the art and UI design and contributed code reviews during prototype development.",
+        "result": "The team produced a working internal prototype that has not yet been published."
+      },
+      "tldr": "An unpublished 2.5D rhythm-game prototype for which I designed the art and UI and reviewed code.",
+      "job-tags": [
+        "ui-design",
+        "game-design"
       ]
     },
     {
@@ -1475,6 +1619,17 @@
           "label": "Colorful number project repo - Khaki-51",
           "url": "https://github.com/colorful-numbers/Khaki-51"
         }
+      ],
+      "star": {
+        "situation": "The project explored a chess-like game in which action points replace conventional movement rules.",
+        "task": "Initiate a game prototype around action-point-based board operations.",
+        "action": "I initiated the Unity project and implemented the core action-point movement concept.",
+        "result": "The project produced an experimental chess variant centered on action-point operations."
+      },
+      "tldr": "A small Unity experiment that reworks chess-like movement around an action-point system.",
+      "job-tags": [
+        "game-development",
+        "game-design"
       ]
     },
     {
@@ -1486,8 +1641,9 @@
       ],
       "date": "Mar 2022 - Sep 2022",
       "description-keys": [
-        "Initiated a new puzzle solving game project.",
-        "A girl living in a small town using property of time to save her friend, but find her trapped in an endless cycle."
+        "Designed a puzzle-game concept about a girl using properties of time to save her friend while trapped in an endless cycle.",
+        "Worked as the game designer, but the project did not produce a prototype.",
+        "Learned the importance of bounded planning before beginning implementation."
       ],
       "skills": [
         "Unity",
@@ -1498,6 +1654,16 @@
           "label": "Colorful number project repo - Raven-24",
           "url": "https://github.com/colorful-numbers/Raven-24"
         }
+      ],
+      "star": {
+        "situation": "The project followed a girl using properties of time to save her friend while trapped in an endless cycle.",
+        "task": "As the game designer, define the time-loop narrative and puzzle-game concept.",
+        "action": "I designed the game concept and its time-based narrative without first constraining the project to a bounded implementation plan.",
+        "result": "The project did not produce a prototype and taught me to establish bounded scope and planning before starting implementation."
+      },
+      "tldr": "An unprototyped time-loop puzzle-game design that taught me to bound project scope before implementation.",
+      "job-tags": [
+        "game-design"
       ]
     },
     {
@@ -1510,7 +1676,7 @@
       "date": "Dec 2023 - Dec 2023",
       "description-keys": [
         "Developed graphical applets using JavaScript to visualize computational geometry algorithms.",
-        "Serve as final project for CSE 546: Computational Geometry."
+        "Implemented an interactive range-tree and segment-tree visualization as the final project for CSE 546: Computational Geometry."
       ],
       "skills": [
         "JavaScript",
@@ -1520,7 +1686,23 @@
         {
           "label": "GitHub",
           "url": "https://github.com/Trance-0/CSE546_final_project"
+        },
+        {
+          "label": "Live applet",
+          "url": "https://cg.trance-0.com/pedagogy/rangeTree"
         }
+      ],
+      "star": {
+        "situation": "Computational geometry data structures are easier to understand when their spatial operations can be inspected visually.",
+        "task": "Build an interactive JavaScript visualization as the final project for CSE 546: Computational Geometry.",
+        "action": "I implemented a graphical applet that demonstrates range-tree and segment-tree behavior in the browser.",
+        "result": "The completed applet is published as an interactive computational-geometry teaching demo."
+      },
+      "tldr": "An interactive JavaScript applet for visualizing range-tree and segment-tree operations.",
+      "job-tags": [
+        "front-end",
+        "algorithm",
+        "data-visualization"
       ]
     },
     {
@@ -1549,6 +1731,18 @@
           "label": "Leetcode profile",
           "url": "https://leetcode.com/u/Trance-0/"
         }
+      ],
+      "star": {
+        "situation": "I wanted to extend a computational-geometry course project into a broader reference for competitive-programming algorithms.",
+        "task": "Develop and maintain a browser-accessible collection of algorithm applets, especially for LeetCode practice.",
+        "action": "I expanded the original course work into a deployed collection covering algorithms used in competitive programming.",
+        "result": "The applet collection remains deployed, while my related LeetCode practice reached the top 0.64% as of April 2026 without AI assistance."
+      },
+      "tldr": "A deployed collection of competitive-programming algorithm applets developed alongside a top-0.64% LeetCode record.",
+      "job-tags": [
+        "front-end",
+        "algorithm",
+        "data-visualization"
       ]
     },
     {
@@ -1560,26 +1754,36 @@
       ],
       "date": "Nov 2023 - Present",
       "description-keys": [
-        "Built a memory archive with LLM to retrieve notes and provide utilities for personal interest.",
-        "Discontinued now but still updating notes in notenextra.trance-0.com"
+        "Built a personal memory archive and note site with Next.js and the Nextra framework, including LLM-assisted retrieval and utilities.",
+        "Reached about 10 users per week; feature development ended after graduation, with only typo and error corrections continuing."
       ],
       "skills": [
-        "Flutter",
-        "Full-Stack Development",
-        "PostgreSQL",
-        "Docker",
-        "Python",
-        "AJAX"
+        "Next.js",
+        "Nextra",
+        "Web Development",
+        "Large Language Models"
       ],
       "links": [
         {
           "label": "GitHub",
-          "url": "https://github.com/Trance-0/Notechondria"
+          "url": "https://github.com/Trance-0/NoteNextra"
         },
         {
           "label": "Accessible Website",
-          "url": "https://notenetra.trance-0.com"
+          "url": "https://notenextra.trance-0.com"
         }
+      ],
+      "star": {
+        "situation": "Personal notes and reference material needed a searchable archive that could support retrieval and lightweight utilities.",
+        "task": "Build and maintain a web-based memory archive with LLM-assisted retrieval.",
+        "action": "I implemented the site with Next.js and Nextra, organized the note archive, and added retrieval and personal-utility features.",
+        "result": "The site reached about 10 users per week; feature development concluded after graduation, and maintenance is now limited to typo and error corrections."
+      },
+      "tldr": "A Next.js and Nextra memory archive with LLM-assisted retrieval that serves about 10 users per week.",
+      "job-tags": [
+        "full-stack",
+        "front-end",
+        "machine-learning"
       ]
     },
     {
@@ -1607,6 +1811,18 @@
           "label": "Website",
           "url": "https://index.trance-0.com"
         }
+      ],
+      "star": {
+        "situation": "Moving daily work across Linux and Windows exposed the cost of depending on one vendor for files, photos, passwords, code, notes, and compute access.",
+        "task": "Build a portable personal infrastructure layer using open-source services that I could inspect, replace, and operate myself.",
+        "action": "I deployed and maintained containerized services for storage, photos, passwords, Git hosting, CI/CD, media, chatbots, and remote compute behind DNS and reverse-proxy infrastructure.",
+        "result": "The platform remains in daily use and taught me to treat reliability as an operational problem involving backups, exposure boundaries, routing, migration, and recovery rather than only application code."
+      },
+      "tldr": "A long-running self-hosted hybrid cloud that replaces proprietary storage, media, password, Git, CI/CD, and messaging services with open-source infrastructure.",
+      "job-tags": [
+        "full-stack",
+        "back-end",
+        "devops"
       ]
     },
     {
@@ -1630,6 +1846,18 @@
         "Programming",
         "PostgreSQL",
         "Databases"
+      ],
+      "star": {
+        "situation": "A hackathon and the WashU cooking community needed a consistent way to share recipes across different units and timing preferences.",
+        "task": "Design and build a full-stack recipe-sharing application with standardized data and customizable presentation.",
+        "action": "I initialized the project, built it with Django and PostgreSQL, and designed the application mechanism and UI.",
+        "result": "WashU's cooking club adopted the application for sharing recipes with preferred units and accurate time measurements."
+      },
+      "tldr": "A Django and PostgreSQL recipe-sharing app adopted by WashU's cooking club for standardized, customizable recipes.",
+      "job-tags": [
+        "full-stack",
+        "front-end",
+        "back-end"
       ]
     },
     {
@@ -1648,6 +1876,17 @@
         "Programming",
         "TensorFlow",
         "Python"
+      ],
+      "star": {
+        "situation": "A team project applied machine learning to historical material about Apartheid in South Africa and Namibia.",
+        "task": "Provide technical support for the team's model-construction work.",
+        "action": "I supported the Python, TensorFlow, and GPT-3 work used to construct the analysis models.",
+        "result": "I contributed technical implementation support to the team's historical-analysis workflow."
+      },
+      "tldr": "A supporting technical role using Python, TensorFlow, and GPT-3 in a team analysis of Apartheid-era material.",
+      "job-tags": [
+        "machine-learning",
+        "data-analysis"
       ]
     },
     {
@@ -1673,6 +1912,18 @@
           "label": "Colorful number project repo - White-75",
           "url": "https://github.com/colorful-numbers/White-75"
         }
+      ],
+      "star": {
+        "situation": "The project explored how recorded focus time could help users identify more effective work-and-rest cycles.",
+        "task": "Build a full-stack concentration tracker with planning, distraction detection, and personalized reporting.",
+        "action": "I independently implemented the application in Unity with a SQL database hosted on a VPS.",
+        "result": "The project produced a complete independent full-stack application with focus tracking, to-do management, distraction detection, and reports."
+      },
+      "tldr": "An independently built Unity and SQL focus tracker for measuring work-rest cycles and generating personalized reports.",
+      "job-tags": [
+        "full-stack",
+        "back-end",
+        "mobile"
       ]
     },
     {
@@ -1684,8 +1935,9 @@
       ],
       "date": "Feb 2020 - Feb 2022",
       "description-keys": [
-        "Initiated a demo project for a first-person puzzle-solving game about Alzheimer's disease.",
-        "Led a team, designed scenes, implemented gameplay with Unity and Blender, and provided long-term support for junior developers."
+        "Initiated a first-person puzzle-game demo about Alzheimer's disease.",
+        "Led a three-person team, designed scenes, implemented gameplay with Unity and Blender, and supported junior developers.",
+        "Completed a playable demo and video preview."
       ],
       "skills": [
         "Unity",
@@ -1697,6 +1949,18 @@
           "label": "Colorful number project repo - Gray-75",
           "url": "https://github.com/colorful-numbers/Gray-75"
         }
+      ],
+      "star": {
+        "situation": "The project used a first-person puzzle game to explore a narrative about Alzheimer's disease.",
+        "task": "Lead a three-person team and deliver a playable demonstration of the concept.",
+        "action": "I led development, designed scenes, implemented gameplay with Unity and Blender, and provided long-term support to junior developers.",
+        "result": "The team completed a playable demo and a video preview."
+      },
+      "tldr": "A three-person Unity and Blender puzzle-game project about Alzheimer's disease that produced a playable demo and video preview.",
+      "job-tags": [
+        "game-development",
+        "game-design",
+        "project-management"
       ]
     },
     {
@@ -1709,11 +1973,9 @@
       "date": "Apr 2019 - Nov 2021",
       "organization": "UC-Berkeley FHL Vive Center for Enhanced Reality",
       "description-keys": [
-        "Participated in an autonomous car racing program.",
-        "Trained AI agents to drive cars in simulation.",
-        "Tuned reward/punishment parameters.",
-        "Led a team to improve performance.",
-        "Provided technical support and mentorship to new members."
+        "Participated in UC Berkeley's Robot Open Autonomous Racing program and worked in a three-person simulation-racing team.",
+        "Manually tuned a PID controller for fast autonomous driving and supported other team members and new participants.",
+        "Placed second in the Fall 2020 ROAR S1 series with a 1,104.00-second total and recorded the fastest single lap at 77.15 seconds."
       ],
       "skills": [
         "TensorFlow",
@@ -1724,7 +1986,24 @@
         {
           "label": "ROAR Racing training site",
           "url": "https://hitchinteractive.com/vvip/"
+        },
+        {
+          "label": "Fall 2020 results",
+          "url": "https://roar.berkeley.edu/past-results/"
         }
+      ],
+      "star": {
+        "situation": "The ROAR simulation competition challenged teams to control an autonomous car quickly and reliably around a racing environment.",
+        "task": "Work in a three-person team to improve autonomous driving performance for the Fall 2020 S1 series.",
+        "action": "I helped manually tune the PID controller, supported team performance work, and provided technical guidance to newer participants.",
+        "result": "Our team placed second with a 1,104.00-second total and earned the fastest-single-lap result at 77.15 seconds."
+      },
+      "tldr": "A three-person ROAR team using a manually tuned PID controller that placed second and recorded the fastest lap in Fall 2020.",
+      "job-tags": [
+        "machine-learning",
+        "algorithm",
+        "robotics",
+        "project-management"
       ]
     }
   ],
