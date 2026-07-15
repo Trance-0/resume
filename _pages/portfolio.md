@@ -108,3 +108,4 @@ Result: {{ portfolio.star.result }}{% endcapture %}
 <script src="{{ '/scripts/project-filter/project-filter.js' | relative_url }}"></script>
 <script src="{{ '/scripts/project-narratives/project-narratives.js' | relative_url }}"></script>
 <script src="{{ '/scripts/click-copy/click-copy.js' | relative_url }}"></script>
+
