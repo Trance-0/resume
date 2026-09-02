@@ -1,0 +1,95 @@
+---
+title: SophiasPath
+order: 16
+category: Interactive Educational Web Application
+topicCategory:
+  - Computer Science
+  - Web Development
+date: Aug 2024 - Oct 2025
+skills:
+  - Next.js
+  - TypeScript
+  - Django REST Framework
+  - PostgreSQL
+  - Docker
+  - Nginx
+  - Cloudflare
+links:
+  - label: Frontend and project notes on GitHub
+    url: https://github.com/Ogjerry/Sophia
+  - label: Backend on GitHub
+    url: https://github.com/Trance-0/SophiasPathBackend
+star:
+  situation: A three-person team wanted to turn one teammate's philosophy research into an interactive educational site connecting schools, thinkers, writings, definitions, and intellectual relationships.
+  task: I owned the backend, data model, API, deployment, and project coordination while also contributing frontend integration and maintenance.
+  action: I designed a Django and PostgreSQL model for pages, sections, typed relations, definition links, and tags; exposed it through Django REST Framework; built an administrative and Markdown-import workflow; integrated and debugged the Next.js frontend; and deployed the services with Docker, Nginx, and Cloudflare-related configuration.
+  result: The team publicly deployed the site and made it usable beyond the team, although no reliable usage analytics were retained. Core development ended when new content and team activity slowed, followed by occasional infrastructure and frontend maintenance through October 2025.
+tldr: A three-person interactive philosophy map for which I owned the Django backend, data model, API, deployment, coordination, and part of the Next.js integration.
+highlights:
+  - Independently built the Django REST Framework backend and PostgreSQL data model for philosophical schools, thinkers, hierarchical sections, typed relationships, definition links, and tags.
+  - Supported both repository-authored Markdown and Django-admin-managed structured content, including a bulk Markdown import path for moving reviewed entries into the backend.
+  - Contributed frontend search, filtering, definition linking, Markdown and wiki rendering, API and image integration, navigation, build fixes, Cloudflare deployment support, and later backend-service replacement.
+  - Coordinated a three-person workflow in which Yexiang Tang researched, wrote, and proofread philosophy content while the team iterated through dated meeting notes and Git history.
+jobTags:
+  - full-stack
+  - front-end
+  - back-end
+  - devops
+  - leadership
+---
+
+## Overview
+
+SophiasPath was a three-person attempt to represent the history of analytic philosophy as something more connected than a sequence of articles. The product combined an educational encyclopedia and storytelling site with a graph of schools, philosophers, definitions, influences, affiliations, developments, and disagreements.
+
+My role covered the full technical spine of the project: I was the sole backend developer, designed the data model and API, owned deployment and infrastructure, coordinated the work, and contributed to the frontend. Yexiang Tang was the specific content provider: he researched, wrote, and proofread the philosophy entries. The frontend repository also records work from Zirui Liu on graph behavior and relationships.
+
+## Highlights
+
+- Independently built the Django REST Framework backend and PostgreSQL data model for philosophical schools, thinkers, hierarchical sections, typed relationships, definition links, and tags.
+- Supported both repository-authored Markdown and Django-admin-managed structured content, including a bulk Markdown import path for moving reviewed entries into the backend.
+- Contributed frontend search, filtering, definition linking, Markdown and wiki rendering, API and image integration, navigation, build fixes, Cloudflare deployment support, and later backend-service replacement.
+- Coordinated a three-person workflow in which Yexiang Tang researched, wrote, and proofread philosophy content while the team iterated through dated meeting notes and Git history.
+
+## Project narrative
+
+### Situation
+
+The team had philosophy research and writing, but the material did not naturally fit a conventional chronological blog. Thinkers belong to schools, influence or reject one another, reuse definitions, and participate in several lines of development at once. The interface therefore needed to preserve readable long-form entries while exposing those relationships as navigation and graph structure.
+
+### Task
+
+I needed to create the reusable content and infrastructure layer behind that experience. This included translating the editorial concepts into a data model, exposing stable endpoints to the frontend, giving the team a practical publishing workflow, deploying the full stack, and coordinating integration work across three contributors.
+
+### Action
+
+I designed the Django model around two page types—schools and philosophers—and hierarchical sections within each page. Sections could represent text, images, files, footnotes, references, graph arrows, or page metadata. Typed relationships captured affiliation, development, influence, and rejection. Definition links connected repeated philosophical terms to the relevant section, while tags made the corpus searchable across pages.
+
+The REST API exposed school and page retrieval, sections, relationships, tags, tag-filtered sections, and search. I added Django admin support so structured content could be managed without editing database rows directly. The project also developed a bulk-import path that parsed reviewed Markdown headings into sections, retained hierarchy, classified special sections, generated slugs, and connected bracketed terms to tags or graph links.
+
+The publishing workflow evolved rather than replacing one system with another. Philosophy entries were authored and proofread as Markdown in the frontend repository; the backend exposed a structured Django-admin representation; and I uploaded or migrated wiki content and media between those layers. On the frontend, my verified contributions included search and filtering, definition linking, Markdown syntax and wiki rendering, API and image integration, navigation and page-slug fixes, lint and build repairs, Cloudflare configuration, and later replacement of backend service references.
+
+For deployment, I packaged Django, PostgreSQL, and Nginx with Docker and persistent volumes for database, application, static, and media data. The frontend history records Cloudflare-related deployment work in February 2025. The backend later received Django and container upgrades in April and a Railway-oriented deployment transition in August; the frontend received a final recorded maintenance change in October.
+
+### Result
+
+The application was publicly deployed and had some outside users, but the project retained no dependable analytics or user count. Core feature development ended in early 2025 as the content provider stopped supplying new material and the team's active interest declined. Occasional maintenance continued through October 2025, so the honest project range is August 2024 through October 2025 rather than treating the first development pause as the final code change.
+
+The most durable result is the workflow and model: prose could remain reviewable in Markdown while the application gained structured search, relationships, tags, media, and graph navigation. The project is a supporting Customer Obsession and Earn Trust example because I built around a specific teammate's publishing needs and delivered the shared technical system, not because it achieved a quantified audience outcome.
+
+## Reconstructed timeline
+
+- **August–September 2024:** The team established the product direction, content format, backend schema, REST API, and first deployment structure.
+- **Late 2024:** Content, media, relationship modeling, frontend rendering, and the editorial conventions evolved together.
+- **January–February 2025:** The team debugged search, tags, definition links, wiki upload, Markdown parsing, relationships, and deployment. Bulk Markdown import connected the repository-based editorial workflow with Django admin.
+- **April 2025:** The backend received Django and Docker configuration upgrades.
+- **August 2025:** Backend deployment support moved toward Railway and the frontend replaced backend service references.
+- **October 2025:** The frontend recorded its final maintenance update.
+
+## Archive uncertainty
+
+Meeting notes dated January 25 and February 2, 2025 repeat an upcoming task as **“data fixing (recovery from ciber-attack).”** That phrase is the only surviving explicit incident record I found. Nearby commits implement bulk Markdown import and repair definition, tag, and wiki rendering behavior, but they do not identify what was attacked, what damage occurred, how data was restored, or which security controls changed. I therefore preserve the note as an unresolved part of the project diary without presenting a security-recovery story as fact or using it in the Leadership Principles evidence.
+
+## Documentation provenance
+
+The backend README explicitly says its API documentation was generated by ChatGPT and then corrected by me, warns that errors may remain, and notes that the documentation may lag a project under development. I am retaining that disclosure in full because it accurately distinguishes generated documentation from the implementation and human review rather than implying that every historical endpoint description is authoritative.

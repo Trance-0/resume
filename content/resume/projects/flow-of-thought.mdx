@@ -1,0 +1,161 @@
+---
+title: Flow-of-Thought
+order: 14
+category: Experimental Multi-Agent LLM Reasoning
+topicCategory:
+  - Computer Science
+  - Large Language Models
+date: Oct 2024 - Dec 2024
+skills:
+  - Python
+  - Multi-Agent Systems
+  - Retrieval-Augmented Generation
+  - Graph of Thoughts
+  - Chain of Thought
+  - Self-Verification
+  - LLM Evaluation
+links:
+  - label: GitHub
+    url: https://github.com/Trance-0/Flow-of-Thoughts
+  - label: Final report
+    url: https://github.com/Trance-0/Flow-of-Thoughts/blob/main/paper/final/final_report.pdf
+star:
+  situation: Long passages can exceed an LLM's effective attention and produce a “lost in the middle” failure, while a single reasoning path may overlook relevant sections or preserve an early mistake.
+  task: As a solo CSE 561 Fall 2024 project, extend a Graph-of-Thoughts implementation into a multi-agent framework that retrieves relevant passage segments, generates independent approaches, checks them, and aggregates an answer.
+  action: I designed the Flow-of-Thought framework, extended the Graph-of-Thoughts codebase, implemented the Python orchestration, ran GPT-4o-mini and Claude 3.5 Sonnet experiments on sorting, set intersection, and long-passage RACE comprehension, analyzed the failures, produced visualizations, and wrote the proposal and reports.
+  result: The prototype completed the planned exploratory evaluation and reported promising long-passage results, but task-dependent behavior, missing ablations, incomplete retrieval behavior, and limited experiments prevent a general performance claim.
+tldr: A solo multi-agent LLM experiment extending Graph of Thoughts with relevance filtering, independent solution agents, self-checking, and aggregation for long-context reasoning.
+highlights:
+  - Extended an existing Graph-of-Thoughts implementation into a multi-agent Python framework with independent method generation, self-verification, refinement, budget controls, and answer aggregation.
+  - Evaluated IO, CoT, ToT, GoT, and FoT with GPT-4o-mini and Claude 3.5 Sonnet on sorting, set intersection, and 100 long RACE passages.
+  - Preserved the complete experimental tables while treating them as exploratory evidence because the implementation lacked a component ablation and produced mixed, task-dependent behavior.
+  - Completed the idea, implementation, experiments, analysis, visualizations, proposal, reports, and presentation independently.
+jobTags:
+  - machine-learning
+  - algorithm
+  - research
+  - data-analysis
+---
+
+## Overview
+
+Flow-of-Thought was my solo final project for CSE 561 in Fall 2024. It explored whether a group of independent LLM agents could reason over long passages more effectively than a single direct prompt or one fixed reasoning path.
+
+The implementation was not written from a blank slate. I extended an existing Graph-of-Thoughts codebase, retained its comparison structures, and added a framework that filtered context, generated independent approaches, checked and refined them, and aggregated their results. I owned the framework idea, Python implementation, experimental design and execution, analysis, visualizations, proposal, reports, and presentation.
+
+## Highlights
+
+- Extended an existing Graph-of-Thoughts implementation into a multi-agent Python framework with independent method generation, self-verification, refinement, budget controls, and answer aggregation.
+- Evaluated IO, CoT, ToT, GoT, and FoT with GPT-4o-mini and Claude 3.5 Sonnet on sorting, set intersection, and 100 long RACE passages.
+- Preserved the complete experimental tables while treating them as exploratory evidence because the implementation lacked a component ablation and produced mixed, task-dependent behavior.
+- Completed the idea, implementation, experiments, analysis, visualizations, proposal, reports, and presentation independently.
+
+## Project narrative
+
+### Situation
+
+Language models may technically accept a long context without using all parts of it equally well. Relevant evidence buried in the middle of a document can receive less attention, and a single chain of reasoning can carry an early mistake into the final answer. Retrieval helps select evidence, while Graph of Thoughts helps branch and combine reasoning, but neither by itself was the exact workflow I wanted to test.
+
+### Task
+
+Build an experimental framework that could:
+
+1. Divide long material into syntactically and semantically useful segments.
+2. Select the segments relevant to a question.
+3. Ask separate LLM agent instances to propose independent solution methods.
+4. Let those agents check common errors and refine their paths.
+5. Aggregate the surviving answers into one result.
+6. Compare the approach with direct input/output, Chain of Thought, Tree of Thoughts, and Graph of Thoughts.
+
+### Action
+
+#### Extending Graph of Thoughts
+
+My implementation was fundamentally an extension of the Graph-of-Thoughts codebase. I reused its core representation and comparison workflow, then added Flow-of-Thought operations and orchestration for approach generation, execution, evaluation, refinement, and aggregation. The framework represented intermediate thoughts and operations as a graph and enforced configurable thought-count and budget limits while traversing executable operations.
+
+Here, “multi-agent” means separate LLM agent instances with distinct roles in the reasoning workflow, not merely labels for branches inside one prompt. The agents generated alternative approaches, checked candidate work, refined it, and contributed to the final aggregation.
+
+#### Long-context workflow
+
+For a long document, the proposed preprocessing stage divided the text into coherent regions small enough to process separately. For an academic paper, those regions might correspond to the abstract, motivation, related work, approach, experiments, and conclusion. A relevance step then identified which regions were useful for the current question so later agents would not repeatedly process unrelated text.
+
+The generation stage created multiple independent methods. Each path could produce intermediate answers and self-check for common mistakes before refinement. The final stage used voting or aggregation across completed paths rather than trusting the first response.
+
+#### Evaluation
+
+I compared five schemes:
+
+- **IO:** direct input/output prompting
+- **CoT:** Chain of Thought
+- **ToT:** Tree of Thoughts
+- **GoT:** Graph of Thoughts
+- **FoT:** my Flow-of-Thought extension
+
+The experiments used GPT-4o-mini and Claude 3.5 Sonnet with temperature `0.7` and three-shot prompts. They covered two structured reasoning tasks and one long-passage reading-comprehension task. The tables below reproduce the final report rather than retroactively selecting only favorable outcomes.
+
+### Reported sorting results
+
+The sorting experiment used 100 trials with lists of 32 random integers. Lower reported error was better.
+
+| Method | GPT-4o-mini | Claude 3.5 Sonnet |
+| --- | ---: | ---: |
+| IO | 2.14 | 2.03 |
+| CoT | 1.88 | 1.86 |
+| ToT | 1.20 | 1.32 |
+| GoT | **1.10** | 1.32 |
+| FoT | 1.13 | **1.09** |
+
+FoT was slightly worse than GoT with GPT-4o-mini and best among the tested schemes with Claude. This mixed result is one reason not to claim universal improvement.
+
+### Reported set-intersection results
+
+The set-intersection experiment used 100 trials on pairs of 32-number sets. Lower average element error was better.
+
+| Method | GPT-4o-mini | Claude 3.5 Sonnet |
+| --- | ---: | ---: |
+| IO | 3.02 | 2.88 |
+| CoT | 2.46 | 1.89 |
+| ToT | 1.93 | 1.97 |
+| GoT | 1.24 | 1.56 |
+| FoT | **1.13** | **1.20** |
+
+FoT produced the lowest reported error for both model columns on this task, but one successful benchmark is not sufficient to establish a general advantage.
+
+### Reported reading-comprehension results
+
+For reading comprehension, I selected the 100 longest passages in the RACE subset used by the project; the report describes a minimum passage length of 3,850 words. Higher score out of 100 was better.
+
+| Method | GPT-4o-mini | Claude 3.5 Sonnet |
+| --- | ---: | ---: |
+| IO | 68.50 | 65.25 |
+| CoT | 72.33 | 69.50 |
+| ToT | 76.25 | 75.33 |
+| GoT | 78.50 | 83.25 |
+| FoT | **84.33** | **85.50** |
+
+The long-passage result was the strongest evidence in the report: FoT achieved the highest score in both model columns among the five tested prompting frameworks. It remains an exploratory course result rather than a production or state-of-the-art claim.
+
+### Result
+
+The project completed a working basic framework and the planned comparison across three task families. The numbers suggest that independent generation, relevance filtering, checking, and aggregation can help in some settings, particularly the long-passage sample. They do not support a broad claim that FoT generally outperforms other methods.
+
+Several limitations constrain the interpretation:
+
+- Method-generation agents sometimes proposed actions the available model could not execute, such as running Python code or producing visualizations.
+- Self-checking could fail at basic verification, including counting elements, and then compound an earlier error.
+- Graph generation required many model calls and became expensive, but I no longer have reliable token or API-cost measurements; the diary therefore makes no quantified cost claim.
+- The basic implementation did not fully support dynamic divide-and-conquer behavior or retrieval of information omitted from earlier steps.
+- Time constraints prevented a component ablation, so the evaluation could not isolate how much relevance filtering, method generation, checking, refinement, or voting contributed individually.
+- The experiment covered too few task types and model configurations to establish generality.
+
+## What I would change
+
+A stronger successor would separate retrieval quality from reasoning quality, record token and monetary cost for every operation, reject infeasible generated methods before execution, and run an ablation for each component. It would also compare results under matched call or token budgets so an accuracy improvement could not simply be attributed to spending more inference compute.
+
+## Leadership relevance
+
+Flow-of-Thought is secondary supporting evidence for **Learn and Be Curious** and **Invent and Simplify**. It shows independent research, framework extension, comparative evaluation, and honest treatment of mixed evidence. It should not replace stronger production or team examples in the Amazon mapping.
+
+## AI-use uncertainty
+
+LLMs were the experimental subjects and execution engines of the project. Separately, I do not remember whether AI-assisted coding materially contributed to the repository, and the history does not establish it. I therefore leave coding-assistance provenance unresolved rather than inferring it from the domain or implementation style.

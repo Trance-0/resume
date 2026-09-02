@@ -1,0 +1,78 @@
+---
+title: MTA Strategy Optimizer
+order: 22
+category: Data Science, Advertising Technology
+topicCategory:
+  - Computer Science
+  - Data Science
+date: Jul 2026 - Present
+organization: Capgemini Shanghai
+skills:
+  - Reinforcement Learning
+  - Python
+  - Multi-Touch Attribution
+  - Data Simulation
+  - Data Validation
+  - PostgreSQL
+  - Software Architecture
+  - Documentation
+  - Project Management
+links:
+  - label: Strategy optimizer
+    url: https://github.com/Trance-0/MTA-strategy-optimizer
+  - label: Simulation dataset
+    url: https://github.com/Trance-0/MTA-SIM-dataset
+star:
+  situation: I joined a two-month-old, 25-person advertising-strategy project as an AI Engineer on July 27, 2026. Because client data was withheld for confidentiality, the team depended on synthetic data, but it had no shared database or reproducible data contract and members were producing incompatible implementations.
+  task: Although I was assigned to one group and had no formal leadership authority, I needed dependable upstream data and shared interfaces before the team could evaluate attribution methods or build a strategy optimizer.
+  action: I delivered the first reproducible simulation baseline in two days, then expanded it with fixed-seed configuration, typed schemas, validation, manifests, storage adapters, standardized MTA interfaces, automated tests, and specification-oriented documentation. I also coordinated the active subgroup around shared contracts while continuing to develop the dashboard and deployment workflow.
+  result: The active subgroup integrated around the shared interfaces, and the mentor selected my implementation as the project's most mature product and the one that best matched expectations. The maintained workspace now reports 476 passing Python tests and 47 dashboard tests; development and mentor evaluation remain ongoing.
+tldr: A 25-person advertising-analytics project where I became the de facto integration lead, delivered a reproducible synthetic-data baseline in two days, and produced the implementation selected by the mentor as the best match for the project expectations.
+highlights:
+  - Joined a two-month-old, 25-person project as an AI Engineer and became the de facto engineering and integration lead without formal authority.
+  - Delivered the first reproducible synthetic-data baseline in two days, then added fixed-seed configuration, schema validation, manifests, storage adapters, standardized MTA interfaces, tests, and documentation.
+  - Coordinated the active subgroup around shared contracts; the mentor selected my implementation as the project's most mature product and best match for the expected deliverable.
+  - Maintained a workspace reporting 476 passing Python tests and 47 dashboard tests while continuing dashboard, deployment, and mentor-review work.
+jobTags:
+  - data-analysis
+  - machine-learning
+  - project-management
+---
+
+## Overview
+
+A 25-person advertising-analytics project where I became the de facto integration lead, delivered a reproducible synthetic-data baseline in two days, and produced the implementation selected by the mentor as the best match for the project expectations.
+
+## Highlights
+
+- Joined a two-month-old, 25-person project as an AI Engineer and became the de facto engineering and integration lead without formal authority.
+- Delivered the first reproducible synthetic-data baseline in two days, then added fixed-seed configuration, schema validation, manifests, storage adapters, standardized MTA interfaces, tests, and documentation.
+- Coordinated the active subgroup around shared contracts; the mentor selected my implementation as the project's most mature product and best match for the expected deliverable.
+- Maintained a workspace reporting 476 passing Python tests and 47 dashboard tests while continuing dashboard, deployment, and mentor-review work.
+
+## Project narrative
+
+### Situation
+
+I joined a two-month-old advertising-strategy project at Capgemini Shanghai as an AI Engineer on July 27, 2026, in the third employee intake. The project involved about 25 people, but it still had no common database or data contract. Because the client and its data were withheld for confidentiality, the team needed synthetic inputs; instead of sharing reproducible generators and documentation, members had been producing incompatible datasets and implementations.
+
+### Task
+
+I was assigned to focus on one group and had no formal authority over the rest of the team. However, the attribution and optimization work that interested me could not be evaluated without stable upstream data. I took responsibility for establishing a reproducible baseline and enough shared interfaces for the active contributors to integrate their components, while leaving explicit extension points for future approved data and models.
+
+### Action
+
+I studied the problem setup and delivered the first usable, reproducible simulation baseline in two days. I then developed it into a configuration-driven pipeline with fixed random seeds, typed schemas, cross-table validation, configuration hashes, dataset manifests, and CSV, SQLite, PostgreSQL, and external-writer paths. The simulator produces synthetic path, performance, and evaluation-only ground-truth tables while structurally preventing ground truth from leaking into model features.
+
+On the attribution side, I established shared adapters and a standardized interface for comparing MTA approaches. I documented the contracts, added automated tests, and asked contributors what their groups needed so I could supply compatible data and interfaces. Without formal authority, I kept the active subgroup aligned through frequent progress discussions and integration work, while contributors who preferred independent approaches remained outside the shared workflow. I am continuing to develop the dashboard and deployment path.
+
+### Result
+
+The active subgroup adopted the shared interfaces, and the mentor selected my implementation as the project's most mature product and the one that best matched the expected deliverable. The maintained workspace now reports 476 passing Python tests and 47 dashboard tests. The work remains a synthetic, pre-production proof of concept rather than a system trained on client data, and both development and mentor evaluation are still ongoing.
+
+## Scope and boundaries
+
+- No client name, production data, customer identifier, or confidential business measurement was provided or used.
+- The public datasets are synthetic research fixtures, not Amazon exports or records from an actual advertiser.
+- The architecture deliberately supports external configurations, private storage writers, and additional attribution or optimization models without embedding future client data in the public repository.
+- Current analytical results support reproducible development and offline comparison; they are not evidence of causal advertising lift or a production deployment.

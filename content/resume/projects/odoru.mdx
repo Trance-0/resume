@@ -1,0 +1,74 @@
+---
+title: Odoru
+order: 13
+category: Hackathon Computer-Vision Prototype
+topicCategory:
+  - Computer Science
+  - Computer Vision
+date: Oct 19 - Oct 20, 2024
+skills:
+  - Next.js
+  - Flask
+  - Socket.IO
+  - OpenCV
+  - MediaPipe
+  - Interface Design
+links:
+  - label: GitHub
+    url: https://github.com/Weizhi-Du/odoru
+star:
+  situation: A three-person HackWashU team explored whether a dance companion could compare a webcam feed with a reference performance and return live visual feedback.
+  task: During the two-day hackathon, design the product interaction, build the Next.js frontend, and help debug integration with the Flask, Socket.IO, and computer-vision workstreams.
+  action: I designed the user-facing flow, worked on the Next.js interface, and assisted integration debugging while teammates developed the backend and pose-comparison pipeline.
+  result: The team completed and demonstrated parts of the proposed experience, but the reference-video, webcam, pose-analysis, and scoring stages were not fully integrated into one reliable end-to-end application. The project received no award and ended after the hackathon.
+tldr: A two-day, three-person dance-feedback prototype where I designed the interaction, built the Next.js frontend, and debugged a partially integrated Flask and computer-vision pipeline.
+highlights:
+  - Designed a dance-companion interaction that paired a reference performance with webcam capture and pose-based feedback.
+  - Built the Next.js frontend and helped debug integration with a Flask and Socket.IO backend during the two-day HackWashU sprint.
+  - "Preserved the partial-integration result honestly: individual interface and pose-processing components existed, but the complete experience was not reliable end to end."
+jobTags:
+  - front-end
+  - machine-learning
+  - ui-design
+  - teamwork
+---
+
+## Overview
+
+Odoru was a three-person HackWashU 2024 prototype for dancing alongside a reference video while a webcam captured the user's motion. The intended application would detect both skeletons, compare their movement over time, and update a score or visual response during the performance.
+
+My responsibilities were product and interface design, Next.js frontend development, and integration debugging. The repository identifies Weizhi Du as backend developer and coordinator, En “Peter” Wei as the modeling contributor, and me as the frontend contributor.
+
+## Highlights
+
+- Designed a dance-companion interaction that paired a reference performance with webcam capture and pose-based feedback.
+- Built the Next.js frontend and helped debug integration with a Flask and Socket.IO backend during the two-day HackWashU sprint.
+- Preserved the partial-integration result honestly: individual interface and pose-processing components existed, but the complete experience was not reliable end to end.
+
+## Project narrative
+
+### Situation
+
+The team wanted to make dance practice more interactive than simply replaying a video. Our concept placed the reference performance and the user's webcam feed in one experience, extracted body landmarks, and used motion similarity to provide immediate feedback.
+
+### Task
+
+Within the October 19–20 hackathon window, I needed to turn that concept into a user-facing interaction, build the Next.js frontend, and help connect it to the backend and computer-vision components produced in parallel by the other two team members.
+
+### Action
+
+I worked on the product flow and Next.js interface and participated in integration debugging. The intended web stack combined Next.js with Flask, Flask-SocketIO, and Socket.IO so video and scoring updates could move between the interface and Python processing code.
+
+The repository also preserves OpenCV and MediaPipe pose detection, webcam and reference-video handling, skeleton rendering, and experimental similarity code. One implementation uses batches of pose landmarks and SciPy Procrustes disparity. I no longer remember whether that specific scorer was the final hackathon method, so I treat it as a surviving experiment rather than claiming it as the definitive algorithm.
+
+The repository's standalone Pygame application demonstrates that several interface and pose-processing ideas were implemented outside the intended web surface. That artifact should not be confused with a fully connected Next.js application or attributed entirely to my frontend work.
+
+### Result
+
+The team completed enough components to demonstrate parts of the concept, but did not achieve one reliable end-to-end path covering reference-video playback, live webcam capture, pose comparison, and continuously updated scoring. Odoru received no award, was not deployed after the event, and had no continued development beyond the two-day sprint.
+
+The project belongs in the portfolio as supporting technical and teamwork evidence, not as an Amazon Leadership Principles example. Its useful lesson is about rapid interface design and integration under a fixed deadline, including being precise about the boundary between a promising collection of components and a completed product.
+
+## AI-use uncertainty
+
+I do not remember whether AI-assisted coding was materially involved, and the repository does not provide reliable evidence either way. This diary therefore leaves the question unresolved rather than inferring authorship from code style or the project's short timeline.

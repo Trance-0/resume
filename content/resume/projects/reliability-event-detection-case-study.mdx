@@ -1,0 +1,81 @@
+---
+title: Reliability Event Detection Case Study
+order: 23
+category: Data Science
+topicCategory:
+  - Computer Science
+  - Data Science
+date: Aug 2026
+skills:
+  - Python
+  - Pandas
+  - Statistical Analysis
+  - Anomaly Detection
+  - Data Visualization
+  - Jupyter Notebook
+  - Interactive Dashboards
+links:
+  - label: Private project repository
+    url: https://git.trance-0.com/Trance-0/EvgoDSCaseStudy
+star:
+  situation: A distributed service network produced operational attempt logs and equipment metadata but had no labeled failure data, making isolated anomalies difficult to distinguish from correlated reliability events.
+  task: Develop a reproducible notebook that identifies impaired units by day, detects shared failure patterns, characterizes likely correlates, and communicates the results to a technical reviewer without relying on supervised labels.
+  action: I built a hierarchical detection pipeline using weekday-adjusted historical baselines, leave-one-out peer comparisons, statistical tail tests, effect-size thresholds, and factor-enrichment analysis. I separated independent impairment signals from systemic reader-, firmware-, and site-level event hypotheses, then added diagnostics, heatmaps, and an interactive geographic drill-down dashboard.
+  result: The notebook produced the required daily reporting interface, distinguished isolated impairment from correlated events, and exported event-level diagnostics with affected units, locations, operational impact, and reliability metrics. Client and dataset details remain private.
+tldr: An unlabeled reliability-analysis case study that turns operational logs into daily impairment signals, systemic-event hypotheses, diagnostics, and an interactive review dashboard.
+highlights:
+  - Designed an unsupervised, hierarchical reliability detector for operational logs without labeled failures.
+  - Combined same-weekday historical baselines, leave-one-out peer comparisons, statistical significance tests, and practical effect-size thresholds to control noisy alerts.
+  - Distinguished independent unit impairment from correlated reader-, firmware-, and site-level event hypotheses while preventing overlapping explanations from being double-counted.
+  - Delivered a reproducible daily reporting function, diagnostic visualizations, and an interactive geographic dashboard for event and unit-level drill-down.
+jobTags:
+  - data-analysis
+  - machine-learning
+  - data-visualization
+---
+
+## Overview
+
+This case study analyzes reliability across a distributed service network using operational attempt logs and equipment and location metadata. Because the data contains no labeled failures, the central problem is not conventional supervised classification: the analysis must infer when a unit behaves abnormally, determine whether several abnormalities share a plausible cause, and preserve the distinction between evidence and attribution.
+
+Client identity, the application domain, raw data, proprietary identifiers, and business conclusions are intentionally omitted because the work is not authorized for public disclosure.
+
+## Analytical approach
+
+I structured the notebook as a hierarchical detection system rather than a single global anomaly score.
+
+### Independent impairment detection
+
+Each unit is first evaluated against two references:
+
+- its own historical behavior on the same day of the week;
+- other units at the same location on the same day, using leave-one-out peer statistics.
+
+The detector evaluates operational stage errors and unusually low activity. Alerts require both statistical evidence and a minimum practical deterioration, reducing false positives caused by small denominators or large datasets where negligible changes can appear statistically significant.
+
+### Systemic-event detection
+
+Independently impaired units are then tested for concentration around shared characteristics. The analysis forms separate hypotheses for equipment-reader patterns, firmware patterns, and location-wide outages. Attribution is ordered so that overlapping evidence is not repeatedly counted under several explanations, while unexplained unit-level impairment remains visible instead of being forced into a systemic category.
+
+### Reporting and diagnostics
+
+The final orchestration function returns one row per day with impaired-unit counts, systemic-event status, affected-unit identifiers, candidate correlates, and aggregate reliability and demand measures. Event-level diagnostic records preserve the locations, units, operational impact, and metrics behind each daily summary.
+
+The notebook also includes:
+
+- raw and weekday-corrected activity heatmaps;
+- diagnostic flag and factor-comparison views;
+- an interactive geographic dashboard with date controls;
+- event ranking by observed operational impact;
+- location and unit-level drill-down;
+- explicit threshold documentation and worked statistical examples.
+
+## Engineering considerations
+
+The implementation emphasizes reproducibility and auditability. Detection stages use explicit naming conventions for independent and systemic signals, preserve intermediate metrics, document threshold behavior, and expose a compact public function rather than requiring reviewers to reconstruct the notebook's internal execution order.
+
+The project also records the use of generative-AI development tools while retaining human responsibility for the analytical design, implementation direction, testing, interpretation, and disclosure boundaries.
+
+## Disclosure boundary
+
+The linked repository is a temporary private reference and may not be accessible without authorization. This page describes the general analytical and engineering work only; it intentionally excludes the client, application domain, data files, proprietary results, and conclusions that could identify the engagement.

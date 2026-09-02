@@ -1,0 +1,87 @@
+---
+title: ImGenHCT
+order: 19
+category: Computer Vision, Image Generation
+topicCategory:
+  - Computer Science
+  - Computer Vision
+date: Nov 2025 - Dec 2025
+skills:
+  - Computer Vision
+  - Image Generation
+  - TiTok
+  - CLIP
+  - PyTorch
+  - Python
+links:
+  - label: GitHub
+    url: https://github.com/Trance-0/ImGenHCT
+  - label: TiTok paper
+    url: https://arxiv.org/abs/2406.07550
+  - label: Highly Compressed Tokenizer paper
+    url: https://arxiv.org/abs/2506.08257
+star:
+  situation: Diffusion models provide strong image quality but require iterative denoising, while one-step generators often sacrifice fidelity.
+  task: Investigate whether highly compressed 1D TiTok image tokens could support efficient one-step text-to-image generation.
+  action: In a two-person team, I contributed to the research idea and system design, filled implementation and presentation gaps, ran test-time generation, VQA and CLIP evaluation, and small debugging experiments on home computers, created visualizations, and co-wrote the final paper. My teammate primarily implemented preprocessing, model training, and the main training pipeline.
+  result: A university-GPU run trained on 400,000 samples for 35 epochs. My teammate's evaluation over 50 prompts and five seeds per prompt reported a 0.79 VQA score for the learned one-step generator versus 0.75 for test-time VQA latent optimization; the team also delivered a demo, presentation, paper, and reproducible training code.
+tldr: A one-step text-to-image pipeline that maps text directly into compressed 1D TiTok image tokens and reached a 0.79 VQA score.
+highlights:
+  - "Served as the final project for CSE 5519: Advances in Computer Vision."
+  - Co-designed a pipeline that maps CLIP text representations directly into highly compressed TiTok image latents and decodes them without an iterative diffusion loop.
+  - Contributed research design, local test-time generation, VQA and CLIP evaluation, small debugging runs, visualizations, gap-filling, and paper writing; my teammate primarily owned preprocessing and main training-code implementation.
+  - Trained the main model on university GPU infrastructure using 400,000 samples for 35 epochs; it reached a reported 0.79 VQA score over 50 prompts with five seeds each, compared with 0.75 for test-time VQA latent optimization.
+  - Completed a working demo, course presentation, final paper, and reproducible training code, while making no claim that VQA alone establishes production readiness.
+jobTags:
+  - machine-learning
+  - data-analysis
+---
+
+## Overview
+
+A one-step text-to-image pipeline that maps text directly into compressed 1D TiTok image tokens and reached a 0.79 VQA score.
+
+## Highlights
+
+- Served as the final project for CSE 5519: Advances in Computer Vision.
+- Explored highly compressed image tokenization combined with text-to-image generation, using a TiTok-style 1D tokenizer to encode images into minimal latent representations.
+- Built an encoder-decoder pipeline that uses CLIP and VQA metrics to evaluate semantic alignment between generated images and text prompts.
+- Trained a token-to-token model on 400,000 samples for 35 epochs; it reached a 0.79 VQA score over 50 prompts with five seeds each, compared with 0.75 for VQA-based optimization.
+
+## Project narrative
+
+### Situation
+
+Diffusion models provide strong image quality but generate through repeated denoising steps. That iterative process is effective but computationally expensive. At the same time, one-step generators often reduce latency by sacrificing fidelity or semantic alignment.
+
+Two recent ideas suggested a different path. TiTok represented an image as a highly compressed one-dimensional latent sequence, and work on highly compressed tokenizers showed that those latents could be optimized directly at test time. Our two-person CSE 5519 team—Boming Miao and me—asked whether a learned model could map text directly into that compressed latent space and let the pretrained TiTok decoder produce an image in one decoding pass.
+
+### Task
+
+Investigate whether highly compressed one-dimensional TiTok representations could support efficient text-to-image generation without diffusion-style iterative denoising. The project needed to connect text and image representations, train a token-to-token mapping, produce a runnable demonstration, and compare the semantic alignment of learned generation against direct test-time latent optimization.
+
+### Action
+
+We used enriched ImageNet captions as the text-image source. The preprocessing path encoded captions with a CLIP text model and images with a pretrained TiTok tokenizer, producing paired text embeddings and compressed image latents. A multi-layer text-to-latent model then learned to predict the image representation from the text representation, and the pretrained TiTok decoder converted the predicted latent into an image in one decoding step.
+
+The main training run used university research GPU infrastructure rather than a home computer. It covered 400,000 samples and ran for 35 epochs. My teammate primarily implemented the preprocessing, model, and main training pipeline and later calculated the final 50-prompt evaluation. My contribution was broader across the parts needed to turn that training work into a coherent research project: I participated in brainstorming and system design, filled missing implementation and presentation pieces, reviewed the evolving pipeline, created visualizations, and co-wrote the paper.
+
+I used home computers for test-time generation, qualitative inspection, VQA and CLIP evaluation, and smaller debugging experiments. This local work exposed practical problems that did not appear in the high-level architecture, including the cost of loading the large VQA model, device placement across tokenizer and evaluation models, and unstable attempts to optimize quantized TiTok latents directly. The repository's demonstration notebook preserves examples of CLIP-guided and VQA-guided latent optimization, including interrupted or failed CUDA runs, rather than presenting every experiment as successful.
+
+For evaluation, the project used VQA Score to measure how well an image aligned with its prompt and CLIP-based similarity for additional inspection. The final comparison covered 50 prompts with five random seeds per prompt, for 250 generated examples. My teammate ran or consolidated that final calculation; I should not claim sole ownership of the metric.
+
+### Result
+
+The learned one-step generator reported an average VQA score of 0.79 across the 50-prompt, five-seed evaluation, compared with 0.75 for test-time VQA latent optimization. The comparison supported the team's core feasibility argument: a learned mapping into compressed TiTok latents could preserve strong prompt alignment while avoiding an iterative diffusion loop at inference time.
+
+The completed course deliverables included a working demonstration, a presentation, a final paper, and reproducible preprocessing and training code. There was no public product deployment, and the trained checkpoint was not preserved as a stated final deliverable.
+
+## Interpretation and limitations
+
+Our project-level interpretation was ambitious: highly compressed TiTok representations appeared sufficient to support useful, potentially production-quality one-step generation. I want to preserve that conclusion because it was part of what made the result interesting to us. However, the recorded evidence supports a narrower public claim. VQA Score measures text-image alignment; by itself it does not establish photorealism, diversity, robustness, latency under production load, or production readiness. The project did not record a complete comparison using metrics such as Fréchet Inception Distance, a blinded human-preference study, or a production deployment.
+
+For that reason, the portfolio summary reports the measured 0.79-versus-0.75 VQA result and the one-step architecture. The broader production-quality interpretation remains here as the team's hypothesis and conclusion, together with the evidence still needed to validate it.
+
+## Personal reflection
+
+ImGenHCT is supporting evidence for **Learn and Be Curious** and **Invent and Simplify**, not my primary ownership story. My most important lesson was that a research contribution is not limited to writing the central training loop. Designing the evaluation, reproducing inference on constrained hardware, investigating failures, turning experiments into understandable figures, and stating who did what are all necessary to make a technical idea credible.

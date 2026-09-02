@@ -1,0 +1,85 @@
+---
+title: Web Development & Personal Website
+order: 6
+category: Web Development
+topicCategory:
+  - Computer Science
+  - Web Development
+date: Feb 2020 - Present
+skills:
+  - Computer Science
+  - Computer Networks
+  - Web Development
+  - Linux
+  - Docker
+  - Programming
+  - React
+  - TypeScript
+  - Three.js
+  - GitHub Actions
+  - Infrastructure Monitoring
+links:
+  - label: Website
+    url: https://index.trance-0.com
+  - label: circtime reference project
+    url: https://github.com/Trance-0/circtime
+star:
+  situation: Moving daily work across Linux and Windows exposed the cost of depending on one vendor for files, photos, passwords, code, notes, and compute access.
+  task: Build a portable personal infrastructure layer using open-source services that I could inspect, replace, and operate myself.
+  action: I deployed and maintained containerized services for storage, photos, passwords, Git hosting, CI/CD, media, chatbots, and remote compute behind DNS and reverse-proxy infrastructure, repeatedly migrating components as my hardware and operational requirements changed.
+  result: The platform remains in daily use. Its portable architecture reduced a full service migration to about 30 minutes, and it continues to serve as the production foundation against which I test experimental tools such as circtime.
+tldr: A long-running self-hosted hybrid cloud that replaces proprietary storage, media, password, Git, CI/CD, and messaging services with open-source infrastructure.
+highlights:
+  - Built a website containing learning material in computer science and shared personal interests at www.trance-0.com.
+  - "Created a series of services via docker: git server, cloud storage via NextCloud/OpenList, media server via Immich, CI/CD manager via Jenkins, password manager via Bitwarden, chatbot supports QQ, WeChat, Telegram, and Discord."
+  - Migrated Nextcloud from a TrueNAS jail through a Linux-core transition and several Docker iterations to an ARM Docker + Portainer stack with NAS-based cold storage, cutting a full service migration down to about 30 minutes on any Docker host.
+  - Proactively migrated a three-year-old CentOS network node to Ubuntu to simplify security maintenance, then built circtime as an experimental topology view while retaining the established production monitor.
+jobTags:
+  - full-stack
+  - back-end
+  - devops
+---
+
+## Overview
+
+A long-running self-hosted hybrid cloud that replaces proprietary storage, media, password, Git, CI/CD, and messaging services with open-source infrastructure.
+
+## Highlights
+
+- Built a website containing learning material in computer science and shared personal interests at www.trance-0.com.
+- Created a series of services via docker: git server, cloud storage via NextCloud/OpenList, media server via Immich, CI/CD manager via Jenkins, password manager via Bitwarden, chatbot supports QQ, WeChat, Telegram, and Discord.
+- Migrated Nextcloud through multiple architectures until a full service move took about 30 minutes, and later moved a three-year-old CentOS network node to Ubuntu to simplify ongoing security maintenance.
+
+## The Nextcloud learning journey
+
+I began experimenting with personal infrastructure in high school because mainstream cloud-storage products did not work equally well across the countries, devices, and networks I used. Cross-border latency, accessibility differences, and platform constraints made a simple requirement—keeping my own files available everywhere—an ongoing technical question.
+
+My first solution was an SMB share on a NAS. It worked inside the network, but it did not provide the cross-platform experience or remote access I wanted. I then discovered Nextcloud, a large community-supported open-source cloud platform, and used the project as a reason to teach myself FreeBSD and the TrueNAS jail model. Running Nextcloud in an isolated jail let me experiment with the application and its dependencies without destabilizing unrelated server components.
+
+During university, I independently learned Docker and rebuilt the service around containers. Volumes separated persistent data from a particular machine, networking made the surrounding services composable, and containerization allowed me to reuse old computers instead of treating each hardware change as a complete reinstall. Nextcloud subsequently moved through a Linux-core transition and several Docker arrangements before reaching the current ARM Docker and Portainer deployment with NAS-based cold storage.
+
+The practical result is a personal cloud on my home network that works across iOS, Windows, and Linux and lets me share files and tools with friends without committing the data to one commercial platform. The more important result is the learning process itself: each limitation led to a new operating system, isolation model, deployment technique, or migration strategy, and each technique became meaningful because it improved a service I use in daily life.
+
+## Project narrative
+
+### Situation
+
+Moving daily work across Linux and Windows exposed the cost of depending on one vendor for files, photos, passwords, code, notes, and compute access.
+
+### Task
+
+Build a portable personal infrastructure layer using open-source services that I could inspect, replace, and operate myself.
+
+### Action
+
+I deployed and maintained containerized services for storage, photos, passwords, Git hosting, CI/CD, media, chatbots, and remote compute behind DNS and reverse-proxy infrastructure. I repeatedly migrated components as the environment evolved: Nextcloud moved from a TrueNAS jail through a Linux-core transition and several Docker iterations to an ARM Docker and Portainer stack with NAS-based cold storage. More recently, I proactively migrated a root network node from a three-year-old CentOS installation to Ubuntu—not because an attack had been detected, but to reduce security-maintenance friction and standardize on the `apt` and `dpkg` ecosystem I use most often.
+
+### Result
+
+The platform remains in daily use and taught me to treat reliability as an operational problem involving backups, exposure boundaries, routing, migration, and recovery rather than only application code. The current containerized design reduced a full service migration to about 30 minutes on any suitable Docker host.
+
+## Monitoring experiment: circtime
+
+As an appendix to this platform, I built [circtime](https://github.com/Trance-0/circtime), an AI-assisted React and TypeScript prototype that tests a concentric, dependency-aware view of my hybrid-cloud topology. It combines an SVG uptime radar with a Three.js history view and uses YAML configuration for infrastructure, services, network nodes, dependencies, thresholds, and retention. GitHub Actions performs HTTP and TCP checks, retains compressed history, and deploys the static dashboard without a dedicated monitoring backend.
+
+The experiment is intentionally not presented as the production monitor. Its private configuration predates a server migration and still requires address and port validation, so I continue using the established Uptime deployment for operational monitoring. circtime remains a reference implementation for topology visualization, degraded-state diagnosis, DNS discovery, and human-directed AI-assisted prototyping.

@@ -1,0 +1,146 @@
+---
+title: ATTPDRL
+order: 18
+category: Deep Reinforcement Learning, Autonomous Vehicles
+topicCategory:
+  - Computer Science
+  - Deep Reinforcement Learning
+date: Oct 2025 - Dec 2025
+skills:
+  - Deep Reinforcement Learning
+  - PyTorch
+  - DQN
+  - PPO
+  - DDPG
+  - Python
+  - Gymnasium
+  - Stable-Baselines3
+  - Shapely
+  - Pygame
+  - TensorBoard
+links:
+  - label: GitHub
+    url: https://github.com/Trance-0/ATTPDRL
+  - label: Final report
+    url: https://github.com/Trance-0/ATTPDRL/blob/master/report.pdf
+star:
+  situation: Trailer trucks have nonlinear articulated dynamics that make steering and parking in constrained spaces substantially harder than controlling standard cars.
+  task: In a two-person course team, build a 2D trailer-truck environment and test whether trajectory-free deep reinforcement learning could learn collision-aware steering without a predefined path.
+  action: Yuchen Wu primarily built the Gymnasium environment, initial DQN, discrete-action adapter, and reward ablations. I supplied environment utilities and reviews, tested PPO and DDPG, wrote the continuous-action adapter, maintained a consistent environment and documentation, created visualizations, and co-wrote the reports. We jointly ran and analyzed the final DQN sequence on my RTX 5090.
+  result: "DQN converged around 400,000 steps for straight forward driving and 800,000 for straight reversing, but the 90-degree steering task failed after 5 million steps. The failure led us to conclude that learning realistic truck motion from unguided exploration is the wrong scope: DRL is better suited to local control inside a small detected environment, underneath a planner or trajectory-level system."
+tldr: A two-person trailer-truck DRL study where straight control converged, 90-degree steering failed, and the failure clarified why DRL should be a bounded local controller rather than an end-to-end trajectory-free driver.
+highlights:
+  - "Served as the final project for CSE 5100: Deep Reinforcement Learning."
+  - Helped develop and review a Gymnasium, Shapely, and Pygame trailer-truck environment; tested PPO and DDPG, built the continuous-action adapter, maintained documentation and visualizations, and jointly ran the final DQN experiments.
+  - DQN converged after about 400,000 steps for forward driving and 800,000 steps for backward driving, but failed to solve the 90-degree steering task after 5 million steps.
+  - Stopped broad hyperparameter search when each complex agent cost roughly seven RTX 5090 GPU-hours, preserving the negative result and reward ablations instead of hiding them.
+  - Completed the proposal, progress report, simulation, trained straight-driving agents, video demonstration, presentation, and final paper.
+jobTags:
+  - machine-learning
+  - algorithm
+  - data-analysis
+  - robotics
+---
+
+## Overview
+
+A two-person trailer-truck DRL study where straight control converged, 90-degree steering failed, and the failure clarified why DRL should be a bounded local controller rather than an end-to-end trajectory-free driver.
+
+## Highlights
+
+- Served as the final project for CSE 5100: Deep Reinforcement Learning.
+- Helped develop and review a Gymnasium, Shapely, and Pygame trailer-truck environment; tested PPO and DDPG, built the continuous-action adapter, maintained documentation and visualizations, and jointly ran the final DQN experiments.
+- DQN converged after about 400,000 steps for forward driving and 800,000 steps for backward driving, but failed to solve the 90-degree steering task after 5 million steps.
+- Stopped broad hyperparameter search when each complex agent cost roughly seven RTX 5090 GPU-hours, preserving the negative result and reward ablations instead of hiding them.
+- Completed the proposal, progress report, simulation, trained straight-driving agents, video demonstration, presentation, and final paper.
+
+## Project narrative
+
+### Situation
+
+Trailer trucks have articulated dynamics that make steering and parking substantially harder than controlling a standard car. Reversing is unstable, the tractor and trailer can jackknife, and a locally reasonable steering action may move the trailer away from the eventual destination. The industrial motivation was autonomous positioning for cargo loading and unloading in constrained space.
+
+Yuchen “Jack” Wu and I began exploring the topic in October 2025 for the final project in CSE 5100: Deep Reinforcement Learning. The early proposal was deliberately ambitious: train an agent to park a trailer truck from feasible starting states, under space and time constraints, without giving it a predefined trajectory. Starting the literature review and feasibility exploration in October was part of the work, so the project date begins then rather than with implementation in November.
+
+### Task
+
+Build a controlled 2D trailer-truck simulation and investigate whether deep reinforcement learning could discover steering behavior through interaction alone. The agent needed to approach a target position and orientation while avoiding walls, jackknifing, and excessive steps. We planned to compare discrete and continuous control methods, simplify the task when necessary, and deliver the full proposal, progress report, demonstration, presentation, and final paper even if the ambitious parking task did not converge.
+
+### Action
+
+### Role split
+
+The project was collaborative, and the archived progress report provides the most useful ownership record. Yuchen primarily built the Gymnasium environment, implemented and tested the initial DQN path, wrote the discrete-action adapter, led the reward-function ablations, and co-wrote the paper. I provided supporting environment functions and code review, tested PPO and DDPG, wrote the continuous or box-action adapter, maintained consistent code and documentation, created the visualizations, and co-wrote the proposal, progress report, and final paper. We jointly ran and analyzed the final DQN experiment sequence.
+
+### Simulator design
+
+The environment used a simplified deterministic kinematic model on a 2D plane. Its state included the trailer-axis position `(x_c, y_c)`, tractor orientation `theta`, and articulation angle `beta`. Steering angle and signed velocity updated tractor orientation, trailer-axis position, and articulation through the coupled kinematic equations. This preserved the nonlinear tractor–trailer relationship and the instability of reversing without introducing a full physics engine.
+
+The final environment used Gymnasium for the reinforcement-learning contract, Pygame for interactive visualization, and Shapely for geometry and collision checks. We originally considered implementing geometry intersection through a line-sweep algorithm, but abandoned it under the course deadline and used Shapely. Human-, random-, and model-action entry points let us inspect whether failures came from the controller, dynamics, collision rules, or reward.
+
+Terminal failure occurred when any truck component collided with a wall, the articulation angle became large enough to indicate jackknifing, or the episode exceeded its step limit. Success required the trailer position and truck orientation to fall within target tolerances. The final shaped reward combined target distance, orientation difference, articulation-angle penalty, wall-distance penalty, a constant time penalty, and terminal success or failure rewards.
+
+### Initial algorithms and failed general parking
+
+We initially tested DQN, PPO, and DDPG with multilayer perceptron policies in a constrained backward-parking problem. DQN and PPO used the default two 64-unit hidden layers; DDPG used the common 400/300-unit layout inherited from the TD3/DDPG defaults.
+
+The simple environment placed an aligned truck one meter from the target with no obstacles. The standard environment randomized position and orientation and placed obstacles directly beside the parking space. Early recorded results were:
+
+| Algorithm | Environment | Steps | Mean reward ± standard deviation |
+| --- | --- | ---: | ---: |
+| DQN | Simple | 3,000 | 116.58 ± 0.00 |
+| DQN | Standard | 30,000 | −148.51 ± 76.49 |
+| PPO | Simple | 3,000 | 107.41 ± 0.00 |
+| PPO | Standard | 3,000 | −189.20 ± 7.43 |
+| PPO | Standard | 30,000 | −187.31 ± 16.53 |
+| DDPG | Simple | 3,000 | 116.18 ± 0.00 |
+| DDPG | Standard | 30,000 | −175.63 ± 45.80 |
+
+The general task provided almost no valuable successful experience during exploration. Sparse success, a combined steering-and-direction action space, reward scaling, and policy capacity were all plausible causes. We also observed that letting the agent choose forward or backward movement made convergence less stable, so we removed that action pair and fixed the direction for each simplified experiment.
+
+### Decision sequence and final DQN experiments
+
+The project progressed through four connected decisions rather than one isolated model choice:
+
+1. We simplified the general parking environment because unguided exploration rarely discovered useful behavior.
+2. We removed the forward/backward direction action and trained separate fixed-direction tasks because the combined choice destabilized learning.
+3. We focused on DQN after PPO and DDPG failed to learn the standard setting and the discrete method was easier to interpret and debug.
+4. We stopped broad hyperparameter search when a single complex agent required roughly seven GPU-hours and the course deadline made a grid search irresponsible.
+
+For straight forward driving, we trained DQN for one million steps. TensorBoard showed convergence at about 400,000 steps, and the final agent maintained direction along the corridor to the target. The experiment took approximately two GPU-hours.
+
+For straight reversing, we used the same one-million-step budget. Convergence occurred around 800,000 steps and required approximately four GPU-hours, illustrating the extra instability of articulated backward motion.
+
+The 90-degree forward-steering environment was the critical failure case. The truck needed to turn around a corner toward a target. Even after five million training steps, the agent did not converge. In the constrained layout it usually collided with the corner. When we removed the lower-left obstacle to make the environment more permissive, the learned policy repeatedly steered right and circled around the center instead of reaching the target. Adjusting learning and exploration rates did not materially change that behavior.
+
+All final experiments ran on my NVIDIA RTX 5090. The final report accidentally calls it an “RTX 5090 Ti”; that GPU model does not exist, so this post preserves the correction.
+
+### Reward ablations and confusing behavior
+
+Yuchen primarily designed and ran the recorded reward ablations, and we interpreted the results together. Raising the target-distance weight from its default of 2 to 6 made backward training less stable and encouraged riskier actions, which matched our expectation. That relationship did not generalize cleanly to forward steering, where a four-million-step run still failed.
+
+We similarly raised the wall-distance penalty from 2 to 3. We expected stronger wall avoidance to stabilize learning and accelerate convergence. Again, the forward-steering result contradicted the simple expectation. The agent could obtain locally improved shaped reward without learning the global turn, and some reward changes produced convergence-like behavior that was difficult to explain.
+
+We preserve these confusing outcomes because they are the main scientific value of the project. A polished success-only account would hide the most important discovery: the reward function encoded local geometric preferences, but not the global structure of a turn.
+
+### Engineering details worth remembering
+
+- Stable-Baselines3 behaved reproducibly only when we saved and reloaded the environment alongside the trained model; we did not fully explain why during the course timeline.
+- Early Pygame simulation introduced action-to-observation delay to approximate real control timing.
+- The environment could not reliably transfer a trained model to an arbitrary new layout or revised reward function unless convergence was already stable.
+- Training cost appeared to grow quickly with task complexity, but the project did not run enough controlled experiments to claim a formal scaling law.
+- The video demonstration and trained agents show the straight tasks; they do not imply that the final parking objective succeeded.
+
+### Result
+
+DQN converged around 400,000 steps for straight forward driving and 800,000 steps for straight reversing. The team completed the proposal, progress report, working simulation, trained straight-driving agents, video demonstration, course presentation, and final paper. The 90-degree steering task nevertheless failed after five million steps, and we stopped rather than hide the negative result or spend roughly seven GPU-hours per agent on an unbounded hyperparameter search.
+
+## Conclusion and revised mental model
+
+The environment was useful for experimentation, but the original end-to-end task was framed at the wrong level. It is unrealistic to expect a real truck to learn the structure of driving and parking through destructive exploration from scratch. Target distance and wall proximity provide local signals; they do not supply global route knowledge, safe exploration, or an understanding of when temporarily moving away from the destination is required to complete a turn.
+
+My current conclusion is therefore narrower and more practical: DRL can be useful for **local control in a small, detected, well-constrained environment**, where the state, goal, and safe operating envelope are already known. A planner, trajectory generator, demonstrations, or another higher-level system should provide global structure. Under that decomposition, reinforcement learning can refine local steering or adapt to residual dynamics rather than being asked to invent the entire driving strategy.
+
+## Leadership relevance
+
+ATTPDRL is supporting evidence for **Are Right, A Lot** and **Dive Deep**, and it can serve as a secondary failure-and-learning story. Its value is not that every experiment succeeded. The useful behavior was to simplify the task, isolate variables, compare algorithms, examine contradictory ablations, respect compute limits, and revise the problem formulation when the evidence rejected the original assumption.

@@ -1,0 +1,99 @@
+---
+title: Mon3tr
+order: 15
+category: Computer vision
+topicCategory:
+  - Computer Science
+  - Computer Vision
+date: Apr 2025 - Apr 2025
+skills:
+  - Computer Vision
+  - MASt3R
+  - Smooth-Diffusion
+  - 3D Reconstruction
+  - Image Inpainting
+  - PyTorch
+links:
+  - label: GitHub
+    url: https://github.com/Trance-0/Mon3tr
+star:
+  situation: The project explored whether a 2D diffusion model could fill missing visual information during image-based 3D reconstruction.
+  task: As a solo course project, connect MASt3R and Smooth-Diffusion into an iterative loop that renders missing views, inpaints them, and feeds them back into reconstruction.
+  action: I implemented and integrated the complete pipeline and a simple UI, running the demo on a home GPU with at least 8 GB of VRAM. I evaluated it qualitatively from photographs but did not build a formal known-3D-to-rendered-2D round-trip benchmark.
+  result: The full code path ran, but the reconstructed scenes were unusable because independently inpainted views did not preserve the geometric consistency required across camera motion. The negative result showed that plausible 2D completion is not equivalent to valid multi-view evidence.
+tldr: A solo MASt3R and Smooth-Diffusion experiment whose complete 2D-inpainting-to-3D loop ran but failed because plausible images were not geometrically consistent across views.
+highlights:
+  - Served as the final project for Spring 2025 CSE 559A Computer Vision at Washington University in St. Louis.
+  - Independently connected MASt3R and Smooth-Diffusion into a runnable pipeline that reconstructed a scene, rendered incomplete views and masks, inpainted the missing regions, and fed completed views back into reconstruction.
+  - Built a simple UI for the reconstruction and inpainting stages and ran the project on a home GPU with at least 8 GB of VRAM.
+  - Found that diffusion could produce visually plausible individual images without preserving the camera-conditioned geometry needed for multi-view reconstruction; the resulting 3D scenes remained unusable.
+  - Preserved the failed reflective-scene and view-interpolation examples and the absence of a formal round-trip benchmark as part of the project record.
+jobTags:
+  - machine-learning
+  - data-analysis
+---
+
+## Overview
+
+A solo MASt3R and Smooth-Diffusion experiment whose complete 2D-inpainting-to-3D loop ran but failed because plausible images were not geometrically consistent across views.
+
+## Highlights
+
+- Served as the final project for Spring 2025 CSE 559A Computer Vision at Washington University in St. Louis.
+- Independently connected MASt3R and Smooth-Diffusion into a runnable pipeline that reconstructed a scene, rendered incomplete views and masks, inpainted the missing regions, and fed completed views back into reconstruction.
+- Built a simple UI for the reconstruction and inpainting stages and ran the project on a home GPU with at least 8 GB of VRAM.
+- Found that diffusion could produce visually plausible individual images without preserving the camera-conditioned geometry needed for multi-view reconstruction; the resulting 3D scenes remained unusable.
+- Preserved the failed reflective-scene and view-interpolation examples and the absence of a formal round-trip benchmark as part of the project record.
+
+## Project narrative
+
+### Situation
+
+Mon3tr was my solo final project for the Spring 2025 CSE 559A Computer Vision course at Washington University in St. Louis. The idea came from a gap between two kinds of models: MASt3R could reconstruct a 3D scene from a limited collection of photographs, while Smooth-Diffusion could inpaint missing regions in an individual 2D image. I wanted to know whether a 2D generator could supply the visual evidence missing from an incomplete 3D reconstruction.
+
+The repository name expands playfully as **“Matching and smOoth difussioN for 3d reconsTRuction.”** Its original README also says that the project “has nothing to do with Arknights (perhaps),” a joke I am retaining because this page is also a project diary. The title artwork in the repository is credited to [Melanbread](https://www.instagram.com/p/DINiQe8RfgO/).
+
+![Mon3tr project artwork](https://raw.githubusercontent.com/Trance-0/Mon3tr/main/assets/Mon3tr.png)
+
+### Task
+
+Build an iterative reconstruction loop:
+
+1. Reconstruct an initial 3D scene from a limited set of 2D photographs with MASt3R.
+2. Move to a perspective where the reconstruction has missing information.
+3. Render the incomplete scene and a mask identifying missing regions.
+4. Ask Smooth-Diffusion to inpaint the masked 2D image.
+5. Feed the completed view back into MASt3R so the reconstruction can absorb the new visual evidence.
+6. Repeat the process in the hope that successive completed views fill the missing geometry.
+
+The goal was not merely to display two models beside each other. The difficult part was translating data, masks, poses, and images between their assumptions well enough for the output of one model to serve as meaningful input to the other.
+
+### Action
+
+I independently implemented the project and connected the stages into a complete runnable path. The repository preserves separate experiments for MASt3R reconstruction, intermediate-view generation, masked inpainting, Gaussian-related trials, and a combined demo. I also built a simple UI that exposed the main 3D reconstruction and 2D inpainting steps rather than requiring every experiment to be run from an isolated script.
+
+The demo ran on my home GPU and expected at least 8 GB of VRAM for Smooth-Diffusion. The integration succeeded mechanically: it could create a 3D scene from photographs, render an incomplete perspective and mask, inpaint the missing pixels, and send the result back into the reconstruction path. However, “the code ran” and “the reconstructed geometry was valid” turned out to be very different success criteria.
+
+My evaluation was qualitative. I took photographs, inspected intermediate rendered views and inpainted images, and looked at the resulting reconstruction. I did **not** build a formal round-trip benchmark starting from a known source 3D object, rendering controlled 2D camera views, reconstructing it, and quantitatively comparing the output with the source geometry. That missing evaluation matters: the project could show visible failure, but it could not measure geometric error or isolate every stage causally.
+
+I do not reliably remember substantial AI coding assistance on this project, and the repository contains no explicit AI attribution. I therefore record it as little or no material AI use while preserving that uncertainty rather than inferring authorship from code style.
+
+### Result
+
+The entire pipeline executed, but the resulting 3D scene was not satisfactory or usable. The dominant problem was **multi-view geometric inconsistency**. Smooth-Diffusion could make an individual masked image look plausible, but it was not conditioned strongly enough to treat that image as a precise camera translation through one persistent 3D world. Details could shift, surfaces could change, and invented content could be reasonable in 2D while contradicting neighboring viewpoints.
+
+![Inconsistent generated intermediate view](https://raw.githubusercontent.com/Trance-0/Mon3tr/main/assets/interpolation_example.png)
+
+MASt3R also struggled with general reconstruction cases, especially reflective surfaces. Reflections violate the assumption that corresponding pixels across views describe one stable surface appearance, so the initial or updated reconstruction could already be wrong before diffusion added another source of inconsistency.
+
+![Failed reflective-scene reconstruction](https://raw.githubusercontent.com/Trance-0/Mon3tr/main/assets/Crash.png)
+
+## What the failure changed
+
+The original intuition treated a missing 3D region almost like a missing patch in a photograph: generate a plausible completion, then let the reconstructor absorb it. The experiment showed why that analogy fails. A useful reconstruction input must be plausible **and** consistent with camera pose, epipolar geometry, depth, occlusion, neighboring views, and the same underlying object identity. A general 2D inpainting model optimizes the first property, not the entire set.
+
+A stronger successor would begin with a controlled synthetic benchmark, render known camera trajectories from source geometry, measure round-trip geometry and view consistency, and use a generator explicitly conditioned on multi-view or 3D constraints. It would also separate reflective and non-reflective scenes so failure in the base reconstructor is not confused with failure in the completion model.
+
+## Deliverables and portfolio role
+
+The completed deliverables were the public repository, runnable demo, and interactive UI. There was no separate final report, recorded presentation, or video that I can verify from the surviving project materials. Mon3tr remains supporting evidence for **Learn and Be Curious**: I combined unfamiliar systems, made the entire path run, and kept the negative result when the central assumption failed.
